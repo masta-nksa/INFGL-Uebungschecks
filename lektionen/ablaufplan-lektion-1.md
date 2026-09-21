@@ -9,7 +9,7 @@ reihenfolge: 1
 
 # Ablaufplan Lektion 1: Zahlensysteme
 
-**ca. 15 Min. zu Beginn des Anlasses | Einzelarbeit, Partnervergleich, Plenum**
+**ca. 15 Min. zu Beginn des Anlasses · Einzelarbeit, Partnervergleich, Plenum**
 
 ## Vorbereitung
 

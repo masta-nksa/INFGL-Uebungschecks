@@ -9,7 +9,7 @@ reihenfolge: 10
 
 # Übungscheck H1: Computersysteme und Aufbau eines PCs
 
-**Lektion 2 – Einzelarbeit | ca. 7 Minuten | ohne Unterlagen**
+**Lektion 2 – Einzelarbeit · ca. 7 Minuten · ohne Unterlagen**
 
 ## Ziel
 

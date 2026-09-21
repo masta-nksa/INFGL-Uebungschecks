@@ -9,7 +9,7 @@ reihenfolge: 30
 
 # Übungscheck Z3: Zweierkomplement
 
-**Lektion 1 – Einzelarbeit | ca. 8 Minuten | Taschenrechner erlaubt**
+**Lektion 1 – Einzelarbeit · ca. 8 Minuten · Taschenrechner erlaubt**
 
 ## Ziel
 

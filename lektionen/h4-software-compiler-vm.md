@@ -9,7 +9,7 @@ reihenfolge: 40
 
 # Übungscheck H4: Software, Compiler und virtuelle Maschinen
 
-**Lektion 2 – Einzelarbeit | ca. 8 Minuten | ohne Unterlagen**
+**Lektion 2 – Einzelarbeit · ca. 8 Minuten · ohne Unterlagen**
 
 ## Ziel
 

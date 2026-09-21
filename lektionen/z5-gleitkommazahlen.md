@@ -9,7 +9,7 @@ reihenfolge: 50
 
 # Übungscheck Z5: Gleitkommazahlen und Datentypen
 
-**Lektion 1 – Einzelarbeit | ca. 8 Minuten | Taschenrechner erlaubt**
+**Lektion 1 – Einzelarbeit · ca. 8 Minuten · Taschenrechner erlaubt**
 
 ## Ziel
 

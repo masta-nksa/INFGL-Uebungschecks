@@ -9,7 +9,7 @@ reihenfolge: 40
 
 # Übungscheck Z4: Binärbrüche
 
-**Lektion 1 – Einzelarbeit | ca. 6 Minuten | Taschenrechner erlaubt**
+**Lektion 1 – Einzelarbeit · ca. 6 Minuten · Taschenrechner erlaubt**
 
 ## Ziel
 

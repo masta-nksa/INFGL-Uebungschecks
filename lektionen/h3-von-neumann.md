@@ -9,7 +9,7 @@ reihenfolge: 30
 
 # Übungscheck H3: Der Von-Neumann-Rechner
 
-**Lektion 2 – Einzelarbeit | ca. 6 Minuten | ohne Unterlagen**
+**Lektion 2 – Einzelarbeit · ca. 6 Minuten · ohne Unterlagen**
 
 ## Ziel
 

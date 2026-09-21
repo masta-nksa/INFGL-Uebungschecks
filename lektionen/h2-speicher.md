@@ -9,7 +9,7 @@ reihenfolge: 20
 
 # Übungscheck H2: Speicher
 
-**Lektion 2 – Einzelarbeit | ca. 7 Minuten | Taschenrechner erlaubt**
+**Lektion 2 – Einzelarbeit · ca. 7 Minuten · Taschenrechner erlaubt**
 
 ## Ziel
 

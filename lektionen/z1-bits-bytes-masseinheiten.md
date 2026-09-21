@@ -9,7 +9,7 @@ reihenfolge: 10
 
 # Übungscheck Z1: Bits, Bytes und Masseinheiten
 
-**Lektion 1 – Einzelarbeit | ca. 7 Minuten | Taschenrechner und ASCII-Tabelle erlaubt**
+**Lektion 1 – Einzelarbeit · ca. 7 Minuten · Taschenrechner und ASCII-Tabelle erlaubt**
 
 ## Ziel
 

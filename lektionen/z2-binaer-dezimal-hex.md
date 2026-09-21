@@ -9,7 +9,7 @@ reihenfolge: 20
 
 # Übungscheck Z2: Binär, Dezimal, Hexadezimal und andere Basen
 
-**Lektion 1 – Einzelarbeit | ca. 8 Minuten | Taschenrechner erlaubt**
+**Lektion 1 – Einzelarbeit · ca. 8 Minuten · Taschenrechner erlaubt**
 
 ## Ziel
 

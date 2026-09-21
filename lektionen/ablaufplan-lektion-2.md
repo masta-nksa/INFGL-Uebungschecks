@@ -9,7 +9,7 @@ reihenfolge: 1
 
 # Ablaufplan Lektion 2: Hardware und Software
 
-**ca. 15 Min. zu Beginn des Anlasses | Einzelarbeit, Partnervergleich, Plenum**
+**ca. 15 Min. zu Beginn des Anlasses · Einzelarbeit, Partnervergleich, Plenum**
 
 ## Vorbereitung
 
