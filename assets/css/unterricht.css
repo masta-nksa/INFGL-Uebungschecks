@@ -734,3 +734,148 @@ a { color: var(--accent); }
   .fill-line { border-bottom: 1px solid #444; }
   a { color: #000; text-decoration: none; }
 }
+
+/* --- Übungschecks ---------------------------------------------------------- */
+/* Interaktive Aufgaben (assets/js/check.js). Farben für richtig/falsch sind
+   unabhängig vom gewählten Design; Zustände werden zusätzlich durch ✓/✗ im Text
+   angezeigt, nie nur durch Farbe. */
+
+:root {
+  --ok:       #1c6b3a;
+  --ok-soft:  #e6f5ec;
+  --nok:      #a8261f;
+  --nok-soft: #fdecea;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ok:       #7fd6a0;
+    --ok-soft:  #14261d;
+    --nok:      #ff9a90;
+    --nok-soft: #2f1917;
+  }
+}
+
+.badge-uebungscheck { background: #e3ecff; color: #24479c; }
+@media (prefers-color-scheme: dark) {
+  .badge-uebungscheck { background: #1c2b4d; color: #9fbcff; }
+}
+
+.visuell-versteckt {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.check-liste { display: grid; gap: 1.1rem; margin-top: 1rem; }
+
+.check-aufgabe {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-left: var(--block-line) solid var(--border-strong);
+  border-radius: var(--radius-karte);
+  padding: 1.1rem 1.25rem 1rem;
+}
+.check-aufgabe[data-status="ok"]     { border-left-color: var(--ok); }
+.check-aufgabe[data-status="falsch"] { border-left-color: var(--nok); }
+
+.prose .check-frage {
+  display: flex; gap: .75rem; align-items: baseline;
+  margin: 0 0 .9rem; padding: 0; border: 0;
+  font-size: 1.02rem; line-height: 1.5; font-weight: 600;
+}
+.check-nr {
+  flex: none; min-width: 1.9rem; height: 1.9rem;
+  display: inline-grid; place-items: center;
+  border-radius: var(--radius-marke);
+  background: var(--accent-soft); color: var(--accent);
+  font-size: .9rem; font-weight: 700;
+}
+.check-frage code { font-weight: 500; }
+
+/* Eingabefelder */
+.check-feld { display: flex; flex-wrap: wrap; gap: .5rem .6rem; align-items: center; margin: .5rem 0; }
+.check-eingabe {
+  font: inherit; font-family: var(--font-mono);
+  width: 9rem; max-width: 100%;
+  padding: .4rem .6rem;
+  border: 1px solid var(--border-strong); border-radius: var(--radius-knopf);
+  background: var(--bg); color: var(--text);
+}
+.check-eingabe.check-bin,
+.check-eingabe.check-mantisse { width: 14rem; }
+.check-eingabe.check-text     { width: 12rem; }
+.check-eingabe.breit          { width: 17rem; }
+.check-eingabe:focus-visible,
+.check-auswahl:focus-visible,
+.check-knopf:focus-visible,
+.check-option:focus-within {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+.check-tabelle td .check-eingabe { width: 100%; min-width: 7rem; }
+.check-nach { color: var(--text-muted); }
+
+.check-auswahl {
+  font: inherit; max-width: 100%;
+  padding: .35rem .5rem;
+  border: 1px solid var(--border-strong); border-radius: var(--radius-knopf);
+  background: var(--bg); color: var(--text);
+}
+
+/* Auswahlaufgaben */
+.check-optionen { display: grid; gap: .5rem; }
+.check-option {
+  display: flex; gap: .7rem; align-items: flex-start;
+  padding: .6rem .8rem;
+  border: 1px solid var(--border); border-radius: var(--radius-knopf);
+  background: var(--bg); cursor: pointer;
+}
+.check-option input { flex: none; margin-top: .3rem; }
+
+/* Zustände */
+.check-eingabe.ist-richtig, .check-option.ist-richtig { border-color: var(--ok);  background: var(--ok-soft); }
+.check-eingabe.ist-falsch,  .check-option.ist-falsch  { border-color: var(--nok); background: var(--nok-soft); }
+.check-tabelle tr.ist-richtig td { background: var(--ok-soft); }
+.check-tabelle tr.ist-falsch td  { background: var(--nok-soft); }
+.check-mitte { text-align: center; }
+
+/* Knöpfe */
+.check-aktion { margin-top: .9rem; }
+.check-knopf {
+  font: inherit; font-weight: 600;
+  padding: .45rem 1.1rem;
+  border: 1px solid var(--accent); border-radius: var(--radius-knopf);
+  background: var(--accent); color: var(--bg);
+  cursor: pointer;
+}
+.check-knopf:hover { filter: brightness(1.08); }
+.check-knopf.sekundaer { background: transparent; color: var(--accent); }
+.check-knopf.gross { padding: .6rem 1.4rem; }
+
+/* Rückmeldung */
+.check-feedback:empty { display: none; }
+.check-feedback {
+  margin-top: .9rem; padding: .65rem .9rem;
+  border-radius: var(--radius-block);
+  border: 1px solid var(--border);
+  font-size: .95rem; line-height: 1.55;
+}
+.check-feedback p { margin: 0; }
+.check-feedback ul { margin: .35rem 0 0; padding-left: 1.2rem; }
+.check-feedback li + li { margin-top: .25rem; }
+.check-feedback.ok     { border-color: var(--ok);  background: var(--ok-soft); }
+.check-feedback.falsch { border-color: var(--nok); background: var(--nok-soft); }
+.check-feedback.leer   { color: var(--text-muted); }
+.check-feedback.ok strong     { color: var(--ok); }
+.check-feedback.falsch strong { color: var(--nok); }
+.check-tipp { font-weight: 700; }
+.check-weg  { color: var(--text-muted); }
+
+.check-gesamt {
+  display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+  margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--border);
+}
+.check-ergebnis { flex-basis: 100%; margin: 0; font-weight: 600; }
+.check-ergebnis:empty { display: none; }
+
+@media print {
+  .check-knopf, .check-gesamt, .check-feedback { display: none; }
+}

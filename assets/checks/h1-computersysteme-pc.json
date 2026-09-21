@@ -1,0 +1,171 @@
+{
+  "id": "H1",
+  "titel": "Computersysteme und Aufbau eines PCs",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie zu: Spezialcomputer oder Universalcomputer?",
+      "optionen": [
+        "Spezialcomputer",
+        "Universalcomputer"
+      ],
+      "zeilen": [
+        {
+          "text": "Spielkonsole",
+          "antwort": "Spezialcomputer"
+        },
+        {
+          "text": "Steuergerät im Auto (KFZ)",
+          "antwort": "Spezialcomputer"
+        },
+        {
+          "text": "Notebook",
+          "antwort": "Universalcomputer"
+        },
+        {
+          "text": "Desktop-PC",
+          "antwort": "Universalcomputer"
+        },
+        {
+          "text": "Clustercomputer",
+          "antwort": "Universalcomputer"
+        }
+      ],
+      "radio": true,
+      "spalte": "Gerät",
+      "tipp": "Ein Spezialcomputer ist für eine bestimmte Aufgabe gebaut, ein Universalcomputer kann beliebige Programme ausführen."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Aus welchen zwei Bestandteilen besteht eine CPU?",
+      "optionen": [
+        {
+          "text": "ALU und Register",
+          "richtig": true
+        },
+        {
+          "text": "ALU und RAM",
+          "warum": "Das RAM ist der Arbeitsspeicher und liegt ausserhalb der CPU."
+        },
+        {
+          "text": "Register und Northbridge",
+          "warum": "Die Northbridge gehört zum Chipsatz auf der Hauptplatine."
+        },
+        {
+          "text": "ALU und Southbridge",
+          "warum": "Die Southbridge gehört zum Chipsatz auf der Hauptplatine."
+        }
+      ],
+      "tipp": "Die CPU rechnet (das übernimmt die eine Einheit) und braucht dazu extrem schnelle Hilfsspeicher (die andere)."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie zu: Welche Aufgabe gehört zu welchem Bestandteil der CPU?",
+      "optionen": [
+        "ALU",
+        "Register"
+      ],
+      "zeilen": [
+        {
+          "text": "Führt die arithmetischen und logischen Operationen aus",
+          "antwort": "ALU"
+        },
+        {
+          "text": "Extrem schnelle Hilfsspeicherzellen, direkt mit der ALU verbunden",
+          "antwort": "Register"
+        }
+      ],
+      "radio": true,
+      "spalte": "Aufgabe",
+      "tipp": "Die ALU ist die Schaltung, welche die Operationen ausführt. Die Register liefern ihr die Argumente und nehmen die Ergebnisse auf."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie zu.",
+      "optionen": [
+        "Hauptplatine",
+        "GPU",
+        "Northbridge",
+        "Southbridge"
+      ],
+      "zeilen": [
+        {
+          "text": "Schneller Controller nahe am Prozessor, für den Datentransport",
+          "antwort": "Northbridge",
+          "tipp": "Nahe am Prozessor und schnell: das ist die eine der beiden «Brücken»."
+        },
+        {
+          "text": "Langsamer Controller für Festplatte, Tastatur, USB …",
+          "antwort": "Southbridge",
+          "tipp": "Für die langsameren Anschlüsse ist die andere «Brücke» zuständig."
+        },
+        {
+          "text": "Spezialisierte Recheneinheit für paralleles Abarbeiten von Gleitkommaoperationen und die Bildschirmdarstellung",
+          "antwort": "GPU",
+          "tipp": "Es geht um Grafik und viele gleichartige Rechnungen gleichzeitig."
+        },
+        {
+          "text": "Zentrale Platine, auf der Prozessor, Speicher, Schnittstellen und Steckplätze sitzen",
+          "antwort": "Hauptplatine",
+          "tipp": "Sie trägt alle anderen Bauteile."
+        }
+      ],
+      "spalte": "Beschreibung",
+      "antwortspalte": "Bauteil"
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Welche dieser Anschlüsse sind Schnittstellen eines heutigen PCs? (Mehrere Antworten sind richtig.)",
+      "optionen": [
+        {
+          "text": "USB",
+          "richtig": true
+        },
+        {
+          "text": "SATA",
+          "richtig": true
+        },
+        {
+          "text": "HDMI",
+          "richtig": true
+        },
+        {
+          "text": "LAN (Ethernet)",
+          "richtig": true
+        },
+        {
+          "text": "ALU",
+          "warum": "Die ALU ist ein Bestandteil der CPU und keine Schnittstelle nach aussen."
+        },
+        {
+          "text": "Cache",
+          "warum": "Cache ist eine Speicherart und keine Schnittstelle."
+        }
+      ],
+      "tipp": "Schnittstellen verbinden den PC mit Geräten, Laufwerken oder Netzwerken. Bauteile im Prozessor und Speicherarten gehören nicht dazu."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was besagt das Mooresche Gesetz?",
+      "optionen": [
+        {
+          "text": "Die Taktfrequenz eines Prozessors verdoppelt sich jedes Jahr.",
+          "warum": "Es geht nicht um die Taktfrequenz, und der Zeitraum ist etwa zwei Jahre."
+        },
+        {
+          "text": "Die Preise für Prozessoren halbieren sich alle zwei Jahre.",
+          "warum": "Das Diagramm zeigt keine Preise, sondern die Anzahl Transistoren."
+        },
+        {
+          "text": "Die Fläche eines Prozessors verdoppelt sich alle zwei Jahre.",
+          "warum": "Die Chips werden nicht grösser. Es passen mehr Transistoren in dieselbe Fläche."
+        },
+        {
+          "text": "Die Anzahl der Transistoren pro Prozessor verdoppelt sich ungefähr alle zwei Jahre.",
+          "richtig": true
+        }
+      ],
+      "tipp": "Schauen Sie sich das Diagramm auf Folie 7 an: Was ist auf der senkrechten Achse aufgetragen?"
+    }
+  ]
+}

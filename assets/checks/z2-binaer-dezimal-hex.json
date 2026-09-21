@@ -1,0 +1,134 @@
+{
+  "id": "Z2",
+  "titel": "Binär, Dezimal, Hexadezimal und andere Basen",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Wandeln Sie in eine Dezimalzahl um: 1011'0110<sub>2</sub>",
+      "felder": [
+        {
+          "label": "Dezimal:",
+          "format": "zahl",
+          "antwort": 182,
+          "tipp": "Addieren Sie die Wertigkeiten der Stellen mit einer 1 (von rechts: 1, 2, 4, 8, 16, 32, 64, 128).",
+          "haeufig": [
+            {
+              "wert": 10110110,
+              "tipp": "Das ist die Binärzahl selbst gelesen als Dezimalzahl. Gesucht ist ihr Wert im Dezimalsystem."
+            }
+          ]
+        }
+      ],
+      "weg": "128 + 32 + 16 + 4 + 2 = 182."
+    },
+    {
+      "typ": "felder",
+      "frage": "Wandeln Sie in eine Binärzahl um: 202<sub>10</sub>",
+      "felder": [
+        {
+          "label": "Binär:",
+          "format": "bin",
+          "antwort": "11001010",
+          "tipp": "Ziehen Sie von links nach rechts die grösste passende Zweierpotenz ab (128, 64, 32, …). Ist sie enthalten, schreiben Sie 1, sonst 0."
+        }
+      ],
+      "weg": "202 − 128 = 74, 74 − 64 = 10, 10 − 8 = 2, 2 − 2 = 0 → 1100'1010."
+    },
+    {
+      "typ": "tabelle",
+      "frage": "Ergänzen Sie die Tabelle.",
+      "kopf": [
+        "Dezimal",
+        "Hexadezimal",
+        "Binär"
+      ],
+      "zeilen": [
+        [
+          "77",
+          {
+            "format": "hex",
+            "antwort": "4D",
+            "tipp": "Teilen Sie 77 durch 16: Quotient und Rest sind die beiden Hexziffern (10 bis 15 werden zu A bis F)."
+          },
+          {
+            "format": "bin",
+            "antwort": "01001101",
+            "tipp": "Zerlegen Sie 77 in Zweierpotenzen, oder wandeln Sie die Hexzahl ziffernweise in je 4 Bit um."
+          }
+        ],
+        [
+          {
+            "format": "zahl",
+            "antwort": 229,
+            "tipp": "E steht für 14, und die vordere Ziffer hat die Wertigkeit 16."
+          },
+          "E5<sub>16</sub>",
+          {
+            "format": "bin",
+            "antwort": "11100101",
+            "tipp": "Jede Hexziffer wird zu genau 4 Bit. E entspricht 14, 5 entspricht 5."
+          }
+        ],
+        [
+          {
+            "format": "zahl",
+            "antwort": 104,
+            "tipp": "Addieren Sie die Wertigkeiten aller Stellen mit einer 1."
+          },
+          {
+            "format": "hex",
+            "antwort": "68",
+            "tipp": "Bilden Sie 4er-Gruppen (0110 und 1000) und übersetzen Sie jede in eine Hexziffer."
+          },
+          "0110'1000<sub>2</sub>"
+        ]
+      ],
+      "weg": "77 = 4D<sub>16</sub> = 0100'1101<sub>2</sub>, E5<sub>16</sub> = 229 = 1110'0101<sub>2</sub>, 0110'1000<sub>2</sub> = 104 = 68<sub>16</sub>."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Warum wird das Hexadezimalsystem in der Informatik so häufig verwendet?",
+      "optionen": [
+        {
+          "text": "Hexadezimalzahlen kann der Prozessor schneller verarbeiten.",
+          "warum": "Der Prozessor rechnet immer binär. Hex ist nur eine Schreibweise für Menschen."
+        },
+        {
+          "text": "Hexadezimalzahlen brauchen weniger Speicherplatz als Binärzahlen.",
+          "warum": "Im Speicher liegen immer Bits. Hex ändert nur die Schreibweise."
+        },
+        {
+          "text": "Jede Hexziffer entspricht genau 4 Bit, dadurch lassen sich lange Binärzahlen kurz und übersichtlich schreiben.",
+          "richtig": true
+        },
+        {
+          "text": "Nur im Hexadezimalsystem lassen sich negative Zahlen darstellen.",
+          "warum": "Negative Zahlen sind eine Frage der Darstellung (Zweierkomplement), nicht des Zahlensystems."
+        }
+      ],
+      "tipp": "Denken Sie an die Umwandlung zwischen Binär und Hex mit 4er-Gruppen."
+    },
+    {
+      "typ": "felder",
+      "frage": "Rechnen Sie in andere Zahlensysteme um.",
+      "felder": [
+        {
+          "label": "256<sub>7</sub> =",
+          "format": "zahl",
+          "antwort": 139,
+          "nach": "<sub>10</sub>",
+          "tipp": "Die Wertigkeiten im 7er-System sind 1, 7, 49. Multiplizieren Sie jede Ziffer mit ihrer Wertigkeit und addieren Sie."
+        },
+        {
+          "label": "100<sub>10</sub> =",
+          "nach": "<sub>3</sub>",
+          "format": "ziffern",
+          "basis": 3,
+          "antwort": "10201",
+          "tipp": "Ziehen Sie die Wertigkeiten des 3er-Systems ab (81, 27, 9, 3, 1), oder teilen Sie wiederholt durch 3 und lesen Sie die Reste von unten nach oben."
+        }
+      ],
+      "weg": "256<sub>7</sub> = 2 · 49 + 5 · 7 + 6 = 139, und 100 = 1 · 81 + 0 · 27 + 2 · 9 + 0 · 3 + 1 → 10201<sub>3</sub>."
+    }
+  ]
+}

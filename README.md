@@ -1,72 +1,91 @@
-# Übungschecks Informatik Grundlagen – Unterrichtseinheit (2 Lektionen)
+# Übungschecks Informatik Grundlagen
 
-Materialien zur Unterrichtseinheit «Übungschecks Informatik Grundlagen».
-Die Website wird von GitHub Pages direkt aus diesem Repository mit Jekyll gebaut –
-**die Markdown-Dateien sind die Quelle, generiertes HTML wird nie eingecheckt.**
+Kurze, interaktive Übungschecks für die Studierenden (FHNW WING, Modul Informatik
+Grundlagen). Die Studierenden lösen die Aufgaben im Browser und klicken auf «Prüfen».
+Bei einer falschen Antwort erscheint ein kurzer Tipp, bei einer richtigen die Bestätigung.
+
+Die Seite wird von GitHub Pages direkt aus diesem Repository mit Jekyll gebaut.
+Es gibt keinen Build-Schritt und kein eingechecktes HTML.
 
 ## Aufbau
 
 ```
-├── _config.yml            Konfiguration (Titel, baseurl, Badge-Beschriftungen)
-├── index.md               Startseite
-├── lektion-1.md …         Lektionsseiten: Metadaten + Ablauf als Aufträge für die SuS
-├── lektionen/             Arbeitsblätter (SuS) und Ablaufpläne (Lehrperson)
-├── lsg/                   Musterlösungen  →  /lsg/
-├── lp.md                  Bereich für die Lehrperson  →  /LP/
-├── konzept.md             didaktisches Gesamtkonzept
-├── _layouts/              HTML-Gerüst (default / startseite / lektion / material)
-└── assets/css/unterricht.css   Gestaltung inkl. Dark Mode und Druckansicht
+├── index.md                    Startseite
+├── lektion-1.md, lektion-2.md  Einheitsseiten (Liste der Checks einer Einheit)
+├── lektionen/*.md              Kopf jedes Checks: Titel, Ziel, Hilfsmittel
+├── assets/checks/*.json        Die Aufgaben mit Antworten und Tipps
+├── assets/js/check.js          Prüflogik und Darstellung
+├── assets/css/unterricht.css   Gestaltung inkl. Dark Mode
+├── _layouts/                   HTML-Gerüst
+└── _config.yml                 Titel, baseurl, Badge-Beschriftung
 ```
 
-## Wer sieht was
+Zu jeder Seite in `lektionen/` gehört eine JSON-Datei. Die Verbindung steht im Kopf der
+Seite als `check: <dateiname ohne .json>`.
 
-| Adresse | Inhalt | verlinkt von |
+## Aufgaben ändern
+
+Alle Aufgaben eines Checks stehen in `assets/checks/<name>.json` unter `aufgaben`.
+Ein Tippfehler lässt sich direkt auf github.com über den Stift-Button korrigieren.
+Texte dürfen einfaches HTML enthalten (`<sub>`, `<sup>`, `<code>`).
+
+Jede Aufgabe hat eine `frage`, einen `typ` und optional einen `tipp` (Ersatz-Tipp für alles,
+was keinen eigenen hat) sowie `weg` (Kurz-Rechenweg, erscheint nach der richtigen Antwort).
+
+| `typ` | Zweck | Wichtige Felder |
 |---|---|---|
-| `/` und `/lektion-N.html` | Ablauf und Unterlagen für die SuS | Navigation |
-| `/lsg/` | alle Musterlösungen | nirgends – Link selbst weitergeben |
-| `/LP/` | Konzept, Ablaufpläne, Gesamtstruktur | nirgends – Lesezeichen setzen |
+| `felder` | eine oder mehrere Eingabefelder | `felder`: Liste von Feldern (siehe unten) |
+| `tabelle` | Tabelle mit Eingabefeldern in Zellen | `kopf`, `zeilen` (Text oder Feld pro Zelle) |
+| `wahl` | genau eine richtige Antwort | `optionen`: `{text, richtig?, warum?}` |
+| `mehrfach` | mehrere richtige Antworten | `optionen`: `{text, richtig?, warum?}` |
+| `zuordnung` | Zeilen einer Option zuordnen | `optionen`, `zeilen`: `{text, antwort, tipp?}`, `radio` (Auswahlknöpfe statt Liste), `spalte`, `antwortspalte` |
 
-`/lsg/` und `/LP/` sind öffentlich erreichbar, aber weder verlinkt noch für
-Suchmaschinen freigegeben (`noindex` + kein Eintrag in der `sitemap.xml`). Beides
-steht als `noindex: true` / `sitemap: false` im Frontmatter bzw. in den `defaults`
-von `_config.yml`. **Achtung:** GitHub Pages unterscheidet Gross- und Kleinschreibung –
-`/LP/` funktioniert, `/lp/` nicht.
+`warum` ist der Tipp, der erscheint, wenn genau diese falsche Option gewählt wurde.
 
-## Inhalte bearbeiten
+### Felder
 
-Text ändern: einfach die `.md`-Datei bearbeiten (lokal oder direkt auf github.com über
-den Stift-Button) und committen. Ein paar Minuten später ist die Seite aktualisiert.
+| Eigenschaft | Bedeutung |
+|---|---|
+| `label`, `nach` | Text vor und nach dem Eingabefeld |
+| `format` | `zahl`, `bin`, `hex`, `ziffern`, `mantisse` oder `text` |
+| `antwort` | richtige Antwort, bei mehreren gültigen Schreibweisen eine Liste |
+| `tipp` | Tipp bei falscher Antwort |
+| `haeufig` | Liste von `{wert, tipp}`: Tipp für einen bekannten Fehler (hat Vorrang vor `tipp`) |
+| `tol` | Toleranz bei `zahl` (Standard: exakt) |
+| `streng` | bei `bin`: führende Nullen zählen (feste Bitbreite) |
+| `bruch` | bei `bin`: Komma erlaubt |
+| `basis` | bei `ziffern`: Zahlensystem, damit unzulässige Ziffern erkannt werden |
+| `breit` | breiteres Eingabefeld |
 
-Jede Inhaltsdatei beginnt mit einem kleinen YAML-Block, aus dem sich Navigation und
-Einordnung ergeben – der Rest der Datei ist normales Markdown:
+Was das Prüfen alles akzeptiert:
 
-```yaml
----
-lektion: 3              # zu welcher Lektion gehört die Datei
-zielgruppe: sus         # sus | lehrperson  → bestimmt den Bereich auf der Lektionsseite
-art: arbeitsblatt       # Badge; mögliche Werte siehe art_labels in _config.yml
-titel: "Gruppenpuzzle: Schutzmassnahmen"   # Titel in Navigation und Browser-Tab
-kurz: "Sechs Pakete zu den 11 Schutzmassnahmen"   # Kurzbeschrieb auf der Lektionsseite
-reihenfolge: 2          # Sortierung innerhalb des Bereichs
----
-```
+- **`zahl`:** Dezimalpunkt oder -komma, Trenner `'` und Leerzeichen, einfache Ausdrücke
+  (`5/8`, `2^34`, `16*2^30`), eine nachgestellte Einheit (`931 GiB`).
+- **`bin`, `hex`, `ziffern`:** Trenner (`1100'1010`, `1100 1010`), Präfix `0b`/`0x`,
+  Suffix `b`/`h`, tiefgestellte Basis (`₂`), Gross- und Kleinschreibung bei Hex.
+- **`text`:** Gross-/Kleinschreibung und Satzzeichen werden ignoriert.
 
-Für `zielgruppe` gilt: `sus` erscheint auf der Lektionsseite, `lehrperson` nur unter
-`/LP/`. Musterlösungen brauchen kein `zielgruppe` – dafür genügt es, die Datei in
-`lsg/` abzulegen, den Rest setzen die `defaults` in `_config.yml`.
+Nach jeder Änderung an einer Datei in `assets/checks/` lohnt sich ein Blick in die Seite:
+Ein Syntaxfehler in der JSON-Datei zeigt den Studierenden die Meldung, dass die Aufgaben
+nicht geladen werden konnten.
 
-**Neues Material hinzufügen:** Datei in `lektionen/` (bzw. `lsg/`) anlegen, obigen
-Block anpassen, committen – sie erscheint automatisch an der richtigen Stelle. Es muss
-kein HTML und keine Navigation angefasst werden.
+## Neuen Check hinzufügen
 
-**Ablauf einer Lektion ändern:** Der Ablauf steht als nummerierte Liste im Textteil von
-`lektion-N.md` – die Nummerierung und die Zeitangaben (`*(ca. 15 Min.)*`) werden
-automatisch formatiert.
+1. `assets/checks/<name>.json` anlegen (am einfachsten eine bestehende Datei kopieren).
+2. `lektionen/<name>.md` anlegen: Kopf wie in den bestehenden Dateien, mit `check: <name>`
+   und `lektion: <Nummer der Einheit>`.
+3. Committen und pushen. Die Seite erscheint automatisch in der Liste der Einheit.
+
+## Hinweis zu den Antworten
+
+Die Prüfung läuft im Browser. Die richtigen Antworten stehen deshalb in den JSON-Dateien
+und sind für alle sichtbar, die im Repository oder im Seitenquelltext nachschauen. Für
+Übungschecks zur Selbstkontrolle genügt das. Für Prüfungen und Noten ist dieser Aufbau
+nicht geeignet.
 
 ## Lokale Vorschau (optional)
 
-Nicht nötig, um die Seite zu aktualisieren – GitHub baut serverseitig. Wer trotzdem
-lokal schauen will, braucht Ruby:
+Braucht Ruby:
 
 ```
 gem install bundler
@@ -74,6 +93,5 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Anschliessend läuft die Vorschau auf <http://localhost:4000>. Wichtig: `baseurl` in
-`_config.yml` muss dem Repository-Namen entsprechen, sonst greifen die Links auf der
-veröffentlichten Seite ins Leere.
+Die Vorschau läuft dann unter <http://localhost:4000/INFGL-Uebungschecks/>. Der Wert
+`baseurl` in `_config.yml` muss dem Repository-Namen entsprechen.

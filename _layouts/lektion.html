@@ -2,9 +2,7 @@
 layout: default
 ---
 {%- comment -%}
-  Lektionsseite aus SuS-Sicht: Ablauf (aus dem Seiteninhalt) und die Unterlagen
-  dieser Lektion. Material der Lehrperson und Musterlösungen erscheinen hier
-  bewusst nicht – sie sind über /LP/ bzw. /lsg/ erreichbar.
+  Einheitsseite: Liste der Übungschecks dieser Einheit.
 {%- endcomment -%}
 {%- assign material  = site.pages | where: "typ", "material" | where: "lektion", page.lektion | sort: "reihenfolge" -%}
 {%- assign fuer_sus  = material | where: "zielgruppe", "sus" -%}
@@ -13,28 +11,19 @@ layout: default
 <div class="wrap">
 
   <nav class="breadcrumb" aria-label="Sie sind hier">
-    <a href="{{ '/' | relative_url }}">Übersicht</a> <span aria-hidden="true">/</span> Lektion {{ page.lektion }}
+    <a href="{{ '/' | relative_url }}">Übersicht</a> <span aria-hidden="true">/</span> Einheit {{ page.lektion }}
   </nav>
 
   <header class="lektion-header">
-    <p class="eyebrow">Lektion {{ page.lektion }}</p>
+    <p class="eyebrow">Einheit {{ page.lektion }}</p>
     <h1>{{ page.titel }}</h1>
     <p class="lead">{{ page.kurz }}</p>
   </header>
 
-  {%- if content != "" %}
-  <section class="material-block block-ablauf">
-    <h2><span class="block-icon" aria-hidden="true">&#128203;</span> Ablauf</h2>
-    <div class="prose ablauf">
-      {{ content }}
-    </div>
-  </section>
-  {%- endif %}
-
   {%- if fuer_sus.size > 0 %}
   <section class="material-block block-sus">
-    <h2><span class="block-icon" aria-hidden="true">&#9997;</span> Unterlagen</h2>
-    <p class="block-hint">Diese Unterlagen brauchen Sie in dieser Lektion.</p>
+    <h2><span class="block-icon" aria-hidden="true">&#9997;</span> Übungschecks</h2>
+    <p class="block-hint">Wählen Sie einen Check. Die Checks folgen dem Aufbau der Vorlesungsfolien.</p>
     <ul class="card-list">
       {%- for m in fuer_sus %}
       <li class="card">
@@ -53,12 +42,12 @@ layout: default
   {%- assign nr_next = page.lektion | plus: 1 -%}
   {%- assign vorige   = lektionen | where: "lektion", nr_prev | first -%}
   {%- assign naechste = lektionen | where: "lektion", nr_next | first -%}
-  <nav class="pager" aria-label="Weitere Lektionen">
+  <nav class="pager" aria-label="Weitere Einheiten">
     {%- if vorige %}
-    <a class="pager-prev" href="{{ vorige.url | relative_url }}"><span>&larr; Lektion {{ vorige.lektion }}</span>{{ vorige.titel }}</a>
+    <a class="pager-prev" href="{{ vorige.url | relative_url }}"><span>&larr; Einheit {{ vorige.lektion }}</span>{{ vorige.titel }}</a>
     {%- endif %}
     {%- if naechste %}
-    <a class="pager-next" href="{{ naechste.url | relative_url }}"><span>Lektion {{ naechste.lektion }} &rarr;</span>{{ naechste.titel }}</a>
+    <a class="pager-next" href="{{ naechste.url | relative_url }}"><span>Einheit {{ naechste.lektion }} &rarr;</span>{{ naechste.titel }}</a>
     {%- endif %}
   </nav>
 

@@ -1,0 +1,85 @@
+{
+  "id": "Z4",
+  "titel": "Binärbrüche",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Wandeln Sie in eine Dezimalzahl um: 0.101<sub>2</sub>",
+      "felder": [
+        {
+          "label": "Dezimal:",
+          "format": "zahl",
+          "antwort": 0.625,
+          "tipp": "Nach dem Komma haben die Stellen die Wertigkeit 1/2, 1/4, 1/8 usw. Addieren Sie die Wertigkeiten der Stellen mit einer 1."
+        }
+      ],
+      "weg": "1/2 + 1/8 = 0.5 + 0.125 = 0.625."
+    },
+    {
+      "typ": "felder",
+      "frage": "Wandeln Sie in eine Binärzahl um: 6.25<sub>10</sub>",
+      "felder": [
+        {
+          "label": "Binär:",
+          "format": "bin",
+          "antwort": "110.01",
+          "bruch": true,
+          "tipp": "Wandeln Sie Vor- und Nachkommateil getrennt um. Beim Nachkommateil multiplizieren Sie wiederholt mit 2 und notieren die jeweilige Vorkommaziffer."
+        }
+      ],
+      "weg": "6 = 110<sub>2</sub>, 0.25 · 2 = 0.5 → 0, 0.5 · 2 = 1.0 → 1, also 110.01<sub>2</sub>."
+    },
+    {
+      "typ": "felder",
+      "frage": "Wandeln Sie in eine Binärzahl um: 2.3125<sub>10</sub>",
+      "felder": [
+        {
+          "label": "Binär:",
+          "format": "bin",
+          "antwort": "10.0101",
+          "bruch": true,
+          "tipp": "Nachkommateil 0.3125 wiederholt mit 2 multiplizieren und die Vorkommaziffern notieren. Kontrollieren Sie mit der Rückrechnung in Dezimal."
+        }
+      ],
+      "weg": "2 = 10<sub>2</sub>, 0.3125 → 0, 1, 0, 1, also 10.0101<sub>2</sub>."
+    },
+    {
+      "typ": "felder",
+      "frage": "Wandeln Sie in eine Binärzahl um: 0.4375<sub>10</sub>",
+      "felder": [
+        {
+          "label": "Binär:",
+          "format": "bin",
+          "antwort": "0.0111",
+          "bruch": true,
+          "tipp": "Wiederholt mit 2 multiplizieren und die Vorkommaziffern notieren, bis der Nachkommateil 0 ist."
+        }
+      ],
+      "weg": "0.4375 → 0, 1, 1, 1, also 0.0111<sub>2</sub> (1/4 + 1/8 + 1/16 = 7/16)."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Welche dieser Dezimalzahlen lässt sich als Binärbruch mit endlich vielen Nachkommastellen exakt darstellen?",
+      "optionen": [
+        {
+          "text": "0.1",
+          "warum": "0.1 ist im Binärsystem periodisch: 0.0001'1001'1001…"
+        },
+        {
+          "text": "0.2",
+          "warum": "0.2 ist im Binärsystem periodisch: 0.0011'0011'0011…"
+        },
+        {
+          "text": "0.375",
+          "richtig": true
+        },
+        {
+          "text": "0.3",
+          "warum": "0.3 ist im Binärsystem periodisch: 0.0100'1100'1100…"
+        }
+      ],
+      "tipp": "Endlich darstellbar sind nur Summen von Zweierbrüchen (1/2, 1/4, 1/8, …). Versuchen Sie, den Bruch als solche Summe zu schreiben.",
+      "weg": "0.375 = 1/4 + 1/8 = 0.011<sub>2</sub>."
+    }
+  ]
+}

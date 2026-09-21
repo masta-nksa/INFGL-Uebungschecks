@@ -1,0 +1,132 @@
+{
+  "id": "H2",
+  "titel": "Speicher",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie die Speicherarten von 1 (am schnellsten, kleinsten, teuersten) bis 4 (am langsamsten, grössten, günstigsten).",
+      "optionen": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "zeilen": [
+        {
+          "text": "Bandlaufwerk (Backup)",
+          "antwort": "4"
+        },
+        {
+          "text": "CPU-Cache",
+          "antwort": "1"
+        },
+        {
+          "text": "Festplatte / SSD",
+          "antwort": "3"
+        },
+        {
+          "text": "Arbeitsspeicher (RAM)",
+          "antwort": "2"
+        }
+      ],
+      "spalte": "Speicherart",
+      "antwortspalte": "Rang",
+      "tipp": "Je näher am Prozessor, desto schneller, kleiner und teurer ist der Speicher."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Richtig oder falsch?",
+      "optionen": [
+        "richtig",
+        "falsch"
+      ],
+      "zeilen": [
+        {
+          "text": "Der Arbeitsspeicher (RAM) behält seinen Inhalt auch nach dem Ausschalten.",
+          "antwort": "falsch",
+          "tipp": "RAM ist flüchtig: Ohne Strom ist der Inhalt weg."
+        },
+        {
+          "text": "ROM kann im normalen Betrieb nur ausgelesen, nicht beschrieben werden.",
+          "antwort": "richtig",
+          "tipp": "ROM steht für «Read Only Memory»."
+        },
+        {
+          "text": "BIOS bzw. UEFI ist im ROM gespeichert.",
+          "antwort": "richtig",
+          "tipp": "So kann der Rechner beim Einschalten immer starten."
+        },
+        {
+          "text": "Beim RAM kann direkt auf jedes einzelne Byte zugegriffen werden.",
+          "antwort": "richtig",
+          "tipp": "RAM steht für «Random Access Memory»: wahlfreier Zugriff."
+        }
+      ],
+      "radio": true
+    },
+    {
+      "typ": "wahl",
+      "frage": "Wozu dient ein Cache-Speicher?",
+      "optionen": [
+        {
+          "text": "Er sichert die Daten dauerhaft, auch wenn der Rechner ausgeschaltet wird.",
+          "warum": "Cache ist flüchtig wie RAM. Er dient der Beschleunigung, nicht der dauerhaften Speicherung."
+        },
+        {
+          "text": "Er speichert Backups der Festplatte.",
+          "warum": "Backups liegen auf Bandlaufwerken oder anderen Massenspeichern. Cache ist viel schneller und kleiner."
+        },
+        {
+          "text": "Er ist ein sehr schneller Pufferspeicher nahe bei der CPU und hält Kopien von häufig benötigten Daten.",
+          "richtig": true
+        },
+        {
+          "text": "Er enthält das BIOS.",
+          "warum": "Das BIOS liegt im ROM."
+        }
+      ],
+      "tipp": "Der Name sagt es: Ein Puffer, der Zugriffe auf ein langsameres Medium vermeiden hilft."
+    },
+    {
+      "typ": "felder",
+      "frage": "Eine 250-MiByte-Datei wird über ein Netzwerk mit 1 Gbit/s übertragen (1 Gbit = 10<sup>9</sup> Bit). Wie lange dauert das theoretisch? Auf 0.1 Sekunden genau.",
+      "felder": [
+        {
+          "label": "Dauer:",
+          "format": "zahl",
+          "antwort": 2.1,
+          "tol": 0.1,
+          "nach": "Sekunden",
+          "tipp": "Rechnen Sie in Bit: 1 MiByte = 1024 · 1024 Byte, und 1 Byte = 8 Bit. Teilen Sie dann durch 10<sup>9</sup> Bit pro Sekunde.",
+          "haeufig": [
+            {
+              "wert": 0.25,
+              "tipp": "So schnell wäre es, wenn die Datei 250 Mbit gross wäre. 1 Byte sind aber 8 Bit."
+            }
+          ]
+        }
+      ],
+      "weg": "250 · 1'048'576 · 8 = 2'097'152'000 Bit, geteilt durch 10<sup>9</sup> Bit/s ≈ 2.1 s."
+    },
+    {
+      "typ": "felder",
+      "frage": "Ein Rechner hat 16 GiByte Arbeitsspeicher. Wie viele Byte sind das? Eine Zweierpotenz (z. B. 2^10) oder die ausgeschriebene Zahl ist beides richtig.",
+      "felder": [
+        {
+          "label": "Anzahl Byte:",
+          "format": "zahl",
+          "antwort": 17179869184,
+          "breit": true,
+          "tipp": "1 GiByte = 2<sup>30</sup> Byte, und 16 = 2<sup>4</sup>. Bei Potenzen mit gleicher Basis werden die Exponenten addiert.",
+          "haeufig": [
+            {
+              "wert": 16000000000,
+              "tipp": "Sie haben mit 10<sup>9</sup> gerechnet. Ein GiByte sind aber 2<sup>30</sup> Byte."
+            }
+          ]
+        }
+      ],
+      "weg": "16 · 2<sup>30</sup> = 2<sup>4</sup> · 2<sup>30</sup> = 2<sup>34</sup> = 17'179'869'184 Byte."
+    }
+  ]
+}

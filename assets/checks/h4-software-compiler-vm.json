@@ -1,0 +1,133 @@
+{
+  "id": "H4",
+  "titel": "Software, Compiler und virtuelle Maschinen",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Software wird in drei Stufen eingeteilt. Ordnen Sie zu.",
+      "optionen": [
+        "Low level",
+        "Level 2",
+        "Level 3"
+      ],
+      "zeilen": [
+        {
+          "text": "BIOS / UEFI",
+          "antwort": "Low level"
+        },
+        {
+          "text": "Windows, Linux, Android",
+          "antwort": "Level 2"
+        },
+        {
+          "text": "Excel, Outlook, Webbrowser",
+          "antwort": "Level 3"
+        }
+      ],
+      "radio": true,
+      "spalte": "Software",
+      "tipp": "Je näher an der Hardware, desto tiefer die Stufe: Erst startet die Firmware den Rechner, dann bindet das Betriebssystem die Komponenten ein, darauf laufen die Anwendungen."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie zu: Compiler, Interpreter oder Parser?",
+      "optionen": [
+        "Compiler",
+        "Interpreter",
+        "Parser"
+      ],
+      "zeilen": [
+        {
+          "text": "Übersetzt den Programmcode vorab in prozessorfähigen Code (Maschinensprache / Assembler)",
+          "antwort": "Compiler",
+          "tipp": "Es wird vor dem Ausführen einmal komplett übersetzt."
+        },
+        {
+          "text": "Setzt die Befehle direkt zur Laufzeit des Programms um (z. B. JavaScript im Webbrowser)",
+          "antwort": "Interpreter",
+          "tipp": "Es gibt keinen Übersetzungsschritt vorab, die Befehle werden beim Ablauf umgesetzt."
+        },
+        {
+          "text": "Prüft den Programmcode auf formale Richtigkeit und meldet Fehler",
+          "antwort": "Parser",
+          "tipp": "«to parse» heisst analysieren."
+        }
+      ],
+      "spalte": "Beschreibung",
+      "antwortspalte": "Begriff"
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Welche Aussagen zu BIOS und UEFI stimmen? (Mehrere Antworten sind richtig.)",
+      "optionen": [
+        {
+          "text": "Sie sind im ROM gespeichert.",
+          "richtig": true
+        },
+        {
+          "text": "Sie prüfen die Hardware und starten das Betriebssystem.",
+          "richtig": true
+        },
+        {
+          "text": "UEFI unterstützt grössere Festplatten und startet schneller als das BIOS.",
+          "richtig": true
+        },
+        {
+          "text": "Sie werden erst gestartet, wenn das Betriebssystem läuft.",
+          "warum": "Es ist umgekehrt: BIOS und UEFI laufen beim Booten vor dem Betriebssystem."
+        },
+        {
+          "text": "Sie sind Anwendungsprogramme, die man wie eine Textverarbeitung installiert.",
+          "warum": "BIOS und UEFI sind Low-Level-Software (Firmware) und keine Anwendungsprogramme."
+        }
+      ],
+      "tipp": "BIOS und UEFI sind Low-Level-Software: Sie laufen vor dem Betriebssystem."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was ist eine virtuelle Maschine (VM)?",
+      "optionen": [
+        {
+          "text": "Ein besonders schneller physischer Rechner im Rechenzentrum.",
+          "warum": "Eine VM besteht nicht aus Hardware, sondern aus Software."
+        },
+        {
+          "text": "Ein Programm, das Programmcode auf formale Fehler prüft.",
+          "warum": "Das beschreibt einen Parser."
+        },
+        {
+          "text": "Ein Speicher, der Zugriffe zwischen CPU und RAM beschleunigt.",
+          "warum": "Das beschreibt einen Cache."
+        },
+        {
+          "text": "Ein virtueller Computer, der aus Software besteht. Damit lassen sich zum Beispiel Anwendungen anderer Betriebssysteme ohne Neustart ausführen.",
+          "richtig": true
+        }
+      ],
+      "tipp": "Das Wort «virtuell» heisst: nachgebildet, nicht real vorhanden."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Ein Startup entwickelt ein Messgerät in einer Kleinserie von 50 Stück. Die Funktionen ändern sich laufend. Was ist sinnvoller?",
+      "optionen": [
+        {
+          "text": "Eigene Hardware: Sie ist performanter und lässt sich jederzeit ändern.",
+          "warum": "Hardware ist unveränderbar. Bei laufenden Änderungen ist das ein Nachteil."
+        },
+        {
+          "text": "Standard-Hardware (PC) mit eigener Software: Software ist anpassbar und bei kleinen Stückzahlen günstig.",
+          "richtig": true
+        },
+        {
+          "text": "Eigene Hardware: Die Produktionskosten sinken bei 50 Stück stark.",
+          "warum": "Bei einer Kleinserie sind die Produktionskosten für eigene Hardware hoch, weil sie sich auf wenige Stück verteilen."
+        },
+        {
+          "text": "Standard-Hardware, weil Software nicht kopiert werden kann.",
+          "warum": "Raubkopien sind bei Software eher verbreitet. Das ist kein Argument für die Softwarelösung."
+        }
+      ],
+      "tipp": "Denken Sie an die Argumente auf Folie 20: Was ist anpassbar, und was ist bei kleinen Stückzahlen teuer?"
+    }
+  ]
+}

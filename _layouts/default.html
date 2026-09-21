@@ -43,7 +43,7 @@
         </span>
       </a>
       <div class="header-tools">
-        <nav class="site-nav" aria-label="Lektionen">
+        <nav class="site-nav" aria-label="Einheiten">
           {%- for l in lektionen %}
           <a href="{{ l.url | relative_url }}"{% if page.url == l.url %} aria-current="page"{% endif %} title="{{ l.titel }}">{{ l.lektion }}</a>
           {%- endfor %}

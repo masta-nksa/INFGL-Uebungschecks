@@ -1,0 +1,147 @@
+{
+  "id": "Z5",
+  "titel": "Gleitkommazahlen und Datentypen",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Ein float hat 32 Bit. Wie viele Bit entfallen auf Vorzeichen, Exponent und Mantisse, und wie gross ist der Bias?",
+      "felder": [
+        {
+          "label": "Vorzeichen:",
+          "format": "zahl",
+          "antwort": 1,
+          "nach": "Bit",
+          "tipp": "Für «plus oder minus» genügt ein einziges Bit."
+        },
+        {
+          "label": "Exponent:",
+          "format": "zahl",
+          "antwort": 8,
+          "nach": "Bit",
+          "tipp": "Exponent und Mantisse teilen sich die restlichen 31 Bit. Der Exponent bekommt den kleineren Teil."
+        },
+        {
+          "label": "Mantisse:",
+          "format": "zahl",
+          "antwort": 23,
+          "nach": "Bit",
+          "tipp": "Die Mantisse bekommt den grösseren Teil der restlichen 31 Bit."
+        },
+        {
+          "label": "Bias:",
+          "format": "zahl",
+          "antwort": 127,
+          "tipp": "Der Exponent wird um einen festen Wert verschoben, damit er ohne Vorzeichen gespeichert werden kann (siehe Folie 17)."
+        }
+      ],
+      "weg": "1 + 8 + 23 = 32 Bit, Bias 127."
+    },
+    {
+      "typ": "felder",
+      "frage": "Welche Dezimalzahl stellt dieser float dar?<br><code>0&nbsp; 1000'0010&nbsp; 010'0000'0000'0000'0000'0000</code>",
+      "felder": [
+        {
+          "label": "Wert:",
+          "format": "zahl",
+          "antwort": 10,
+          "tipp": "Lesen Sie den Exponenten (1000'0010<sub>2</sub>) und ziehen Sie den Bias ab. Die Mantisse ergänzen Sie um die führende 1 zu 1.01<sub>2</sub>. Der Wert ist 1.01<sub>2</sub> · 2<sup>Exponent</sup>.",
+          "haeufig": [
+            {
+              "wert": 1.25,
+              "tipp": "1.25 ist erst die Mantisse (1.01<sub>2</sub>). Multiplizieren Sie noch mit 2 hoch (Exponent − Bias)."
+            },
+            {
+              "wert": 5,
+              "tipp": "Der Bias ist 127, nicht 128."
+            }
+          ]
+        }
+      ],
+      "weg": "Exponent 130 − 127 = 3, Mantisse 1.01<sub>2</sub> = 1.25, also 1.25 · 2<sup>3</sup> = 10."
+    },
+    {
+      "typ": "felder",
+      "frage": "Stellen Sie 5.5 als float dar.",
+      "felder": [
+        {
+          "label": "Vorzeichen:",
+          "format": "bin",
+          "antwort": "0",
+          "nach": "(1 Bit)",
+          "tipp": "5.5 ist positiv."
+        },
+        {
+          "label": "Exponent:",
+          "format": "bin",
+          "antwort": "10000001",
+          "streng": true,
+          "nach": "(8 Bit)",
+          "tipp": "Schreiben Sie 5.5 als 101.1<sub>2</sub> = 1.011<sub>2</sub> · 2<sup>Exponent</sup>. Addieren Sie den Bias 127 zum Exponenten und schreiben Sie das Ergebnis mit 8 Bit."
+        },
+        {
+          "label": "Mantisse:",
+          "format": "mantisse",
+          "antwort": "011",
+          "breit": true,
+          "nach": "(die ersten Stellen genügen, der Rest sind Nullen)",
+          "tipp": "Nehmen Sie die Nachkommastellen von 1.011 (ohne das führende «1.»). Der Rest der 23 Bit wird mit Nullen aufgefüllt."
+        }
+      ],
+      "weg": "5.5 = 1.011<sub>2</sub> · 2<sup>2</sup>, Exponent 2 + 127 = 129 = 1000'0001, Mantisse 011 0…0."
+    },
+    {
+      "typ": "wahl",
+      "frage": "In vielen Programmiersprachen ergibt 0.1 + 0.2 nicht genau 0.3. Woran liegt das?",
+      "optionen": [
+        {
+          "text": "Der Prozessor addiert ungenau.",
+          "warum": "Die Addition selbst ist exakt. Das Problem liegt bei der Darstellung der Zahlen."
+        },
+        {
+          "text": "0.1 und 0.2 lassen sich im Binärsystem nicht exakt speichern und werden gerundet.",
+          "richtig": true
+        },
+        {
+          "text": "Der Bias verfälscht das Ergebnis.",
+          "warum": "Der Bias verschiebt nur den Exponenten und verfälscht keinen Wert."
+        },
+        {
+          "text": "0.3 hat zu viele Nachkommastellen für den Bildschirm.",
+          "warum": "Es geht nicht um die Anzeige, sondern darum, wie die Zahlen gespeichert werden."
+        }
+      ],
+      "tipp": "Denken Sie an die vorige Aufgabenreihe: Welche Dezimalbrüche sind im Binärsystem periodisch?"
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Richtig oder falsch?",
+      "optionen": [
+        "richtig",
+        "falsch"
+      ],
+      "zeilen": [
+        {
+          "text": "Ein float kann jede reelle Zahl exakt darstellen.",
+          "antwort": "falsch",
+          "tipp": "Es gibt nur endlich viele Bitmuster, also nur endlich viele darstellbare Werte."
+        },
+        {
+          "text": "Die darstellbaren Zahlen liegen gleichmässig verteilt (äquidistant) auf der Zahlengeraden.",
+          "antwort": "falsch",
+          "tipp": "Bei kleinen Beträgen liegen die Werte dicht beieinander, bei grossen Beträgen weiter auseinander."
+        },
+        {
+          "text": "Es gibt einen betragsmässig grössten float-Wert; was darüber liegt, führt zu einem Überlauf (Overflow).",
+          "antwort": "richtig",
+          "tipp": "Der Exponent hat nur 8 Bit, also gibt es einen grössten darstellbaren Wert."
+        },
+        {
+          "text": "Ein double hat 64 Bit und deckt einen grösseren Wertebereich ab als ein float.",
+          "antwort": "richtig",
+          "tipp": "Mit 64 statt 32 Bit sind ein grösserer Exponent und eine längere Mantisse möglich."
+        }
+      ],
+      "radio": true
+    }
+  ]
+}

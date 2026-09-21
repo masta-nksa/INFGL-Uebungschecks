@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-#  Übungschecks Informatik Grundlagen – Unterrichtseinheit (2 Lektionen)
+#  Übungschecks Informatik Grundlagen – 2 Einheiten, 9 Checks
 #  Jekyll-Konfiguration für GitHub Pages
 # ---------------------------------------------------------------------------
 
@@ -34,20 +34,13 @@ kramdown:
 plugins:
   - jekyll-sitemap
 
-# Beschriftung der Material-Typen (Badges + Listen).
-# Neuer Typ? Hier ergänzen und im Frontmatter der Datei "art:" setzen.
-# Ohne Eintrag bleibt das Badge leer – der häufigste Grund für ein leeres Badge.
+# Beschriftung des Material-Typs im Badge.
+# Ohne Eintrag bleibt das Badge leer.
 art_labels:
-  ablaufplan:    "Ablaufplan"
-  arbeitsblatt:  "Arbeitsblatt"
-  musterloesung: "Musterlösung"
-  glossar:       "Glossar"
-  info:          "Information"
-  input:         "Theorie-Input"
-  auftrag:       "Auftrag"
-  konzept:       "Konzept"
+  uebungscheck: "Übungscheck"
 
-# Alle Dateien in lektionen/ sind Unterrichtsmaterial und teilen dasselbe Layout.
+# Alle Dateien in lektionen/ sind Übungschecks und teilen dasselbe Layout.
+# Die Aufgaben selbst stehen in assets/checks/*.json (Format: siehe README.md).
 defaults:
   - scope:
       path: "lektionen"
@@ -55,19 +48,6 @@ defaults:
     values:
       layout: "material"
       typ: "material"
-  # Musterlösungen liegen unter /lsg/ – sie werden nirgends von den SuS-Seiten aus
-  # verlinkt (die Lehrperson gibt den Link weiter) und bleiben aus Suchmaschinen
-  # heraus: noindex + kein Eintrag in der sitemap.xml.
-  - scope:
-      path: "lsg"
-      type: "pages"
-    values:
-      layout: "material"
-      typ: "material"
-      zielgruppe: "loesung"
-      art: "musterloesung"
-      noindex: true
-      sitemap: false
 
 exclude:
   - Gemfile

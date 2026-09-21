@@ -1,0 +1,155 @@
+{
+  "id": "H3",
+  "titel": "Der Von-Neumann-Rechner",
+  "aufgaben": [
+    {
+      "typ": "mehrfach",
+      "frage": "Aus welchen Bestandteilen besteht ein Rechner nach von Neumann (1946)? (Mehrere Antworten sind richtig.)",
+      "optionen": [
+        {
+          "text": "Recheneinheit",
+          "richtig": true
+        },
+        {
+          "text": "Steuereinheit",
+          "richtig": true
+        },
+        {
+          "text": "Speicher",
+          "richtig": true
+        },
+        {
+          "text": "Ein- und Ausgabeeinheit(en)",
+          "richtig": true
+        },
+        {
+          "text": "Grafikkarte",
+          "warum": "Eine Grafikkarte gehört nicht zum Grundmodell von 1946."
+        },
+        {
+          "text": "Netzteil",
+          "warum": "Das Netzteil ist keine Funktionseinheit im Modell von von Neumann."
+        }
+      ],
+      "tipp": "Zum Modell gehören genau vier Bestandteile: Rechnen, Steuern, Speichern und Ein-/Ausgeben."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Bringen Sie die Phasen des Von-Neumann-Zyklus in die richtige Reihenfolge (1 bis 5).",
+      "optionen": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "zeilen": [
+        {
+          "text": "Execute",
+          "antwort": "4"
+        },
+        {
+          "text": "Fetch",
+          "antwort": "1"
+        },
+        {
+          "text": "Write Back",
+          "antwort": "5"
+        },
+        {
+          "text": "Decode",
+          "antwort": "2"
+        },
+        {
+          "text": "Fetch Operands",
+          "antwort": "3"
+        }
+      ],
+      "spalte": "Phase",
+      "antwortspalte": "Reihenfolge",
+      "tipp": "Zuerst wird der Befehl geholt und entschlüsselt, dann werden die Daten geholt, die Operation ausgeführt und zuletzt das Ergebnis zurückgeschrieben."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Was passiert in welcher Phase?",
+      "optionen": [
+        "Fetch",
+        "Decode",
+        "Fetch Operands",
+        "Execute",
+        "Write Back"
+      ],
+      "zeilen": [
+        {
+          "text": "Der nächste Befehl wird aus dem Speicher geholt.",
+          "antwort": "Fetch"
+        },
+        {
+          "text": "Der Befehl wird entschlüsselt.",
+          "antwort": "Decode"
+        },
+        {
+          "text": "Die Daten, mit denen gerechnet wird, werden aus Register oder Speicher geholt.",
+          "antwort": "Fetch Operands"
+        },
+        {
+          "text": "Die ALU führt die Operation aus.",
+          "antwort": "Execute"
+        },
+        {
+          "text": "Das Ergebnis wird zurückgeschrieben.",
+          "antwort": "Write Back"
+        }
+      ],
+      "spalte": "Beschreibung",
+      "antwortspalte": "Phase",
+      "tipp": "Die englischen Namen verraten die Tätigkeit: «fetch» = holen, «decode» = entschlüsseln, «execute» = ausführen."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Der Zyklus «lebt bis heute im RISC-Rechner». Welche Abkürzungen gehören zu den fünf Phasen dort?",
+      "optionen": [
+        {
+          "text": "IF, EX, ID, MEM, WB",
+          "warum": "Zuerst wird decodiert (ID), dann ausgeführt (EX)."
+        },
+        {
+          "text": "IF, ID, EX, MEM, WB",
+          "richtig": true
+        },
+        {
+          "text": "FE, DE, EX, WB, ST",
+          "warum": "Diese Abkürzungen kommen bei den fünf Phasen nicht vor."
+        },
+        {
+          "text": "IF, ID, ALU, RAM, OUT",
+          "warum": "Die Phasen tragen Tätigkeiten als Namen, nicht Bauteile."
+        }
+      ],
+      "tipp": "Die Phasen entsprechen dem Von-Neumann-Zyklus, ergänzt um eine Speicherphase (Memory)."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Denkanstoss (nicht auf den Folien): Was ist das zentrale Prinzip der von-Neumann-Architektur bezüglich Programmen und Daten?",
+      "optionen": [
+        {
+          "text": "Programme und Daten liegen im selben Speicher.",
+          "richtig": true
+        },
+        {
+          "text": "Programme liegen im ROM, Daten im RAM.",
+          "warum": "Bei von Neumann teilen sich Programm und Daten denselben Speicher."
+        },
+        {
+          "text": "Jedes Programm hat eine eigene Recheneinheit.",
+          "warum": "Es gibt eine Recheneinheit, die nacheinander die Befehle verschiedener Programme ausführt."
+        },
+        {
+          "text": "Programme werden fest in die Hardware verdrahtet.",
+          "warum": "Gerade das ist der Fortschritt von von Neumann: Das Programm liegt im Speicher und ist austauschbar."
+        }
+      ],
+      "tipp": "Wenn ein Programm im Speicher liegt, wird es wie Daten als Folge von Bytes gespeichert."
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "id": "Z1",
+  "titel": "Bits, Bytes und Masseinheiten",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Wie viele verschiedene Bitfolgen der Länge 5 gibt es?",
+      "felder": [
+        {
+          "label": "Anzahl Bitfolgen:",
+          "format": "zahl",
+          "antwort": 32,
+          "tipp": "Jedes Bit hat 2 Möglichkeiten (0 oder 1). Bei 5 Bit multiplizieren sich die Möglichkeiten: 2 · 2 · … (fünfmal).",
+          "haeufig": [
+            {
+              "wert": 10,
+              "tipp": "Die Möglichkeiten werden multipliziert, nicht addiert: 2 · 5 ist zu wenig."
+            },
+            {
+              "wert": 25,
+              "tipp": "Es ist 2 hoch 5 (Basis 2, weil ein Bit zwei Zustände hat), nicht 5 hoch 2."
+            }
+          ]
+        }
+      ],
+      "weg": "2<sup>5</sup> = 32."
+    },
+    {
+      "typ": "felder",
+      "frage": "Wie viele Bit braucht man mindestens, um 100 verschiedene Zustände zu unterscheiden?",
+      "felder": [
+        {
+          "label": "Mindestens",
+          "format": "zahl",
+          "antwort": 7,
+          "nach": "Bit",
+          "tipp": "Mit n Bit gibt es 2<sup>n</sup> Zustände. Suchen Sie das kleinste n, für das 2<sup>n</sup> mindestens 100 ist. Tipp: 2<sup>6</sup> = 64.",
+          "haeufig": [
+            {
+              "wert": 6,
+              "tipp": "Mit 6 Bit gibt es nur 2<sup>6</sup> = 64 Zustände, das reicht nicht für 100."
+            },
+            {
+              "wert": 100,
+              "tipp": "Gesucht ist die Anzahl Bit, nicht die Anzahl Zustände."
+            }
+          ]
+        }
+      ],
+      "weg": "2<sup>6</sup> = 64 reicht nicht, 2<sup>7</sup> = 128 reicht."
+    },
+    {
+      "typ": "felder",
+      "frage": "Ergänzen Sie die Angaben zum Byte.",
+      "felder": [
+        {
+          "label": "Ein Byte besteht aus",
+          "format": "zahl",
+          "antwort": 8,
+          "nach": "Bit.",
+          "tipp": "Denken Sie an die Bitgruppe, mit der eine Zahl wie 1000'1101 geschrieben wird."
+        },
+        {
+          "label": "Ein Byte besteht aus",
+          "format": "zahl",
+          "antwort": 2,
+          "nach": "Nibbles.",
+          "tipp": "Ein Nibble ist eine 4er-Bitgruppe."
+        },
+        {
+          "label": "Ein Byte hat",
+          "format": "zahl",
+          "antwort": 256,
+          "nach": "verschiedene Zustände.",
+          "tipp": "Wie in Aufgabe 1: 2 hoch die Anzahl Bit."
+        },
+        {
+          "label": "Grösster Wert ohne Vorzeichen:",
+          "format": "zahl",
+          "antwort": 255,
+          "tipp": "Gezählt wird ab 0. Der grösste Wert ist deshalb um 1 kleiner als die Anzahl Zustände."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was bedeutet 1 MiB?",
+      "optionen": [
+        {
+          "text": "1000 kB",
+          "warum": "Das wäre 1 MB (Zehnerpotenz). Das «i» in MiB steht für die Zweierpotenz."
+        },
+        {
+          "text": "1024 kiB",
+          "richtig": true
+        },
+        {
+          "text": "1024 Byte",
+          "warum": "Das wäre 1 kiB. Ein MiB ist eine Stufe grösser."
+        },
+        {
+          "text": "1'000'000 Bit",
+          "warum": "Bit und Byte sind verschieden, und es wird mit 1024 statt mit 1000 gerechnet."
+        }
+      ],
+      "tipp": "Das «i» in kiB, MiB und GiB verweist auf die Zweierpotenz 1024 statt 1000.",
+      "weg": "1 MiB = 1024 · 1024 Byte = 1024 kiB."
+    },
+    {
+      "typ": "felder",
+      "frage": "Eine Festplatte ist mit 1 TByte angeschrieben (1 TByte = 10<sup>12</sup> Byte). Wie viele GiByte fasst sie? Auf ganze Zahlen runden.",
+      "felder": [
+        {
+          "label": "Kapazität:",
+          "format": "zahl",
+          "antwort": 931.32,
+          "tol": 0.5,
+          "nach": "GiByte",
+          "tipp": "1 GiByte = 2<sup>30</sup> Byte = 1'073'741'824 Byte. Teilen Sie die Byte-Zahl der Festplatte durch diesen Wert.",
+          "haeufig": [
+            {
+              "wert": 1000,
+              "tipp": "So würde es aussehen, wenn GByte und GiByte dasselbe wären. Ein GiByte ist aber grösser (2<sup>30</sup> Byte), also ergibt es weniger als 1000."
+            },
+            {
+              "wert": 1024,
+              "tipp": "1024 wären es bei 1 TiByte. Hier sind es aber 10<sup>12</sup> Byte."
+            }
+          ]
+        }
+      ],
+      "weg": "10<sup>12</sup> : 2<sup>30</sup> ≈ 931.3."
+    },
+    {
+      "typ": "felder",
+      "frage": "Was steht in dieser Textdatei? Benutzen Sie die ASCII-Tabelle.<br><code>0100'0010&nbsp; 0110'0001&nbsp; 0111'0011&nbsp; 0110'0101</code>",
+      "felder": [
+        {
+          "label": "Text:",
+          "format": "text",
+          "antwort": "Base",
+          "tipp": "Wandeln Sie jedes Byte in eine Dezimalzahl um und suchen Sie sie in der ASCII-Tabelle. Das erste Byte, 0100'0010, ergibt 66."
+        }
+      ],
+      "weg": "66, 97, 115, 101 ergeben «Base»."
+    }
+  ]
+}

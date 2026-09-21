@@ -1,0 +1,173 @@
+{
+  "id": "Z3",
+  "titel": "Zweierkomplement",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Welcher Zahlenbereich lässt sich im Zweierkomplement mit 4 Bit bzw. mit 8 Bit darstellen?",
+      "felder": [
+        {
+          "label": "4 Bit, kleinste Zahl:",
+          "format": "zahl",
+          "antwort": -8
+        },
+        {
+          "label": "4 Bit, grösste Zahl:",
+          "format": "zahl",
+          "antwort": 7,
+          "haeufig": [
+            {
+              "wert": 8,
+              "tipp": "Die positive Seite reicht nur bis 7, denn die 0 gehört zu den nicht-negativen Zahlen."
+            }
+          ]
+        },
+        {
+          "label": "8 Bit, kleinste Zahl:",
+          "format": "zahl",
+          "antwort": -128
+        },
+        {
+          "label": "8 Bit, grösste Zahl:",
+          "format": "zahl",
+          "antwort": 127,
+          "haeufig": [
+            {
+              "wert": 128,
+              "tipp": "Die positive Seite reicht nur bis 127, denn die 0 gehört zu den nicht-negativen Zahlen."
+            }
+          ]
+        }
+      ],
+      "tipp": "Bei n Bit reicht der Bereich von −2<sup>n−1</sup> bis 2<sup>n−1</sup> − 1.",
+      "weg": "4 Bit: −8 bis +7, 8 Bit: −128 bis +127."
+    },
+    {
+      "typ": "felder",
+      "frage": "Stellen Sie −5 mit 4 Bit im Zweierkomplement dar.",
+      "felder": [
+        {
+          "label": "Binär:",
+          "format": "bin",
+          "antwort": "1011",
+          "streng": true,
+          "nach": "(4 Bit)",
+          "tipp": "Schreiben Sie +5 mit 4 Bit, kippen Sie alle Bits und addieren Sie 1.",
+          "haeufig": [
+            {
+              "wert": "1010",
+              "tipp": "Das ist erst das bitweise Komplement. Es fehlt noch «+ 1»."
+            },
+            {
+              "wert": "1101",
+              "tipp": "Das Zweierkomplement entsteht nicht, indem man nur das Vorzeichenbit auf 1 setzt."
+            }
+          ]
+        }
+      ],
+      "weg": "0101 → 1010 → + 1 → 1011."
+    },
+    {
+      "typ": "felder",
+      "frage": "Stellen Sie −20 mit 8 Bit im Zweierkomplement dar.",
+      "felder": [
+        {
+          "label": "Binär:",
+          "format": "bin",
+          "antwort": "11101100",
+          "streng": true,
+          "nach": "(8 Bit)",
+          "tipp": "Schreiben Sie +20 mit 8 Bit (0001'0100), kippen Sie alle Bits und addieren Sie 1.",
+          "haeufig": [
+            {
+              "wert": "11101011",
+              "tipp": "Das ist erst das bitweise Komplement. Es fehlt noch «+ 1»."
+            },
+            {
+              "wert": "10010100",
+              "tipp": "Das Zweierkomplement entsteht nicht, indem man nur das Vorzeichenbit auf 1 setzt."
+            }
+          ]
+        }
+      ],
+      "weg": "0001'0100 → 1110'1011 → + 1 → 1110'1100."
+    },
+    {
+      "typ": "felder",
+      "frage": "Welche Dezimalzahl stellt 1111'0001 im Zweierkomplement (8 Bit) dar?",
+      "felder": [
+        {
+          "label": "Dezimal:",
+          "format": "zahl",
+          "antwort": -15,
+          "tipp": "Das erste Bit ist 1, die Zahl ist also negativ. Bilden Sie nochmals das Zweierkomplement (kippen, + 1), um den Betrag zu erhalten.",
+          "haeufig": [
+            {
+              "wert": 241,
+              "tipp": "241 wäre der Wert ohne Vorzeichen. Im Zweierkomplement bedeutet das erste Bit 1: negativ."
+            },
+            {
+              "wert": 15,
+              "tipp": "Der Betrag stimmt, aber das erste Bit ist 1, die Zahl ist also negativ."
+            }
+          ]
+        }
+      ],
+      "weg": "Komplement 0000'1110, + 1 = 0000'1111 = 15, also −15."
+    },
+    {
+      "typ": "felder",
+      "frage": "Berechnen Sie 12 − 7 mit 8 Bit, indem Sie das Zweierkomplement von 7 addieren.",
+      "felder": [
+        {
+          "label": "−7 als Zweierkomplement:",
+          "format": "bin",
+          "antwort": "11111001",
+          "streng": true,
+          "nach": "(8 Bit)",
+          "tipp": "Schreiben Sie +7 mit 8 Bit (0000'0111), kippen Sie alle Bits und addieren Sie 1."
+        },
+        {
+          "label": "12 + (−7), binär:",
+          "format": "bin",
+          "antwort": "00000101",
+          "nach": "(8 Bit)",
+          "tipp": "Addieren Sie 0000'1100 und Ihr Zweierkomplement von 7. Ein Übertrag über das 8. Bit hinaus fällt weg."
+        },
+        {
+          "label": "Resultat, dezimal:",
+          "format": "zahl",
+          "antwort": 5,
+          "tipp": "Wandeln Sie Ihr binäres Resultat in eine Dezimalzahl um."
+        }
+      ],
+      "weg": "12 = 0000'1100, −7 = 1111'1001, Summe 1 0000'0101, der Übertrag fällt weg: 0000'0101 = 5."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Richtig oder falsch?",
+      "optionen": [
+        "richtig",
+        "falsch"
+      ],
+      "zeilen": [
+        {
+          "text": "Im Zweierkomplement zeigt ein erstes Bit «1» eine negative Zahl an.",
+          "antwort": "richtig",
+          "tipp": "Das erste Bit ist das Vorzeichenbit: 1 heisst negativ."
+        },
+        {
+          "text": "Bildet man das Zweierkomplement zweimal hintereinander, erhält man wieder die Ausgangszahl.",
+          "antwort": "richtig",
+          "tipp": "Das Zweierkomplement entspricht einem Vorzeichenwechsel. Zweimal wechseln ergibt wieder das Ursprüngliche."
+        },
+        {
+          "text": "Mit 8 Bit lässt sich die Zahl +128 im Zweierkomplement darstellen.",
+          "antwort": "falsch",
+          "tipp": "Mit 8 Bit reicht der Bereich nur bis +127. Für +128 wäre ein Bit mehr nötig."
+        }
+      ],
+      "radio": true
+    }
+  ]
+}
