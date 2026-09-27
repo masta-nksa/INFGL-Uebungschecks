@@ -1,0 +1,77 @@
+{
+  "id": "V2",
+  "titel": "Cäsar-Verschlüsselung",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Verschlüsseln Sie das Wort <code>modul</code> mit der Cäsar-Verschlüsselung (Verschiebung um 3).",
+      "felder": [
+        {
+          "label": "Geheimtext:",
+          "format": "text",
+          "antwort": "prgxo",
+          "tipp": "Verschieben Sie jeden Buchstaben 3 Stellen weiter im Alphabet: m→p, o→r, d→g, u→x, l→o."
+        }
+      ],
+      "weg": "m→p, o→r, d→g, u→x, l→o, also «prgxo»."
+    },
+    {
+      "typ": "felder",
+      "frage": "Der Geheimtext <code>urxwhu</code> wurde mit Cäsar-Verschiebung um 3 erzeugt. Wie lautet der Klartext?",
+      "felder": [
+        {
+          "label": "Klartext:",
+          "format": "text",
+          "antwort": "router",
+          "tipp": "Entschlüsseln heisst hier: jeden Buchstaben 3 Stellen zurück im Alphabet verschieben (also die Umkehrung von Aufgabe 1)."
+        }
+      ],
+      "weg": "u→r, r→o, x→u, w→t, h→e, u→r, also «router»."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Warum zählt die Cäsar-Verschlüsselung zu den monoalphabetischen Verfahren?",
+      "optionen": [
+        {
+          "text": "Weil jedes Klartextzeichen über den ganzen Text hinweg immer durch dasselbe Geheimtextzeichen ersetzt wird.",
+          "richtig": true
+        },
+        {
+          "text": "Weil nur das lateinische Alphabet verschlüsselt werden kann.",
+          "warum": "«Mono» bezieht sich auf die feste Zuordnung pro Zeichen, nicht auf die Art des Alphabets."
+        },
+        {
+          "text": "Weil nur ein einziger Buchstabe im ganzen Text verschlüsselt wird.",
+          "warum": "Es wird der ganze Text verschlüsselt, jeder Buchstabe einzeln nach derselben festen Regel."
+        },
+        {
+          "text": "Weil die Verschiebung bei jedem Buchstaben zufällig neu gewählt wird.",
+          "warum": "Bei Cäsar ist die Verschiebung im ganzen Text konstant, nicht zufällig."
+        }
+      ],
+      "tipp": "«Mono» heisst «eins» — was bleibt hier für jedes Zeichen immer gleich?"
+    },
+    {
+      "typ": "wahl",
+      "frage": "Weshalb lässt sich eine monoalphabetische Verschlüsselung auch ohne Kenntnis des Schlüssels knacken?",
+      "optionen": [
+        {
+          "text": "Weil die typische Häufigkeit der Buchstaben einer Sprache im Geheimtext erhalten bleibt und sich mit einer Häufigkeitsanalyse zuordnen lässt.",
+          "richtig": true
+        },
+        {
+          "text": "Weil Computer heute so schnell sind, dass jede Verschlüsselung sofort geknackt wird.",
+          "warum": "Das Problem liegt an der festen Buchstaben-Zuordnung, nicht an der reinen Rechenleistung."
+        },
+        {
+          "text": "Weil monoalphabetische Verfahren gar keinen Schlüssel verwenden.",
+          "warum": "Auch hier gibt es einen Schlüssel (z. B. die Verschiebung), nur ist er über die Buchstabenhäufigkeit erratbar."
+        },
+        {
+          "text": "Weil der Geheimtext immer genauso lang ist wie der Klartext.",
+          "warum": "Die gleiche Länge verrät für sich allein keine Buchstaben-Zuordnung."
+        }
+      ]
+    }
+  ]
+}

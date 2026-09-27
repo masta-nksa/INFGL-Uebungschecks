@@ -1,5 +1,5 @@
 ---
-lektion: 3
+lektion: 4
 zielgruppe: sus
 art: uebungscheck
 check: n4-modulationsarten
@@ -11,7 +11,7 @@ theorie: "/lektionen/n0-theorie.html#modulation"
 
 # Übungscheck N4: Modulationsarten
 
-**Einheit 3 · ca. 5 Minuten · ohne Unterlagen**
+**Einheit 4 · ca. 5 Minuten · ohne Unterlagen**
 
 ## Ziel
 

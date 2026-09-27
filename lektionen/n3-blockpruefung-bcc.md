@@ -1,5 +1,5 @@
 ---
-lektion: 3
+lektion: 4
 zielgruppe: sus
 art: uebungscheck
 check: n3-blockpruefung-bcc
@@ -11,7 +11,7 @@ theorie: "/lektionen/n0-theorie.html#blockpruefung"
 
 # Übungscheck N3: Zyklische Blockprüfung (BCC)
 
-**Einheit 3 · ca. 7 Minuten · ohne Unterlagen**
+**Einheit 4 · ca. 7 Minuten · ohne Unterlagen**
 
 ## Ziel
 

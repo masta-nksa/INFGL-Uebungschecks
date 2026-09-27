@@ -1,20 +1,20 @@
 ---
 layout: lektion
 lektion: 3
-titel: "Netzwerktechnik-Grundlagen"
-kurz: "Kommunikation und Übertragungsarten, Übertragungsfehler und Hamming-Code, Blockprüfung (BCC) und Modulationsarten – mit Theorie zum Nachlesen."
+titel: "Verschlüsselung"
+kurz: "Begriffe und Schutzziele, Cäsar- und Vigenère-Verschlüsselung, asymmetrische Verschlüsselung und RSA – mit Theorie zum Nachlesen."
 permalink: /lektion-3.html
 lernziele:
-  - text: "Sie kennen Begriffe der Netzwerktechnik und unterscheiden die Übertragungsarten (Simplex/Halbduplex/Vollduplex, seriell/parallel, synchron/asynchron)."
-    theorie: "/lektionen/n0-theorie.html#kommunikation"
-    check: "/lektionen/n1-kommunikation-uebertragungsarten.html"
-  - text: "Sie kennen Ursachen und Arten von Übertragungsfehlern und können den Hamming-Code erklären und anwenden."
-    theorie: "/lektionen/n0-theorie.html#hamming"
-    check: "/lektionen/n2-uebertragungsfehler-hamming.html"
-  - text: "Sie können die zyklische Blockprüfung (BCC) erklären und einen BCC berechnen."
-    theorie: "/lektionen/n0-theorie.html#blockpruefung"
-    check: "/lektionen/n3-blockpruefung-bcc.html"
-  - text: "Sie kennen die Modulationsarten der Signalübertragung sowie die Frequenzbereiche der kabellosen lokalen Netzwerke (WLAN)."
-    theorie: "/lektionen/n0-theorie.html#modulation"
-    check: "/lektionen/n4-modulationsarten.html"
+  - text: "Sie kennen die Grundbegriffe der Verschlüsselung, die vier Schutzziele und den Unterschied zwischen symmetrischer und asymmetrischer Verschlüsselung."
+    theorie: "/lektionen/v0-theorie.html#begriffe"
+    check: "/lektionen/v1-begriffe-strategien.html"
+  - text: "Sie verschlüsseln und entschlüsseln Wörter mit der Cäsar-Verschlüsselung und erklären, warum monoalphabetische Verfahren unsicher sind."
+    theorie: "/lektionen/v0-theorie.html#caesar"
+    check: "/lektionen/v2-caesar.html"
+  - text: "Sie verschlüsseln ein Wort mit der Vigenère-Verschlüsselung und erklären, warum polyalphabetische Verfahren schwerer zu knacken sind."
+    theorie: "/lektionen/v0-theorie.html#vigenere"
+    check: "/lektionen/v3-vigenere.html"
+  - text: "Sie erklären, wann welcher Schlüssel eines asymmetrischen Verfahrens zum Einsatz kommt, was eine Einwegfunktion ist und wo RSA eingesetzt wird."
+    theorie: "/lektionen/v0-theorie.html#asymmetrisch-rsa"
+    check: "/lektionen/v4-asymmetrisch-rsa.html"
 ---

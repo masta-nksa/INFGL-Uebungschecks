@@ -1,0 +1,88 @@
+{
+  "id": "V1",
+  "titel": "Begriffe und Strategien",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie jeder Beschreibung den passenden Begriff zu.",
+      "optionen": ["Klartext", "Geheimtext", "Verschlüsselung", "Entschlüsselung", "Schlüssel"],
+      "zeilen": [
+        {
+          "text": "Eine unverschlüsselte, lesbare Nachricht.",
+          "antwort": "Klartext",
+          "tipp": "Der englische Begriff dazu ist «Plaintext»."
+        },
+        {
+          "text": "Der Prozess, der einen Klartext mithilfe eines Algorithmus unlesbar macht.",
+          "antwort": "Verschlüsselung",
+          "tipp": "Englisch: «Encryption»."
+        },
+        {
+          "text": "Der Prozess, der eine verschlüsselte Nachricht wieder in Klartext umwandelt.",
+          "antwort": "Entschlüsselung",
+          "tipp": "Englisch: «Decryption»."
+        },
+        {
+          "text": "Ein Geheimnis, ähnlich einem Passwort, das zum Ver- bzw. Entschlüsseln nötig ist.",
+          "antwort": "Schlüssel",
+          "tipp": "Englisch: «Key»."
+        },
+        {
+          "text": "Das Ergebnis der Verschlüsselung, für Unberechtigte unlesbar.",
+          "antwort": "Geheimtext",
+          "tipp": "Das Gegenstück zum Klartext."
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Welches Schutzziel steht hinter jeder Aussage?",
+      "optionen": ["Vertraulichkeit", "Integrität", "Authentizität", "Verbindlichkeit"],
+      "zeilen": [
+        {
+          "text": "Nur die Empfängerin kann den Inhalt der Nachricht lesen.",
+          "antwort": "Vertraulichkeit",
+          "tipp": "Es geht darum, wer die Nachricht lesen kann."
+        },
+        {
+          "text": "Die Nachricht wurde auf dem Weg von niemandem verändert.",
+          "antwort": "Integrität",
+          "tipp": "Es geht um Unversehrtheit des Inhalts."
+        },
+        {
+          "text": "Es ist sichergestellt, dass die Nachricht wirklich vom angegebenen Absender stammt.",
+          "antwort": "Authentizität",
+          "tipp": "Es geht um die Echtheit des Absenders."
+        },
+        {
+          "text": "Der Absender kann im Nachhinein nicht abstreiten, die Nachricht verfasst zu haben.",
+          "antwort": "Verbindlichkeit",
+          "tipp": "Es geht darum, dass die Urheberschaft nicht geleugnet werden kann."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was unterscheidet die symmetrische von der asymmetrischen Verschlüsselung?",
+      "optionen": [
+        {
+          "text": "Bei symmetrischer Verschlüsselung dient derselbe Schlüssel dem Ver- und Entschlüsseln, bei asymmetrischer ein öffentlicher und ein privater Schlüssel.",
+          "richtig": true
+        },
+        {
+          "text": "Symmetrische Verschlüsselung ist immer sicherer als asymmetrische.",
+          "warum": "Die Sicherheit hängt vom konkreten Verfahren ab, nicht allein von symmetrisch oder asymmetrisch."
+        },
+        {
+          "text": "Bei asymmetrischer Verschlüsselung braucht es gar keinen Schlüssel.",
+          "warum": "Auch asymmetrische Verfahren brauchen Schlüssel — nur eben zwei unterschiedliche statt einem gemeinsamen."
+        },
+        {
+          "text": "Symmetrisch bedeutet, dass die Nachricht gleich lang bleibt wie der Klartext.",
+          "warum": "Symmetrisch bezieht sich auf den Schlüssel, nicht auf die Textlänge."
+        }
+      ],
+      "tipp": "Denken Sie an die Anzahl und Art der beteiligten Schlüssel."
+    }
+  ]
+}

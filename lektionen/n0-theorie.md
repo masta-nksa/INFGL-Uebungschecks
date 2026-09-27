@@ -1,5 +1,5 @@
 ---
-lektion: 3
+lektion: 4
 zielgruppe: sus
 art: theorie
 titel: "Theorie: Netzwerktechnik-Grundlagen"
@@ -9,7 +9,7 @@ reihenfolge: 10
 
 # Theorie: Netzwerktechnik-Grundlagen
 
-**Einheit 3 · zum Nachlesen vor oder nach den Checks**
+**Einheit 4 · zum Nachlesen vor oder nach den Checks**
 
 <!--
   Stand dieser Angaben: 27.09.2026.

@@ -1,5 +1,5 @@
 ---
-lektion: 3
+lektion: 4
 zielgruppe: sus
 art: uebungscheck
 check: n2-uebertragungsfehler-hamming
@@ -11,7 +11,7 @@ theorie: "/lektionen/n0-theorie.html#hamming"
 
 # Übungscheck N2: Übertragungsfehler und Hamming-Code
 
-**Einheit 3 · ca. 8 Minuten · ohne Unterlagen**
+**Einheit 4 · ca. 8 Minuten · ohne Unterlagen**
 
 ## Ziel
 

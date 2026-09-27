@@ -1,0 +1,76 @@
+{
+  "id": "V3",
+  "titel": "Vigenère-Verschlüsselung",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Verschlüsseln Sie das Wort <code>hallo</code> mit der Vigenère-Verschlüsselung und dem Schlüssel <code>gold</code>.",
+      "felder": [
+        {
+          "label": "Geheimtext:",
+          "format": "text",
+          "antwort": "nowou",
+          "tipp": "Der Schlüssel wird wiederholt (g-o-l-d-g), und jeder Klartextbuchstabe wird um so viele Stellen verschoben, wie der jeweilige Schlüsselbuchstabe im Alphabet steht (g=6, o=14, l=11, d=3)."
+        }
+      ],
+      "weg": "h+g→n, a+o→o, l+l→w, l+d→o, o+g→u, also «nowou»."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was bedeutet «polyalphabetisch» bei der Vigenère-Verschlüsselung?",
+      "optionen": [
+        {
+          "text": "Es wird nicht nur ein Geheimtextalphabet verwendet, sondern mehrere, je nach Stelle im Schlüsselwort.",
+          "richtig": true
+        },
+        {
+          "text": "Es werden mehrere Sprachen gleichzeitig verschlüsselt.",
+          "warum": "«Poly» bezieht sich auf die Anzahl verwendeter Geheimtextalphabete, nicht auf Sprachen."
+        },
+        {
+          "text": "Jeder Buchstabe wird durch mehrere andere Buchstaben ersetzt.",
+          "warum": "Jeder Klartextbuchstabe wird durch genau einen Geheimtextbuchstaben ersetzt — nur wechselt das verwendete Alphabet."
+        },
+        {
+          "text": "Der Schlüssel wird nach jedem Wort neu erfunden.",
+          "warum": "Derselbe Schlüssel wird über den ganzen Text hinweg wiederholt."
+        }
+      ],
+      "tipp": "«Poly» heisst «viele» — was gibt es bei Vigenère im Gegensatz zu Cäsar mehrfach?"
+    },
+    {
+      "typ": "wahl",
+      "frage": "Warum ist Vigenère schwerer zu knacken als eine einfache Cäsar-Verschlüsselung?",
+      "optionen": [
+        {
+          "text": "Weil derselbe Klartextbuchstabe je nach Stelle im Schlüsselwort zu unterschiedlichen Geheimtextbuchstaben wird, was eine einfache Häufigkeitsanalyse erschwert.",
+          "richtig": true
+        },
+        {
+          "text": "Weil Vigenère einen viel längeren Geheimtext erzeugt als Cäsar.",
+          "warum": "Geheimtext und Klartext sind bei beiden Verfahren gleich lang."
+        },
+        {
+          "text": "Weil Vigenère asymmetrisch verschlüsselt.",
+          "warum": "Vigenère ist wie Cäsar ein symmetrisches Verfahren — derselbe Schlüssel dient dem Ver- und Entschlüsseln."
+        },
+        {
+          "text": "Weil bei Vigenère nur Grossbuchstaben verwendet werden dürfen.",
+          "warum": "Die Gross-/Kleinschreibung hat nichts mit der Sicherheit des Verfahrens zu tun."
+        }
+      ]
+    },
+    {
+      "typ": "felder",
+      "frage": "Um eine Vigenère-Verschlüsselung ohne Schlüssel zu knacken, sucht man wiederkehrende Buchstabenfolgen im Geheimtext und bildet den grössten gemeinsamen Teiler (GgT) ihrer Abstände. Was verrät dieser GgT?",
+      "felder": [
+        {
+          "label": "Der GgT verrät meistens:",
+          "format": "text",
+          "antwort": "die Schlüssellänge",
+          "tipp": "Wiederkehrende Buchstabenfolgen entstehen meist dort, wo derselbe Klartextabschnitt zufällig auf dieselbe Stelle im wiederholten Schlüssel trifft."
+        }
+      ]
+    }
+  ]
+}

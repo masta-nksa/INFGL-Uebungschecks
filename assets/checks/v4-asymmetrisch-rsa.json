@@ -1,0 +1,120 @@
+{
+  "id": "V4",
+  "titel": "Asymmetrische Verschlüsselung und RSA",
+  "aufgaben": [
+    {
+      "typ": "wahl",
+      "frage": "Bob will Alice eine vertrauliche Nachricht schicken, die nur sie lesen kann. Mit welchem Schlüssel verschlüsselt Bob die Nachricht?",
+      "optionen": [
+        {
+          "text": "Mit Alices öffentlichem Schlüssel (Public Key).",
+          "richtig": true
+        },
+        {
+          "text": "Mit Alices privatem Schlüssel (Private Key).",
+          "warum": "Den privaten Schlüssel kennt nur Alice selbst — Bob hat ihn gar nicht."
+        },
+        {
+          "text": "Mit seinem eigenen privaten Schlüssel.",
+          "warum": "Damit könnte nur mit Bobs öffentlichem Schlüssel entschlüsselt werden — das stellt keine Vertraulichkeit gegenüber Alice sicher."
+        },
+        {
+          "text": "Mit einem Schlüssel, den beide vorher persönlich ausgetauscht haben.",
+          "warum": "Genau diesen vorherigen Austausch will die asymmetrische Verschlüsselung vermeiden."
+        }
+      ],
+      "tipp": "Nur der private Schlüssel der Empfängerin kann die Nachricht wieder entschlüsseln."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Alice will beweisen, dass eine Nachricht wirklich von ihr stammt (Authentizität). Mit welchem Schlüssel signiert sie die Nachricht?",
+      "optionen": [
+        {
+          "text": "Mit ihrem eigenen privaten Schlüssel.",
+          "richtig": true
+        },
+        {
+          "text": "Mit ihrem eigenen öffentlichen Schlüssel.",
+          "warum": "Das könnte jede und jeder, nicht nur Alice — das würde die Urheberschaft nicht beweisen."
+        },
+        {
+          "text": "Mit dem öffentlichen Schlüssel der Empfängerin.",
+          "warum": "Das würde Vertraulichkeit sicherstellen, aber nicht beweisen, dass Alice die Verfasserin ist."
+        },
+        {
+          "text": "Mit einem Schlüssel, den die Empfängerin ihr zuvor zugeschickt hat.",
+          "warum": "Zum Signieren verwendet man den eigenen privaten Schlüssel, den sonst niemand besitzt."
+        }
+      ],
+      "tipp": "Nur Alice besitzt ihren privaten Schlüssel — was mit ihm erzeugt wurde, kann nur von ihr stammen."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was ist eine «Einwegfunktion» im Sinn von RSA?",
+      "optionen": [
+        {
+          "text": "Eine Rechenoperation, die in die eine Richtung einfach, aber in die andere praktisch nicht umkehrbar ist.",
+          "richtig": true
+        },
+        {
+          "text": "Eine Funktion, die nur einmal verwendet werden darf.",
+          "warum": "Es geht um die Richtung der Berechnung, nicht um die Anzahl Verwendungen."
+        },
+        {
+          "text": "Eine Funktion, die nur eine einzige Eingabe akzeptiert.",
+          "warum": "Es geht darum, wie schwer sich die Berechnung umkehren lässt, nicht um die Anzahl Eingaben."
+        },
+        {
+          "text": "Eine Funktion, die den Klartext direkt in den Schlüssel umwandelt.",
+          "warum": "Die Einwegfunktion betrifft das Verschlüsseln selbst, nicht die Erzeugung des Schlüssels aus dem Klartext."
+        }
+      ],
+      "tipp": "Denken Sie an die Analogie mit dem Kuchen: Backen ist einfach, vom Kuchen aufs Rezept schliessen ist schwer."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Worauf beruht die Sicherheit von RSA konkret?",
+      "optionen": [
+        {
+          "text": "Zwei grosse Primzahlen zu multiplizieren ist leicht, das Produkt aber wieder in genau diese zwei Primfaktoren zu zerlegen ist bei genügend grossen Zahlen extrem aufwändig.",
+          "richtig": true
+        },
+        {
+          "text": "Die verwendeten Schlüssel werden geheim gehalten, indem sie nie über das Internet übertragen werden.",
+          "warum": "Der öffentliche Schlüssel wird bei RSA gerade bekanntgegeben — die Sicherheit liegt in der Mathematik, nicht in der Geheimhaltung des Public Keys."
+        },
+        {
+          "text": "Der Geheimtext wird mehrfach hintereinander verschlüsselt.",
+          "warum": "RSA verschlüsselt in einem Schritt; die Sicherheit liegt in der Primfaktorzerlegung, nicht in Wiederholung."
+        },
+        {
+          "text": "Niemand kennt den verwendeten Algorithmus.",
+          "warum": "Der RSA-Algorithmus ist seit 1977 öffentlich bekannt — die Sicherheit beruht auf der Rechenschwierigkeit, nicht auf Geheimhaltung des Verfahrens."
+        }
+      ]
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Wo wird die asymmetrische Verschlüsselung (RSA oder verwandte Verfahren) heute typischerweise eingesetzt?",
+      "optionen": [
+        {
+          "text": "Bei https-Verbindungen (TLS-Zertifikate)",
+          "richtig": true
+        },
+        {
+          "text": "Beim digitalen Signieren von Dokumenten",
+          "richtig": true
+        },
+        {
+          "text": "Bei E-Mail-Verschlüsselung (z. B. OpenPGP)",
+          "richtig": true
+        },
+        {
+          "text": "Beim Speichern von Dateien auf einer lokalen, nie vernetzten Festplatte ohne jede Übertragung",
+          "warum": "Ohne Kommunikation mit einer Gegenstelle gibt es kein Schlüsselpaar-Szenario, das einen Vorteil bringt."
+        }
+      ],
+      "tipp": "Denken Sie an Situationen, in denen zwei Parteien kommunizieren, ohne vorher einen gemeinsamen Schlüssel ausgetauscht zu haben."
+    }
+  ]
+}

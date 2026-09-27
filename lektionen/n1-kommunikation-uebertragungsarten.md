@@ -1,5 +1,5 @@
 ---
-lektion: 3
+lektion: 4
 zielgruppe: sus
 art: uebungscheck
 check: n1-kommunikation-uebertragungsarten
@@ -11,7 +11,7 @@ theorie: "/lektionen/n0-theorie.html#kommunikation"
 
 # Übungscheck N1: Kommunikation und Übertragungsarten
 
-**Einheit 3 · ca. 6 Minuten · ohne Unterlagen**
+**Einheit 4 · ca. 6 Minuten · ohne Unterlagen**
 
 ## Ziel
 
