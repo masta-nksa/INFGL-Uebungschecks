@@ -35,6 +35,10 @@ Sie mindestens so viele Bit *n*, dass 2ⁿ ≥ *m* ist.
 Ein **Byte** besteht aus 8 Bit (= 2 **Nibble** zu je 4 Bit) und hat damit 2⁸ = 256
 mögliche Zustände — ohne Vorzeichen also die Werte 0 bis 255.
 
+**Durchgerechnetes Beispiel:** Mit 6 Bit gibt es 2⁶ = 64 verschiedene Bitfolgen. Um
+50 verschiedene Zustände zu unterscheiden, reichen 5 Bit nicht (2⁵ = 32 < 50), aber
+6 Bit reichen (2⁶ = 64 ≥ 50) — es braucht also mindestens 6 Bit.
+
 ### Dezimale und binäre Grössenvorsätze
 
 Bei grösseren Speichermengen gibt es zwei Systeme von Vorsätzen, die leicht
@@ -46,16 +50,24 @@ verwechselt werden:
 | kiB, MiB, GiB | binär (Zweierpotenz) | 2¹⁰, 2²⁰, 2³⁰ Byte |
 
 Das **„i“** in kiB/MiB/GiB steht für die Zweierpotenz. Weil 2¹⁰ = 1024 grösser ist
-als 10³ = 1000, ist 1 GiB auch grösser als 1 GB. Das erklärt einen bekannten Effekt:
-Eine Festplatte, die mit «1 TByte» (= 10¹² Byte, dezimal) angeschrieben ist, zeigt das
-Betriebssystem als rund 931 GiByte an — dieselbe Menge Byte, nur in der grösseren
-Einheit GiByte ausgedrückt, ergibt eine kleinere Zahl.
+als 10³ = 1000, ist 1 GiB auch grösser als 1 GB — dieselbe Bytezahl ergibt in GiB
+also eine kleinere Zahl als in GB.
+
+**Durchgerechnetes Beispiel:** Eine Festplatte ist mit «500 GByte» angeschrieben
+(dezimal, 500 · 10⁹ Byte). Wie viele GiByte zeigt das Betriebssystem an? Da
+1 GiByte = 2³⁰ Byte = 1'073'741'824 Byte ist, ergibt sich 500 · 10⁹ ÷ 2³⁰ ≈ 465.7
+GiByte — eine kleinere Zahl als die 500, obwohl es dieselbe Datenmenge ist. Das ist
+der bekannte Effekt, dass Speichergeräte «weniger anzeigen, als draufsteht».
 
 ### ASCII
 
 Im **ASCII-Code** entspricht jedem Byte genau ein Zeichen. Ein Text lässt sich also
 Byte für Byte dekodieren: Jedes Byte wird zuerst in eine Dezimalzahl umgewandelt, und
 diese Dezimalzahl wird in der ASCII-Tabelle nachgeschlagen.
+
+**Durchgerechnetes Beispiel:** `0100'0010  0110'1001  0111'0100` — das erste Byte ist
+66, das ergibt in der ASCII-Tabelle ein «B». Die anderen beiden Bytes sind 105 («i»)
+und 116 («t»). Der Text lautet also «Bit».
 
 **Dazu passender Check:** [z1 – Bits, Bytes und Masseinheiten]({{ "/lektionen/z1-bits-bytes-masseinheiten.html" | relative_url }})
 
@@ -72,6 +84,10 @@ Wertigkeiten 1, 2, 4, 8, 16, …
   Zweierpotenz ab (ist sie enthalten, schreiben Sie 1, sonst 0) — oder teilen Sie
   wiederholt durch 2 und lesen Sie die Reste von unten nach oben.
 
+**Durchgerechnetes Beispiel:** 173₁₀ in Binär: 173 − 128 = 45, 45 − 32 = 13,
+13 − 8 = 5, 5 − 4 = 1, 1 − 1 = 0 → die verwendeten Zweierpotenzen (128, 32, 8, 4, 1)
+ergeben `1010'1101`.
+
 ### Hexadezimal
 
 Das Hexadezimalsystem (Basis 16, Ziffern 0–9 und A–F für die Werte 10–15) wird in der
@@ -79,6 +95,10 @@ Informatik häufig verwendet, weil **jede Hexziffer genau 4 Bit entspricht**. Da
 lassen sich lange, unübersichtliche Binärzahlen kurz und lesbar aufschreiben. Die
 Umwandlung Binär ↔ Hex geschieht deshalb einfach ziffernweise in 4er-Gruppen, ohne
 über den Umweg Dezimal gehen zu müssen.
+
+**Durchgerechnetes Beispiel:** `1010'1101` (unser Ergebnis von oben) in 4er-Gruppen
+gelesen: `1010` = A, `1101` = D, also `AD`₁₆. Die Probe: A·16 + D = 10·16 + 13 = 173,
+stimmt mit dem Ausgangswert überein.
 
 ### Andere Basen
 
@@ -102,7 +122,9 @@ ist das Vorzeichenbit — 0 bedeutet nicht-negativ, 1 bedeutet negativ.
 2. Kippen Sie alle Bits (aus 0 wird 1, aus 1 wird 0) — das ist das *Einerkomplement*.
 3. Addieren Sie 1.
 
-Beispiel: −5 mit 4 Bit → +5 = `0101` → gekippt `1010` → + 1 = `1011`.
+**Durchgerechnetes Beispiel:** −9 mit 5 Bit → +9 = `01001` → gekippt `10110` →
++ 1 = `10111`. Probe (Rückwandlung): `10111` gekippt ist `01000`, + 1 ergibt
+`01001` = 9 — mit negativem Vorzeichen also wieder −9.
 
 **Rückwandlung** (negative Zahl im Zweierkomplement → ihr Betrag): Dieselben zwei
 Schritte (kippen, +1) noch einmal angewendet ergeben den Betrag. Das Zweierkomplement
@@ -131,8 +153,12 @@ haben die Wertigkeiten 1/2, 1/4, 1/8, 1/16, … (also 2⁻¹, 2⁻², 2⁻³, �
   Nachkommateil: multiplizieren Sie wiederholt mit 2 und notieren Sie jeweils die
   entstehende Vorkommaziffer (0 oder 1), bis nichts mehr übrig bleibt.
 
-Beispiel 0.4375: 0.4375·2 = 0.875 → 0; 0.875·2 = 1.75 → 1; 0.75·2 = 1.5 → 1; 0.5·2 =
-1.0 → 1. Ergebnis: `0.0111`.
+**Durchgerechnetes Beispiel (Binär → Dezimal):** `0.1101`₂ = 1/2 + 1/4 + 0/8 + 1/16
+= 0.5 + 0.25 + 0.0625 = `0.8125`.
+
+**Durchgerechnetes Beispiel (Dezimal → Binär):** 0.6875 → 0.6875·2 = 1.375 → 1;
+0.375·2 = 0.75 → 0; 0.75·2 = 1.5 → 1; 0.5·2 = 1.0 → 1. Ergebnis: `0.1011`. Probe:
+1/2 + 1/8 + 1/16 = 0.5 + 0.125 + 0.0625 = 0.6875, stimmt.
 
 ### Nicht jede Dezimalzahl ist exakt darstellbar
 
@@ -168,6 +194,19 @@ Der Wert ist dann 1.*Mantisse*₂ · 2^(*Exponent* − 127).
 **Dezimalzahl → Float:** Schreiben Sie die Zahl binär normalisiert als
 1.*xxx* · 2^*e*. Der gespeicherte Exponent ist *e* + 127 (als 8-Bit-Binärzahl), die
 Mantisse sind die Nachkommastellen von *xxx* (mit Nullen aufgefüllt auf 23 Bit).
+
+**Durchgerechnetes Beispiel:** Stellen Sie 3.25 als float dar. Binär ist
+3.25 = `11.01`₂ = `1.101`₂ · 2¹ (normalisiert). Der Exponent ist also 1, gespeichert
+wird 1 + 127 = 128 = `1000'0000`₂. Die Mantisse ist `101` (aufgefüllt mit Nullen auf
+23 Bit). Vorzeichen 0 (positiv). Das float-Bitmuster lautet:
+
+```
+0  1000'0000  101'0000'0000'0000'0000'0000
+v  Exponent   Mantisse
+```
+
+Probe (Rückrechnung): Exponent 128 − 127 = 1, Mantisse ergänzt um die führende 1:
+`1.101`₂ = 1.625, also 1.625 · 2¹ = 3.25 — stimmt.
 
 ### Grenzen von Gleitkommazahlen
 

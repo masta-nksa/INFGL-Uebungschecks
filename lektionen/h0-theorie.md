@@ -111,6 +111,11 @@ Für Aufgaben mit Speichergrössen und Übertragungsraten braucht es meist zwei 
    unterschiedliche Systeme (siehe auch die Theorie zu [Bits, Bytes und
    Masseinheiten]({{ "/lektionen/z0-theorie.html#bits-bytes" | relative_url }})).
 
+**Durchgerechnetes Beispiel:** Eine 500-MiByte-Datei wird über eine Leitung mit
+100 Mbit/s übertragen (1 Mbit/s = 10⁶ Bit/s). Wie lange dauert das? Zuerst die
+Dateigrösse in Bit: 500 · 1024 · 1024 · 8 = 4'194'304'000 Bit. Geteilt durch die
+Rate: 4'194'304'000 ÷ 100'000'000 ≈ 41.9 Sekunden.
+
 **Dazu passender Check:** [h2 – Speicher]({{ "/lektionen/h2-speicher.html" | relative_url }})
 
 ## Der Von-Neumann-Rechner {#vonneumann}
