@@ -1,0 +1,94 @@
+{
+  "id": "N4",
+  "titel": "Modulationsarten",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie jeder Beschreibung die passende Modulationsart zu.",
+      "optionen": ["AM", "FM", "PM"],
+      "zeilen": [
+        {
+          "text": "Die Amplitude (Höhe) der Trägerwelle wird verändert.",
+          "antwort": "AM",
+          "tipp": "AM = Amplitudenmodulation."
+        },
+        {
+          "text": "Die Frequenz der Trägerwelle wird verändert.",
+          "antwort": "FM",
+          "tipp": "FM = Frequenzmodulation."
+        },
+        {
+          "text": "Die Phase der Trägerwelle wird verschoben.",
+          "antwort": "PM",
+          "tipp": "PM = Phasenmodulation."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was macht ein Modem?",
+      "optionen": [
+        {
+          "text": "Es wandelt digitale Signale in analoge um und umgekehrt (Modulation/Demodulation).",
+          "richtig": true
+        },
+        {
+          "text": "Es verstärkt nur die Sendeleistung eines WLAN-Routers.",
+          "warum": "Das ist nicht die Aufgabe eines Modems."
+        },
+        {
+          "text": "Es prüft Sendedaten mit dem Hamming-Code.",
+          "warum": "Fehlerkorrektur ist eine andere Funktion, nicht die eines Modems."
+        },
+        {
+          "text": "Es verbindet zwei unterschiedliche Netzwerke miteinander.",
+          "warum": "Das ist eher die Aufgabe eines Routers."
+        }
+      ]
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Welche Frequenzbereiche stehen WLAN-Routern (IEEE 802.11) heute bereits standardmässig zur Verfügung?",
+      "optionen": [
+        {
+          "text": "2,4 GHz",
+          "richtig": true
+        },
+        {
+          "text": "5 GHz",
+          "richtig": true
+        },
+        {
+          "text": "60 GHz",
+          "warum": "Ein 60-GHz-Band ist erst in Vorbereitung, noch nicht Standard."
+        },
+        {
+          "text": "100 MHz",
+          "warum": "Das liegt im UKW-Radiobereich, nicht im WLAN-Bereich."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Welche Aussage zum 5-GHz-Band gegenüber dem 2,4-GHz-Band trifft zu?",
+      "optionen": [
+        {
+          "text": "Grössere Reichweite, aber langsamere Datenübertragung.",
+          "warum": "Das ist gerade umgekehrt."
+        },
+        {
+          "text": "Geringere Reichweite, aber schnellere Datenübertragung.",
+          "richtig": true
+        },
+        {
+          "text": "Genau gleiche Reichweite und Geschwindigkeit, nur ein anderer Kanal.",
+          "warum": "Die beiden Bänder unterscheiden sich gerade in Reichweite und Geschwindigkeit."
+        },
+        {
+          "text": "Wird von WLAN-Routern nicht unterstützt.",
+          "warum": "Das 5-GHz-Band ist neben 2,4 GHz das zweite Standardband."
+        }
+      ]
+    }
+  ]
+}

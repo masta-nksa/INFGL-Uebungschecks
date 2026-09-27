@@ -30,6 +30,10 @@ layout: default
     </div>
   </div>
 
+  {%- if page.theorie %}
+  <p class="theorie-hinweis"><a href="{{ page.theorie | relative_url }}">&larr; Theorie zu diesem Check</a></p>
+  {%- endif %}
+
   <article class="prose">
     {{ content }}
     {%- if page.check %}

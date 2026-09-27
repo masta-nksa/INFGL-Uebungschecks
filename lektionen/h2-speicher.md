@@ -6,6 +6,7 @@ check: h2-speicher
 titel: "Übungscheck H2: Speicher"
 kurz: "Speicherarten, RAM und ROM, Cache, Datenraten (ca. 7 Minuten)"
 reihenfolge: 20
+theorie: "/lektionen/h0-theorie.html#speicher"
 ---
 
 # Übungscheck H2: Speicher

@@ -6,6 +6,7 @@ check: z5-gleitkommazahlen
 titel: "Übungscheck Z5: Gleitkommazahlen und Datentypen"
 kurz: "Aufbau von float, Rundungsfehler, Eigenschaften von Gleitkommazahlen (ca. 8 Minuten)"
 reihenfolge: 50
+theorie: "/lektionen/z0-theorie.html#gleitkommazahlen"
 ---
 
 # Übungscheck Z5: Gleitkommazahlen und Datentypen

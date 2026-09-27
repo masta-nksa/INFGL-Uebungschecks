@@ -6,6 +6,7 @@ check: z3-zweierkomplement
 titel: "Übungscheck Z3: Zweierkomplement"
 kurz: "Zahlenbereich, negative Zahlen darstellen, Subtraktion durch Addition (ca. 8 Minuten)"
 reihenfolge: 30
+theorie: "/lektionen/z0-theorie.html#zweierkomplement"
 ---
 
 # Übungscheck Z3: Zweierkomplement

@@ -6,6 +6,7 @@ check: h3-von-neumann
 titel: "Übungscheck H3: Der Von-Neumann-Rechner"
 kurz: "Bestandteile und Zyklus des Von-Neumann-Rechners (ca. 6 Minuten)"
 reihenfolge: 30
+theorie: "/lektionen/h0-theorie.html#vonneumann"
 ---
 
 # Übungscheck H3: Der Von-Neumann-Rechner

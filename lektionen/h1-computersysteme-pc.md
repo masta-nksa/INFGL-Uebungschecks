@@ -6,6 +6,7 @@ check: h1-computersysteme-pc
 titel: "Übungscheck H1: Computersysteme und Aufbau eines PCs"
 kurz: "Computersysteme, CPU, Hauptplatine, Schnittstellen, Mooresches Gesetz (ca. 7 Minuten)"
 reihenfolge: 10
+theorie: "/lektionen/h0-theorie.html#computersysteme"
 ---
 
 # Übungscheck H1: Computersysteme und Aufbau eines PCs

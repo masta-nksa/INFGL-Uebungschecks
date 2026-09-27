@@ -428,6 +428,19 @@ a { color: var(--accent); }
 .block-lehrperson h2 { color: var(--lp); }
 .block-sus { border-left: var(--block-line) solid var(--sus); }
 .block-sus h2 { color: var(--sus); }
+.block-lernziele { border-left: var(--block-line) solid var(--accent); }
+.block-lernziele h2 { color: var(--accent); }
+
+.lernziele-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
+.lernziele-list li { padding-bottom: .9rem; border-bottom: 1px solid var(--border); }
+.lernziele-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.lernziele-list p { margin: 0 0 .35rem; }
+.lernziele-list p:last-child { margin-bottom: 0; }
+.lernziel-links { font-size: .88rem; }
+.lernziel-links a { color: var(--accent); }
+
+.theorie-hinweis { margin: 0 0 1.2rem; font-size: .92rem; }
+.theorie-hinweis a { color: var(--accent); }
 
 /* Quellenangabe unter einem Text */
 .quellen {
@@ -756,8 +769,10 @@ a { color: var(--accent); }
 }
 
 .badge-uebungscheck { background: #e3ecff; color: #24479c; }
+.badge-theorie       { background: #dff0f3; color: #17636e; }
 @media (prefers-color-scheme: dark) {
   .badge-uebungscheck { background: #1c2b4d; color: #9fbcff; }
+  .badge-theorie       { background: #12343a; color: #7fd0da; }
 }
 
 .visuell-versteckt {

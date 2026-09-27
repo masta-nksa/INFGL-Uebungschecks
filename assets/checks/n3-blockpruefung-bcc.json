@@ -1,0 +1,83 @@
+{
+  "id": "N3",
+  "titel": "Zyklische Blockprüfung (BCC)",
+  "aufgaben": [
+    {
+      "typ": "wahl",
+      "frage": "Wie wird der BCC bei der zyklischen Blockprüfung berechnet?",
+      "optionen": [
+        {
+          "text": "Die Sendedaten werden durch einen vereinbarten Generator dividiert (bitweise mit XOR statt Subtraktion); der Rest ist der BCC.",
+          "richtig": true
+        },
+        {
+          "text": "Der BCC ist die Summe aller Einsen in den Sendedaten.",
+          "warum": "Das wäre eher ein einfacher Parity Check, keine Blockprüfung."
+        },
+        {
+          "text": "Der BCC ist eine Kopie der letzten Bits der Sendedaten.",
+          "warum": "Der BCC wird durch eine Division berechnet, nicht kopiert."
+        },
+        {
+          "text": "Der BCC wird vom Empfänger festgelegt und dem Sender mitgeteilt.",
+          "warum": "Der Sender berechnet und sendet den BCC, nicht umgekehrt."
+        }
+      ]
+    },
+    {
+      "typ": "felder",
+      "frage": "Der vereinbarte Generator ist 5 Bit lang. Wie viele Nullen müssen vor der Berechnung an die Sendedaten angehängt werden?",
+      "felder": [
+        {
+          "label": "Anzahl Nullen:",
+          "format": "zahl",
+          "antwort": 4,
+          "tipp": "Es werden n − 1 Nullen angehängt, wenn der Generator n Bit hat."
+        }
+      ]
+    },
+    {
+      "typ": "felder",
+      "frage": "Sendedaten (ohne BCC): <code>1010</code>, Generator: <code>1101</code>. Berechnen Sie den BCC (den Rest der Modulo-2-Division) und die vollständig zu sendenden Daten (mit BCC anstelle der angehängten Nullen).",
+      "felder": [
+        {
+          "label": "BCC (Rest):",
+          "format": "bin",
+          "antwort": "001",
+          "streng": true,
+          "tipp": "Hängen Sie 3 Nullen an (der Generator hat 4 Bit) und dividieren Sie bitweise mit XOR statt Subtraktion."
+        },
+        {
+          "label": "Sendedaten mit BCC:",
+          "format": "bin",
+          "antwort": "1010001",
+          "streng": true,
+          "tipp": "Ersetzen Sie die 3 angehängten Nullen durch den berechneten Rest."
+        }
+      ],
+      "weg": "1010000 : 1101 (Modulo-2-Division) ergibt den Rest 001. Gesendet werden also 1010 gefolgt von 001: 1010001."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Der Empfänger dividiert die empfangenen Daten (inklusive BCC) nochmals durch denselben Generator. Wie erkennt er einen Übertragungsfehler?",
+      "optionen": [
+        {
+          "text": "Der Rest ist ungleich 0.",
+          "richtig": true
+        },
+        {
+          "text": "Der Rest ist genau 0.",
+          "warum": "Ein Rest von 0 bedeutet gerade, dass kein Fehler erkannt wurde."
+        },
+        {
+          "text": "Das Ergebnis der Division ist negativ.",
+          "warum": "Bei der Modulo-2-Division mit XOR gibt es keine negativen Zwischenergebnisse."
+        },
+        {
+          "text": "Die Division braucht mehr Rechenschritte als beim Sender.",
+          "warum": "Die Anzahl Rechenschritte sagt nichts über einen Fehler aus."
+        }
+      ]
+    }
+  ]
+}

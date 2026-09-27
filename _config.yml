@@ -1,11 +1,12 @@
 # ---------------------------------------------------------------------------
-#  Übungschecks Informatik Grundlagen – 2 Einheiten, 9 Checks
+#  Übungschecks Informatik Grundlagen – wird laufend um weitere Einheiten
+#  ergänzt (Stand: Zahlensysteme, Hardware/Software, Netzwerktechnik-Grundlagen)
 #  Jekyll-Konfiguration für GitHub Pages
 # ---------------------------------------------------------------------------
 
 title: "Übungschecks Informatik Grundlagen"
-untertitel: "Kurze Startchecks zu Zahlensysteme sowie Hardware und Software"
-description: "Übungschecks zu Beginn einer Einheit im Modul Informatik Grundlagen (FHNW WING, 1. Semester)."
+untertitel: "Theorie und Übungschecks zu den Einheiten im Modul"
+description: "Theorie zum Nachlesen und Übungschecks zu den Einheiten im Modul Informatik Grundlagen (FHNW WING, 1. Semester)."
 lang: "de-CH"
 
 # WICHTIG ------------------------------------------------------------------
@@ -38,6 +39,7 @@ plugins:
 # Ohne Eintrag bleibt das Badge leer.
 art_labels:
   uebungscheck: "Übungscheck"
+  theorie: "Theorie"
 
 # Alle Dateien in lektionen/ sind Übungschecks und teilen dasselbe Layout.
 # Die Aufgaben selbst stehen in assets/checks/*.json (Format: siehe README.md).

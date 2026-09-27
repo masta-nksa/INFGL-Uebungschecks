@@ -6,6 +6,7 @@ check: z2-binaer-dezimal-hex
 titel: "Übungscheck Z2: Binär, Dezimal, Hexadezimal und andere Basen"
 kurz: "Binär, Dezimal und Hex umrechnen, andere Basen (ca. 8 Minuten)"
 reihenfolge: 20
+theorie: "/lektionen/z0-theorie.html#binaer-hex"
 ---
 
 # Übungscheck Z2: Binär, Dezimal, Hexadezimal und andere Basen

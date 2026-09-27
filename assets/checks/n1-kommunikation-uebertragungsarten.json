@@ -1,0 +1,95 @@
+{
+  "id": "N1",
+  "titel": "Kommunikation und Übertragungsarten",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie jedem Beispiel die passende Austauschrichtung zu.",
+      "optionen": ["Simplex", "Halbduplex", "Vollduplex"],
+      "zeilen": [
+        {
+          "text": "Ein Radiosender überträgt Musik; die Hörerin kann nichts zurücksenden.",
+          "antwort": "Simplex",
+          "tipp": "Nur eine Übertragungsrichtung ist überhaupt möglich."
+        },
+        {
+          "text": "Bei einem Walkie-Talkie kann jeweils nur eine Seite gleichzeitig sprechen.",
+          "antwort": "Halbduplex",
+          "tipp": "Beide Richtungen sind möglich, aber nicht zur gleichen Zeit."
+        },
+        {
+          "text": "Bei einem Telefongespräch können beide Seiten gleichzeitig sprechen und hören.",
+          "antwort": "Vollduplex",
+          "tipp": "Beide Richtungen gleichzeitig."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Bei einer USB-Verbindung werden die Bits nacheinander über eine einzige Datenleitung übertragen. Wie nennt man diese Übertragungsart?",
+      "optionen": [
+        {
+          "text": "Parallel",
+          "warum": "Parallel bedeutet, dass mehrere Bits gleichzeitig über mehrere Leitungen gesendet werden."
+        },
+        {
+          "text": "Seriell",
+          "richtig": true
+        },
+        {
+          "text": "Synchron",
+          "warum": "Synchron/asynchron betrifft die Taktung der Übertragung, nicht die Anzahl Leitungen."
+        },
+        {
+          "text": "Halbduplex",
+          "warum": "Das betrifft die Übertragungsrichtung, nicht die Anzahl gleichzeitig gesendeter Bits."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Bei der Eingabe über eine Tastatur werden die Zeichen unregelmässig gesendet, jedes mit eigenem Start- und Stopp-Signal. Wie nennt man diese Übermittlung?",
+      "optionen": [
+        {
+          "text": "Synchron",
+          "warum": "Synchrone Übermittlung ist getaktet und braucht keine Start-/Stoppinformation pro Zeichen."
+        },
+        {
+          "text": "Asynchron",
+          "richtig": true
+        },
+        {
+          "text": "Parallel",
+          "warum": "Das betrifft die Anzahl Leitungen, nicht die Taktung."
+        },
+        {
+          "text": "Vollduplex",
+          "warum": "Das betrifft die Übertragungsrichtung, nicht die Taktung."
+        }
+      ]
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Damit zwei Geräte überhaupt kommunizieren können, brauchen sie zwei Dinge. Welche?",
+      "optionen": [
+        {
+          "text": "Eine physische Verbindung",
+          "richtig": true
+        },
+        {
+          "text": "Ein gemeinsames Protokoll",
+          "richtig": true
+        },
+        {
+          "text": "Die gleiche Betriebsart (Simplex, Halbduplex oder Vollduplex)",
+          "warum": "Die Betriebsart ist eine Eigenschaft der gewählten Verbindung, keine Grundvoraussetzung für Kommunikation an sich."
+        },
+        {
+          "text": "Die gleiche Übertragungsgeschwindigkeit",
+          "warum": "Die Geschwindigkeit kann ausgehandelt werden; sie ist keine Grundvoraussetzung für Kommunikation."
+        }
+      ],
+      "tipp": "Denken Sie an die Definition von Kommunikation: Was braucht es überhaupt, damit Informationen ausgetauscht werden können?"
+    }
+  ]
+}

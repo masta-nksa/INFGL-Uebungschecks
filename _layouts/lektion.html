@@ -20,6 +20,24 @@ layout: default
     <p class="lead">{{ page.kurz }}</p>
   </header>
 
+  {%- if page.lernziele %}
+  <section class="material-block block-lernziele">
+    <h2><span class="block-icon" aria-hidden="true">&#127919;</span> Lernziele</h2>
+    <p class="block-hint">Jedes Lernziel verweist auf den passenden Theorie-Abschnitt und den passenden Check.</p>
+    <ol class="lernziele-list">
+      {%- for lz in page.lernziele %}
+      <li>
+        <p>{{ lz.text }}</p>
+        <p class="lernziel-links">
+          <a href="{{ lz.theorie | relative_url }}">Theorie</a>
+          {%- if lz.check %} <span aria-hidden="true">&middot;</span> <a href="{{ lz.check | relative_url }}">Check</a>{%- endif %}
+        </p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif %}
+
   {%- if fuer_sus.size > 0 %}
   <section class="material-block block-sus">
     <h2><span class="block-icon" aria-hidden="true">&#9997;</span> Übungschecks</h2>

@@ -6,6 +6,7 @@ check: z1-bits-bytes-masseinheiten
 titel: "Übungscheck Z1: Bits, Bytes und Masseinheiten"
 kurz: "Zweierpotenzen, Byte und Nibble, kiB/MiB/GiB, ASCII (ca. 7 Minuten)"
 reihenfolge: 10
+theorie: "/lektionen/z0-theorie.html#bits-bytes"
 ---
 
 # Übungscheck Z1: Bits, Bytes und Masseinheiten

@@ -6,6 +6,7 @@ check: h4-software-compiler-vm
 titel: "Übungscheck H4: Software, Compiler und virtuelle Maschinen"
 kurz: "Softwarestufen, Compiler, Interpreter, Parser, virtuelle Maschinen (ca. 8 Minuten)"
 reihenfolge: 40
+theorie: "/lektionen/h0-theorie.html#software"
 ---
 
 # Übungscheck H4: Software, Compiler und virtuelle Maschinen

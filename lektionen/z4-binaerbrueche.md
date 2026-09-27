@@ -6,6 +6,7 @@ check: z4-binaerbrueche
 titel: "Übungscheck Z4: Binärbrüche"
 kurz: "Dezimalbrüche und Binärbrüche ineinander umrechnen (ca. 6 Minuten)"
 reihenfolge: 40
+theorie: "/lektionen/z0-theorie.html#binaerbrueche"
 ---
 
 # Übungscheck Z4: Binärbrüche
