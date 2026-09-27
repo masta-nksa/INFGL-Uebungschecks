@@ -102,19 +102,21 @@ Geheimtextalphabets werden mehrere verwendet, um eine Häufigkeitsanalyse zu
 erschweren. Welches Alphabet für welchen Klartextbuchstaben verwendet wird, legt ein
 **Schlüsselwort** fest, das über den Klartext hinweg wiederholt wird.
 
-**Durchgerechnetes Beispiel:** Klartext `schule`, Schlüssel `nksa`:
+**Durchgerechnetes Beispiel:** Klartext `schule`, Schlüssel `juni`:
 
 ```
-Schlüssel   n k s a n k
+Schlüssel   j u n i j u
 Klartext    s c h u l e
-Geheimtext  f m z u y o
+Geheimtext  b w u c u y
 ```
 
 Jeder Buchstabe des Schlüssels gibt an, um wie viele Stellen der darunterstehende
-Klartextbuchstabe verschoben wird (n = 13 Stellen, k = 10 Stellen, s = 18 Stellen,
-a = 0 Stellen), genau wie bei Cäsar — nur dass die Verschiebung von Zeichen zu
-Zeichen wechselt. Gleiche Klartextbuchstaben (hier zweimal «l»/«e» im Muster) werden
-dadurch nicht zwingend zum gleichen Geheimtextbuchstaben.
+Klartextbuchstabe verschoben wird (j = 9 Stellen, u = 20 Stellen, n = 13 Stellen,
+i = 8 Stellen), genau wie bei Cäsar — nur dass die Verschiebung von Zeichen zu
+Zeichen wechselt, weil der 4 Buchstaben lange Schlüssel wiederholt wird. Anders als
+bei Cäsar hängt die Verschiebung hier von der *Position im Text* ab statt vom
+Buchstaben selbst: Käme derselbe Klartextbuchstabe zweimal an unterschiedlichen
+Positionen vor, würde er deshalb meist zu unterschiedlichen Geheimtextbuchstaben.
 
 ### Trotzdem knackbar
 
