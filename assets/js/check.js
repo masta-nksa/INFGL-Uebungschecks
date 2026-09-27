@@ -297,17 +297,34 @@
     };
   }
 
+  // Mischt eine Liste von Indizes zufällig (Fisher-Yates), damit die richtige
+  // Antwort nicht immer an derselben Stelle steht.
+  function mischeIndizes(anzahl) {
+    var liste = [];
+    for (var i = 0; i < anzahl; i++) liste.push(i);
+    for (var j = liste.length - 1; j > 0; j--) {
+      var k = Math.floor(Math.random() * (j + 1));
+      var t = liste[j]; liste[j] = liste[k]; liste[k] = t;
+    }
+    return liste;
+  }
+
   function baueAuswahl(item, teil, mehrfach) {
     zaehler += 1;
     var name = 'w' + zaehler;
-    var inputs = [];
+    // inputs/labels bleiben nach dem ursprünglichen Index aus item.optionen
+    // sortiert (das erwarten bewerteWahl/bewerteMehrfach). Nur die Reihenfolge,
+    // in der sie ins DOM eingefügt werden, ist zufällig gemischt.
+    var inputs = new Array(item.optionen.length);
+    var labels = new Array(item.optionen.length);
     var gruppe = h('div', { class: 'check-optionen', role: mehrfach ? 'group' : 'radiogroup' });
-    var labels = item.optionen.map(function (o) {
+    mischeIndizes(item.optionen.length).forEach(function (i) {
+      var o = item.optionen[i];
       var inp = h('input', { type: mehrfach ? 'checkbox' : 'radio', name: name });
-      inputs.push(inp);
+      inputs[i] = inp;
       var lab = h('label', { class: 'check-option' }, [inp, h('span', { html: o.text })]);
+      labels[i] = lab;
       gruppe.appendChild(lab);
-      return lab;
     });
     teil.appendChild(gruppe);
     return {
