@@ -61,16 +61,27 @@
       ]
     },
     {
-      "typ": "felder",
-      "frage": "Um eine Vigenère-Verschlüsselung ohne Schlüssel zu knacken, sucht man wiederkehrende Buchstabenfolgen im Geheimtext und bildet den grössten gemeinsamen Teiler (GgT) ihrer Abstände. Was verrät dieser GgT?",
-      "felder": [
+      "typ": "wahl",
+      "frage": "Um eine Vigenère-Verschlüsselung ohne Schlüssel zu knacken, sucht man wiederkehrende Buchstabenfolgen im Geheimtext und bildet den grössten gemeinsamen Teiler (GgT) ihrer Abstände. Was verrät dieser GgT meistens?",
+      "optionen": [
         {
-          "label": "Der GgT verrät meistens:",
-          "format": "text",
-          "antwort": "die Schlüssellänge",
-          "tipp": "Wiederkehrende Buchstabenfolgen entstehen meist dort, wo derselbe Klartextabschnitt zufällig auf dieselbe Stelle im wiederholten Schlüssel trifft."
+          "text": "Die Länge des verwendeten Schlüssels.",
+          "richtig": true
+        },
+        {
+          "text": "Den genauen Inhalt (die Buchstaben) des Schlüssels.",
+          "warum": "Der GgT verrät nur, wie lang der Schlüssel vermutlich ist — welche Buchstaben er enthält, findet man erst danach mit einer Häufigkeitsanalyse pro Teilalphabet."
+        },
+        {
+          "text": "Die verwendete Sprache des Klartexts.",
+          "warum": "Wiederkehrende Buchstabenfolgen und ihr GgT hängen mit der Schlüssellänge zusammen, nicht mit der Sprache."
+        },
+        {
+          "text": "Ob symmetrisch oder asymmetrisch verschlüsselt wurde.",
+          "warum": "Vigenère ist immer symmetrisch — der GgT liefert einen Hinweis auf die Schlüssellänge, nicht auf die Verschlüsselungsart."
         }
-      ]
+      ],
+      "tipp": "Wiederkehrende Buchstabenfolgen entstehen meist dort, wo derselbe Klartextabschnitt zufällig auf dieselbe Stelle im wiederholten Schlüssel trifft."
     }
   ]
 }
