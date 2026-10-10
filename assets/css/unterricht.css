@@ -290,7 +290,8 @@ a { color: var(--accent); }
 .header-tools { display: flex; align-items: center; gap: .8rem; margin-left: auto; }
 
 .site-nav { display: flex; gap: .3rem; }
-.site-nav a {
+.site-nav a,
+.site-nav .nav-ohne-seite {
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 2.4rem; height: 2.2rem; padding-inline: .5rem;
   border-radius: var(--radius-knopf); font-size: .92rem; font-weight: 600;
@@ -298,6 +299,7 @@ a { color: var(--accent); }
 }
 .site-nav a:hover { background: var(--accent-soft); color: var(--accent); }
 .site-nav a[aria-current="page"] { background: var(--accent); color: #fff; }
+.site-nav .nav-ohne-seite { opacity: .45; cursor: default; }
 
 /* Design-Umschalter: ein kleiner Knopf, der der Reihe nach durchschaltet.
    Ohne JavaScript bleibt er über das hidden-Attribut ausgeblendet – dann
@@ -318,7 +320,7 @@ a { color: var(--accent); }
 @media (max-width: 30rem) {
   .header-inner { gap: .4rem; }
   .header-tools { width: 100%; margin-left: 0; justify-content: space-between; gap: .5rem; }
-  .site-nav a { min-width: 2.1rem; padding-inline: .35rem; }
+  .site-nav a, .site-nav .nav-ohne-seite { min-width: 2.1rem; padding-inline: .35rem; }
 }
 
 /* --- Startseite ---------------------------------------------------------- */
@@ -346,7 +348,8 @@ a { color: var(--accent); }
 }
 
 .lektion-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.lektion-list > li > a {
+.lektion-list > li > a,
+.lektion-list > li > .lektion-ohne-seite {
   display: flex; align-items: center; gap: 1.1rem;
   padding: 1.05rem 1.2rem; text-decoration: none; color: inherit;
   background: var(--bg-elev); border: 1px solid var(--border);
@@ -354,6 +357,12 @@ a { color: var(--accent); }
   transition: border-color .15s, transform .15s;
 }
 .lektion-list > li > a:hover { border-color: var(--accent); transform: translateY(-1px); }
+/* Kursblock ohne eigene Seite (z. B. Praktikum): sichtbar, aber nicht anklickbar */
+.lektion-list > li > .lektion-ohne-seite {
+  background: transparent; border-style: dashed; box-shadow: none;
+  color: var(--text-muted); cursor: default;
+}
+.lektion-ohne-seite .lektion-nr { background: transparent; color: var(--text-muted); }
 .lektion-nr {
   flex: none; width: 2.9rem; height: 2.9rem; border-radius: var(--radius-feld);
   display: grid; place-items: center;
@@ -661,7 +670,8 @@ a { color: var(--accent); }
 :root[data-thema="raster"] .site-header { border-bottom-width: 2px; border-bottom-color: var(--text); }
 :root[data-thema="raster"] .hero { padding-block: 3.5rem 2.5rem; }
 :root[data-thema="raster"] .lektion-list { gap: 0; border-top: 1px solid var(--border-strong); }
-:root[data-thema="raster"] .lektion-list > li > a {
+:root[data-thema="raster"] .lektion-list > li > a,
+:root[data-thema="raster"] .lektion-list > li > .lektion-ohne-seite {
   border: 0; border-bottom: 1px solid var(--border); padding-inline: 0;
 }
 :root[data-thema="raster"] .lektion-list > li > a:hover { transform: none; background: var(--accent-soft); }

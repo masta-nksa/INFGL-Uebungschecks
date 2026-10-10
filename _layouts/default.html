@@ -44,8 +44,15 @@
       </a>
       <div class="header-tools">
         <nav class="site-nav" aria-label="Einheiten">
-          {%- for l in lektionen %}
+          {%- assign letzte = lektionen | last -%}
+          {%- for nr in (1..letzte.lektion) %}
+          {%- assign l = lektionen | where: "lektion", nr | first -%}
+          {%- assign ohne = site.einheiten_ohne_seite | where: "lektion", nr | first -%}
+          {%- if l %}
           <a href="{{ l.url | relative_url }}"{% if page.url == l.url %} aria-current="page"{% endif %} title="{{ l.titel }}">{{ l.lektion }}</a>
+          {%- elsif ohne %}
+          <span class="nav-ohne-seite" title="{{ ohne.titel }} (ohne Übungschecks)">{{ ohne.lektion }}</span>
+          {%- endif %}
           {%- endfor %}
         </nav>
         {%- comment -%}

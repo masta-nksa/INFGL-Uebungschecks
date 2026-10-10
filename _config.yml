@@ -2,8 +2,8 @@
 #  Übungschecks Informatik Grundlagen – wird laufend um weitere Einheiten
 #  ergänzt (Stand: Zahlensysteme, Hardware/Software, Verschlüsselung,
 #  Netzwerktechnik-Grundlagen, IP-Netze und Subnetting, OSI/Router/Switch).
-#  Die Nummern der Einheiten folgen den Kursblöcken; Block 5 (PC-Zusammenbau)
-#  ist ein Praktikum und fehlt deshalb.
+#  Die Nummern der Einheiten folgen den Kursblöcken; Block 5 (Hardwarepraktikum)
+#  hat keine Seite und steht unten unter einheiten_ohne_seite.
 #  Jekyll-Konfiguration für GitHub Pages
 # ---------------------------------------------------------------------------
 
@@ -43,6 +43,13 @@ plugins:
 art_labels:
   uebungscheck: "Übungscheck"
   theorie: "Theorie"
+
+# Kursblöcke ohne eigene Seite: Sie erscheinen in der Übersicht und in der
+# Kopfzeile mit ihrer Nummer, sind aber nicht anklickbar.
+einheiten_ohne_seite:
+  - lektion: 5
+    titel: "Hardwarepraktikum"
+    kurz: "PC-Zusammenbau im Praktikum vor Ort – ohne Theorie-Seite und Übungschecks."
 
 # Alle Dateien in lektionen/ sind Übungschecks und teilen dasselbe Layout.
 # Die Aufgaben selbst stehen in assets/checks/*.json (Format: siehe README.md).

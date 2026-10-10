@@ -16,4 +16,4 @@ Hier finden Sie kurze Übungschecks zu jeder Einheit im Modul Informatik Grundla
 
 Ein Check dauert 4 bis 10 Minuten und dient der Standortbestimmung: Sie sehen, was Sie schon sicher können und wo Sie noch nachfragen sollten.
 
-Die Nummern der Einheiten entsprechen den Kursblöcken. Block 5 (PC-Zusammenbau) ist ein Praktikum und hat deshalb keine Übungschecks.
+Die Nummern der Einheiten entsprechen den Kursblöcken.

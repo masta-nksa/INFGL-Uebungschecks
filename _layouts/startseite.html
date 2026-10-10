@@ -16,7 +16,15 @@ layout: default
 
   <h2 class="section-title">Einheiten</h2>
   <ol class="lektion-list">
-    {%- for l in lektionen %}
+    {%- comment -%}
+      Der Reihe nach über die Nummern gehen: Zu einer Nummer gibt es entweder eine
+      Einheitsseite oder einen Eintrag in site.einheiten_ohne_seite (nicht klickbar).
+    {%- endcomment -%}
+    {%- assign letzte = lektionen | last -%}
+    {%- for nr in (1..letzte.lektion) %}
+    {%- assign l = lektionen | where: "lektion", nr | first -%}
+    {%- assign ohne = site.einheiten_ohne_seite | where: "lektion", nr | first -%}
+    {%- if l %}
     <li>
       <a href="{{ l.url | relative_url }}">
         <span class="lektion-nr">{{ l.lektion }}</span>
@@ -27,6 +35,17 @@ layout: default
         <span class="lektion-pfeil" aria-hidden="true">&rarr;</span>
       </a>
     </li>
+    {%- elsif ohne %}
+    <li>
+      <div class="lektion-ohne-seite">
+        <span class="lektion-nr">{{ ohne.lektion }}</span>
+        <span class="lektion-body">
+          <strong>{{ ohne.titel }}</strong>
+          <span class="lektion-kurz">{{ ohne.kurz }}</span>
+        </span>
+      </div>
+    </li>
+    {%- endif %}
     {%- endfor %}
   </ol>
 
