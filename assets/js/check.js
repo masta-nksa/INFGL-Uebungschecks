@@ -69,6 +69,14 @@
     return ohneFuehrendeNullen(s);
   }
 
+  // IPv4-Adresse oder Netzmaske: vier Dezimalzahlen von 0 bis 255, durch Punkte getrennt.
+  function ipTeile(roh) {
+    var s = sauber(roh).replace(/\s+/g, '').replace(/,/g, '.');
+    if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(s)) return null;
+    var teile = s.split('.').map(Number);
+    return teile.every(function (n) { return n <= 255; }) ? teile : null;
+  }
+
   function textNorm(roh) {
     return sauber(roh).toLowerCase().replace(/[«»"'’.,;:!?()]/g, '').replace(/\s+/g, ' ');
   }
@@ -120,6 +128,15 @@
         return null;
       },
       gleich: function (roh, soll) { return ohneFuehrendeNullen(rohziffern(roh)) === ohneFuehrendeNullen(rohziffern(String(soll))); }
+    },
+    ip: {
+      fehler: function (roh) {
+        return ipTeile(roh) ? null : 'Bitte vier Zahlen von 0 bis 255 eingeben, getrennt durch Punkte (z. B. 192.168.1.20).';
+      },
+      gleich: function (roh, soll) {
+        var a = ipTeile(roh), b = ipTeile(String(soll));
+        return !!a && !!b && a.join('.') === b.join('.');
+      }
     },
     text: {
       fehler: function () { return null; },

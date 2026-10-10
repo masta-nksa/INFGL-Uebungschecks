@@ -1,0 +1,217 @@
+{
+  "id": "R4",
+  "titel": "Repeater, Hub, Switch, Router und Gateway",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Welches aktive Netzwerkelement ist gemeint?",
+      "optionen": ["Repeater", "Hub", "Switch", "Router", "Gateway"],
+      "spalte": "Aufgabe",
+      "antwortspalte": "Element",
+      "zeilen": [
+        {
+          "text": "Verbindet Netzwerke untereinander und sucht anhand der IP-Adresse den besten Weg.",
+          "antwort": "Router",
+          "tipp": "Gesucht ist das Element, das eine Wegweiser-Tabelle für Netze führt."
+        },
+        {
+          "text": "Reiner Signalverstärker: frischt ein abgeschwächtes Signal auf, ohne die Daten zu verändern.",
+          "antwort": "Repeater",
+          "tipp": "Der englische Name beschreibt die Aufgabe: Das Signal wird «wiederholt»."
+        },
+        {
+          "text": "Leitet einen Frame anhand der MAC-Adresse nur in das betroffene Segment weiter.",
+          "antwort": "Switch",
+          "tipp": "Gesucht ist das Element mit einer Adresstabelle für MAC-Adressen."
+        },
+        {
+          "text": "Packt die Daten neu, damit zwei unterschiedliche Architekturen miteinander kommunizieren können.",
+          "antwort": "Gateway",
+          "tipp": "Dieses Element muss den Inhalt verstehen und arbeitet deshalb bis zur obersten Schicht."
+        },
+        {
+          "text": "Verbindet mehrere Stationen sternförmig und gibt jedes Signal an alle Anschlüsse weiter.",
+          "antwort": "Hub",
+          "tipp": "Dieses Element wertet keine Adressen aus. Es ist ein Repeater mit mehreren Anschlüssen."
+        }
+      ]
+    },
+    {
+      "typ": "tabelle",
+      "frage": "Bis zu welcher OSI-Schicht arbeitet das Element? Tragen Sie die Nummer der höchsten Schicht ein.",
+      "kopf": [
+        "Element",
+        "höchste OSI-Schicht"
+      ],
+      "zeilen": [
+        [
+          "Switch",
+          {
+            "format": "zahl",
+            "antwort": 2,
+            "tipp": "Ein Switch arbeitet mit MAC-Adressen. Auf welcher Schicht liegt diese Adresse?",
+            "haeufig": [
+              {
+                "wert": 3,
+                "tipp": "Auf Schicht 3 liegen die IP-Adressen. Ein Switch wertet eine andere Adresse aus."
+              }
+            ]
+          }
+        ],
+        [
+          "Repeater",
+          {
+            "format": "zahl",
+            "antwort": 1,
+            "tipp": "Ein Repeater kennt keine Adressen, er arbeitet nur mit dem Signal."
+          }
+        ],
+        [
+          "Gateway",
+          {
+            "format": "zahl",
+            "antwort": 7,
+            "tipp": "Ein Gateway packt die Daten neu. Dazu muss es alle Schichten durchlaufen."
+          }
+        ],
+        [
+          "Router",
+          {
+            "format": "zahl",
+            "antwort": 3,
+            "tipp": "Ein Router arbeitet mit IP-Adressen. Auf welcher Schicht liegt diese Adresse?",
+            "haeufig": [
+              {
+                "wert": 2,
+                "tipp": "Auf Schicht 2 liegen die MAC-Adressen. Ein Router wertet eine andere Adresse aus."
+              }
+            ]
+          }
+        ],
+        [
+          "Hub",
+          {
+            "format": "zahl",
+            "antwort": 1,
+            "tipp": "Ein Hub gibt Signale an alle weiter, ohne Adressen zu lesen."
+          }
+        ]
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Vier PCs sind an einen Hub angeschlossen. Welche Aussage über die Topologie trifft zu?",
+      "optionen": [
+        {
+          "text": "Physikalisch ein Bus, logisch ein Stern",
+          "warum": "Es ist genau umgekehrt. Überlegen Sie: Wie sind die Kabel verlegt, und wer erhält jedes Signal?"
+        },
+        {
+          "text": "Physikalisch und logisch ein Stern",
+          "warum": "Die Kabel bilden zwar einen Stern. Ein Hub gibt aber jedes Signal an alle weiter, wie wenn alle am selben Kabel hingen."
+        },
+        {
+          "text": "Physikalisch ein Stern, logisch ein Bus",
+          "richtig": true
+        },
+        {
+          "text": "Physikalisch ein Ring, logisch ein Stern",
+          "warum": "Die Kabel führen alle zu einem zentralen Gerät und bilden keinen geschlossenen Kreis."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "An einem Switch hängen an den Anschlüssen 1 bis 4 die PCs von Ana, Björn, Chiara und Deniz. Die Adresstabelle des Switches ist vollständig. Ana schickt einen Frame an Chiara. An welche Anschlüsse gibt der Switch den Frame aus?",
+      "optionen": [
+        {
+          "text": "Nur an Anschluss 3",
+          "richtig": true
+        },
+        {
+          "text": "An die Anschlüsse 2, 3 und 4",
+          "warum": "So würde ein Hub arbeiten. Ein Switch kennt dank der Adresstabelle den richtigen Anschluss."
+        },
+        {
+          "text": "An alle vier Anschlüsse",
+          "warum": "Ein Switch schickt den Frame nicht an alle, und schon gar nicht zurück an die Absenderin."
+        },
+        {
+          "text": "An keinen, weil Ana und Chiara im selben Netzwerk sind",
+          "warum": "Im selben Netzwerk ist kein Router nötig. Der Switch muss den Frame aber trotzdem zustellen."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Der PC <code>192.168.30.14</code> (Netzmaske <code>255.255.255.0</code>) will Daten an <code>192.168.40.14</code> senden. Beide Netze sind bisher nur je an einem eigenen Switch angeschlossen. Welches Element braucht es zusätzlich?",
+      "optionen": [
+        {
+          "text": "Einen Repeater, der das Signal verstärkt",
+          "warum": "Ein Repeater verlängert ein Netz. Hier liegt das Ziel aber in einem anderen Netzwerk."
+        },
+        {
+          "text": "Einen dritten Switch, der die beiden Switches verbindet",
+          "warum": "Ein Switch arbeitet innerhalb eines Netzwerks. Vergleichen Sie die Netzteile der beiden Adressen."
+        },
+        {
+          "text": "Einen Hub, der die Frames an alle weitergibt",
+          "warum": "Ein Hub arbeitet nur auf Schicht 1 und kann keine Netzwerke verbinden."
+        },
+        {
+          "text": "Einen Router, der die beiden Netzwerke verbindet",
+          "richtig": true
+        }
+      ],
+      "tipp": "Bestimmen Sie mit der Netzmaske, ob Sender und Ziel im selben Netzwerk liegen."
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Aus welchen Gründen setzt man aktive Netzwerkelemente ein?",
+      "optionen": [
+        {
+          "text": "Um die physikalische Ausdehnung eines Netzes zu erweitern",
+          "richtig": true
+        },
+        {
+          "text": "Um IP-Adressen automatisch zu vergeben",
+          "warum": "Das ist die Aufgabe des Dienstes DHCP, nicht der Grund für ein aktives Netzwerkelement."
+        },
+        {
+          "text": "Um eine Verbindung zu einer anderen Topologie herzustellen",
+          "richtig": true
+        },
+        {
+          "text": "Um sich an ein anderes Netzwerk anzuschliessen",
+          "richtig": true
+        },
+        {
+          "text": "Um Namen wie www.fhnw.ch in IP-Adressen zu übersetzen",
+          "warum": "Das ist die Aufgabe des Dienstes DNS."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was bedeutet «Mikrosegmentierung» bei einem Switch?",
+      "optionen": [
+        {
+          "text": "Ein Paket wird in sehr kleine Fragmente zerlegt.",
+          "warum": "Das Zerlegen von Paketen heisst Fragmentierung und ist Sache des Routers."
+        },
+        {
+          "text": "An jedem Anschluss des Switches hängt genau ein Gerät.",
+          "richtig": true
+        },
+        {
+          "text": "Ein Netz wird mit einer längeren Netzmaske in Subnetze unterteilt.",
+          "warum": "Das ist Subnetting. Es geschieht auf Schicht 3 mit IP-Adressen, nicht im Switch."
+        },
+        {
+          "text": "Der Switch verstärkt das Signal für sehr kurze Kabel.",
+          "warum": "Segmentierung hat mit der Unterteilung des Netzes zu tun, nicht mit der Signalstärke."
+        }
+      ]
+    }
+  ]
+}

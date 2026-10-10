@@ -1,0 +1,158 @@
+{
+  "id": "R3",
+  "titel": "Netzarten, Topologien und Übertragungsmedien",
+  "aufgaben": [
+    {
+      "typ": "wahl",
+      "frage": "Was versteht man unter der «Topologie» eines Netzes?",
+      "optionen": [
+        {
+          "text": "Die Geschwindigkeit, mit der Daten im Netz übertragen werden",
+          "warum": "Die Geschwindigkeit hängt vom Medium und von den Geräten ab. Die Topologie beschreibt etwas Räumliches."
+        },
+        {
+          "text": "Die Anordnung der Geräte und ihrer Verbindungen im Netz",
+          "richtig": true
+        },
+        {
+          "text": "Die Regeln, nach denen zwei Geräte Daten austauschen",
+          "warum": "Das ist ein Protokoll."
+        },
+        {
+          "text": "Die Aufteilung einer IP-Adresse in Netzteil und Hostteil",
+          "warum": "Das leistet die Netzmaske. Die Topologie hat nichts mit Adressen zu tun."
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Zu welcher Topologie gehört die Aussage?",
+      "optionen": ["Bus", "Ring", "Stern"],
+      "spalte": "Aussage",
+      "antwortspalte": "Topologie",
+      "radio": true,
+      "zeilen": [
+        {
+          "text": "Alle Rechner sind an eine zentrale Vermittlungsstelle angeschlossen.",
+          "antwort": "Stern",
+          "tipp": "Stellen Sie sich die Verkabelung von oben vor: In der Mitte steht ein Gerät, von dem alle Kabel ausgehen."
+        },
+        {
+          "text": "Der Netzzugang wird mit einem Token (Berechtigungsmarke) geregelt.",
+          "antwort": "Ring",
+          "tipp": "Das Token wird von Station zu Station weitergereicht und kommt am Schluss wieder beim Anfang an."
+        },
+        {
+          "text": "Es braucht T-Stücke und Abschlusswiderstände.",
+          "antwort": "Bus",
+          "tipp": "Abschlusswiderstände braucht es dort, wo ein gemeinsames Kabel zwei Enden hat."
+        },
+        {
+          "text": "Fällt die Zentrale aus, geht gar nichts mehr.",
+          "antwort": "Stern",
+          "tipp": "Welche Topologie hat überhaupt eine Zentrale?"
+        },
+        {
+          "text": "Jede Station hat einen Vorgänger und einen Nachfolger.",
+          "antwort": "Ring",
+          "tipp": "Vorgänger und Nachfolger für jede Station gibt es nur, wenn die Verbindung in sich geschlossen ist."
+        },
+        {
+          "text": "Das Zugriffsverfahren ist CSMA/CD; bei vielen Stationen wird das gemeinsame Kabel zum Engpass.",
+          "antwort": "Bus",
+          "tipp": "Ein Engpass entsteht, wenn sich alle Stationen ein einziges Kabel teilen."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "In einem Büro sind 6 PCs je mit einem eigenen Kabel an einen Switch angeschlossen. Eine Putzmaschine durchtrennt das Kabel von PC 4. Was ist die Folge?",
+      "optionen": [
+        {
+          "text": "Alle 6 PCs verlieren die Verbindung.",
+          "warum": "Das wäre bei einem gemeinsamen Kabel so. Hier hat jeder PC ein eigenes Kabel zur Zentrale."
+        },
+        {
+          "text": "Die PCs 4, 5 und 6 verlieren die Verbindung.",
+          "warum": "Die PCs hängen nicht hintereinander. Jeder ist einzeln mit dem Switch verbunden."
+        },
+        {
+          "text": "Nur PC 4 verliert die Verbindung.",
+          "richtig": true
+        },
+        {
+          "text": "Kein PC verliert die Verbindung, der Switch leitet die Daten um.",
+          "warum": "PC 4 hat nur dieses eine Kabel. Ohne Kabel gibt es keinen anderen Weg zu ihm."
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie jeder Beschreibung das passende Übertragungsmedium zu.",
+      "optionen": ["Twisted-Pair-Kabel", "Koaxialkabel", "Lichtwellenleiter (Glasfaser)"],
+      "spalte": "Beschreibung",
+      "antwortspalte": "Medium",
+      "zeilen": [
+        {
+          "text": "Wird mit einem BNC-Stecker angeschlossen.",
+          "antwort": "Koaxialkabel",
+          "tipp": "BNC-Stecker gehören zum Kabel der früheren Busnetze."
+        },
+        {
+          "text": "Eine Leuchtdiode sendet, ein Fototransistor empfängt.",
+          "antwort": "Lichtwellenleiter (Glasfaser)",
+          "tipp": "Hier wird kein Strom übertragen, sondern Licht."
+        },
+        {
+          "text": "Wird mit einem RJ45-Stecker angeschlossen (z. B. Cat-5).",
+          "antwort": "Twisted-Pair-Kabel",
+          "tipp": "Das ist das heute übliche Netzwerkkabel mit verdrillten Kupferadern."
+        }
+      ]
+    },
+    {
+      "typ": "felder",
+      "frage": "Wie lang darf ein LAN-Segment mit Twisted-Pair-Kabel (100BASE-T) höchstens sein?",
+      "felder": [
+        {
+          "label": "Höchstens",
+          "format": "zahl",
+          "antwort": 100,
+          "nach": "m",
+          "tipp": "Die Länge ist eine runde Zahl in der Grössenordnung eines Fussballfelds. Für längere Strecken braucht es aktive Netzwerkelemente.",
+          "haeufig": [
+            {
+              "wert": 1000,
+              "tipp": "Ein Kilometer ist für ein Kupferkabel dieser Art zu viel. Das Signal wäre zu stark abgeschwächt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "LAN oder WAN?",
+      "optionen": ["LAN", "WAN"],
+      "spalte": "Netz",
+      "antwortspalte": "Art",
+      "radio": true,
+      "zeilen": [
+        {
+          "text": "Das Netz in einem Schulhaus",
+          "antwort": "LAN",
+          "tipp": "L steht für «Local», W für «Wide». Wie gross ist die Ausdehnung dieses Netzes?"
+        },
+        {
+          "text": "Die Verbindung zwischen den Standorten einer Firma in Basel, Genf und Wien",
+          "antwort": "WAN",
+          "tipp": "L steht für «Local», W für «Wide». Wie gross ist die Ausdehnung dieses Netzes?"
+        },
+        {
+          "text": "Laptop, Handy und Drucker am WLAN-Router zu Hause",
+          "antwort": "LAN",
+          "tipp": "L steht für «Local», W für «Wide». Wie gross ist die Ausdehnung dieses Netzes?"
+        }
+      ]
+    }
+  ]
+}

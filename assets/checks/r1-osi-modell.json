@@ -1,0 +1,191 @@
+{
+  "id": "R1",
+  "titel": "Das OSI-Modell",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Wie heissen die sieben Schichten des OSI-Modells? Ordnen Sie jeder Nummer den Namen zu.",
+      "optionen": [
+        "Anwendung (Application)",
+        "Bitübertragung (Physical)",
+        "Darstellung (Presentation)",
+        "Kommunikation (Session)",
+        "Sicherung (Data Link)",
+        "Transport (Transport)",
+        "Vermittlung (Network)"
+      ],
+      "spalte": "Schicht",
+      "antwortspalte": "Name",
+      "tipp": "Merksatz von unten nach oben: «Please Do Not Throw Sausage Pizza Away».",
+      "zeilen": [
+        {
+          "text": "Schicht 7 (zuoberst)",
+          "antwort": "Anwendung (Application)"
+        },
+        {
+          "text": "Schicht 6",
+          "antwort": "Darstellung (Presentation)"
+        },
+        {
+          "text": "Schicht 5",
+          "antwort": "Kommunikation (Session)"
+        },
+        {
+          "text": "Schicht 4",
+          "antwort": "Transport (Transport)"
+        },
+        {
+          "text": "Schicht 3",
+          "antwort": "Vermittlung (Network)"
+        },
+        {
+          "text": "Schicht 2",
+          "antwort": "Sicherung (Data Link)"
+        },
+        {
+          "text": "Schicht 1 (zuunterst)",
+          "antwort": "Bitübertragung (Physical)"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Welche Schicht erledigt diese Aufgabe?",
+      "optionen": [
+        "1 Bitübertragung",
+        "2 Sicherung",
+        "3 Vermittlung",
+        "4 Transport",
+        "5 Kommunikation",
+        "6 Darstellung",
+        "7 Anwendung"
+      ],
+      "spalte": "Aufgabe",
+      "antwortspalte": "Schicht",
+      "zeilen": [
+        {
+          "text": "Pakete adressieren und den Weg zum Ziel finden (Routing)",
+          "antwort": "3 Vermittlung",
+          "tipp": "Auf dieser Schicht arbeitet das Protokoll IP."
+        },
+        {
+          "text": "Datenformate übersetzen, verschlüsseln und komprimieren",
+          "antwort": "6 Darstellung",
+          "tipp": "Es geht darum, in welcher Form die Daten dargestellt sind, damit die Gegenseite sie lesen kann."
+        },
+        {
+          "text": "Eine physikalische Verbindung über Kupfer, Glasfaser oder Luft bereitstellen",
+          "antwort": "1 Bitübertragung",
+          "tipp": "Hier geht es um Signale und Medien, also um die unterste Schicht."
+        },
+        {
+          "text": "Fehlergesicherte Übertragung mit TCP oder ungesichert mit UDP",
+          "antwort": "4 Transport",
+          "tipp": "TCP und UDP gehören zur gleichen Schicht. Sie liegt direkt über der Schicht mit dem Protokoll IP."
+        },
+        {
+          "text": "Den Bitstrom in Rahmen (Frames) aufteilen und mit einer Prüfsumme versehen",
+          "antwort": "2 Sicherung",
+          "tipp": "Diese Schicht liegt direkt über der Bitübertragung und sichert deren Bitstrom."
+        },
+        {
+          "text": "Eine Sitzung zwischen zwei Partnern auf- und abbauen",
+          "antwort": "5 Kommunikation",
+          "tipp": "Der englische Name dieser Schicht ist «Session»."
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Auf welcher Schicht wird mit dieser Adresse gearbeitet?",
+      "optionen": ["Schicht 2", "Schicht 3", "Schicht 4"],
+      "spalte": "Adresse",
+      "antwortspalte": "Schicht",
+      "radio": true,
+      "zeilen": [
+        {
+          "text": "Portnummer",
+          "antwort": "Schicht 4",
+          "tipp": "Ports bezeichnen einen Dienst auf einem Rechner. Welche Schicht übergibt die Daten an ein Programm (TCP, UDP)?"
+        },
+        {
+          "text": "MAC-Adresse",
+          "antwort": "Schicht 2",
+          "tipp": "Die MAC-Adresse gehört zur Netzwerkkarte und gilt nur im lokalen Netz, also weit unten im Modell."
+        },
+        {
+          "text": "IP-Adresse",
+          "antwort": "Schicht 3",
+          "tipp": "Auf welcher Schicht arbeitet das Protokoll IP, das die Pakete adressiert?"
+        }
+      ]
+    },
+    {
+      "typ": "felder",
+      "frage": "Wie viele Bit belegt eine MAC-Adresse?",
+      "felder": [
+        {
+          "label": "Eine MAC-Adresse hat",
+          "format": "zahl",
+          "antwort": 48,
+          "nach": "Bit.",
+          "tipp": "Eine MAC-Adresse wird als 6 Bytes in Hexadezimalschreibweise notiert, z. B. 00-1B-44-11-3A-B7.",
+          "haeufig": [
+            {
+              "wert": 32,
+              "tipp": "32 Bit hat eine IPv4-Adresse. Die MAC-Adresse ist länger."
+            },
+            {
+              "wert": 6,
+              "tipp": "6 ist die Anzahl Bytes. Gefragt ist die Anzahl Bit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was geschieht mit den Daten, wenn sie beim Senden von Schicht 7 nach unten bis Schicht 1 wandern?",
+      "optionen": [
+        {
+          "text": "Jede Schicht entfernt den Header der darüberliegenden Schicht.",
+          "warum": "Header werden beim Empfangen entfernt, auf dem Weg nach oben."
+        },
+        {
+          "text": "Jede Schicht stellt den Daten ihren eigenen Header voran.",
+          "richtig": true
+        },
+        {
+          "text": "Die Daten werden auf jeder Schicht neu verschlüsselt.",
+          "warum": "Verschlüsselung ist die Aufgabe einer einzelnen Schicht (Darstellung), nicht jeder Schicht."
+        },
+        {
+          "text": "Die Daten bleiben unverändert, nur Schicht 1 fügt Adressen hinzu.",
+          "warum": "Schicht 1 überträgt nur Bits. Adressen kommen auf den Schichten darüber hinzu."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Worin unterscheiden sich TCP und UDP?",
+      "optionen": [
+        {
+          "text": "TCP arbeitet auf Schicht 4, UDP auf Schicht 3.",
+          "warum": "Beide sind Transportprotokolle und arbeiten auf derselben Schicht."
+        },
+        {
+          "text": "TCP ist verbindungslos, UDP ist verbindungsorientiert.",
+          "warum": "Es ist genau umgekehrt."
+        },
+        {
+          "text": "TCP verwendet IP-Adressen, UDP verwendet MAC-Adressen.",
+          "warum": "Beide Transportprotokolle arbeiten mit Portnummern."
+        },
+        {
+          "text": "TCP ist verbindungsorientiert, UDP ist verbindungslos.",
+          "richtig": true
+        }
+      ]
+    }
+  ]
+}

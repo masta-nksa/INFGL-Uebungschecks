@@ -1,0 +1,185 @@
+{
+  "id": "R2",
+  "titel": "TCP/IP, Protokollköpfe und HTTP",
+  "aufgaben": [
+    {
+      "typ": "wahl",
+      "frage": "Die Protokollfamilie TCP/IP bildet die technische Grundlage des Internets. Wofür steht die Abkürzung «TCP»?",
+      "optionen": [
+        {
+          "text": "Transfer Control Protocol",
+          "warum": "Das erste Wort stimmt nicht ganz. Gesucht ist das englische Wort für «Übertragung», nicht für «Überweisung»."
+        },
+        {
+          "text": "Transmission Contact Protocol",
+          "warum": "Das mittlere Wort stimmt nicht: Das Protokoll steuert die Übertragung."
+        },
+        {
+          "text": "Transmission Control Protocol",
+          "richtig": true
+        },
+        {
+          "text": "Transport Connection Protocol",
+          "warum": "TCP arbeitet zwar auf der Transportschicht und ist verbindungsorientiert, der Name lautet aber anders."
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Die TCP/IP-Architektur hat vier Ebenen. Auf welcher Ebene liegt das Protokoll?",
+      "optionen": ["Application Level", "Transmission Level", "Internet Level", "Network Level"],
+      "spalte": "Protokoll",
+      "antwortspalte": "Ebene",
+      "zeilen": [
+        {
+          "text": "IP",
+          "antwort": "Internet Level",
+          "tipp": "IP steht für «Internet Protocol»."
+        },
+        {
+          "text": "UDP",
+          "antwort": "Transmission Level",
+          "tipp": "UDP ist wie TCP ein Transportprotokoll (OSI-Schicht 4)."
+        },
+        {
+          "text": "Ethernet",
+          "antwort": "Network Level",
+          "tipp": "Ethernet regelt die Übertragung im lokalen Netz und entspricht den untersten beiden OSI-Schichten."
+        },
+        {
+          "text": "HTTP",
+          "antwort": "Application Level",
+          "tipp": "HTTP wird direkt vom Browser verwendet, also von einer Anwendung."
+        },
+        {
+          "text": "TCP",
+          "antwort": "Transmission Level",
+          "tipp": "TCP steuert die Übertragung zwischen zwei Programmen (OSI-Schicht 4)."
+        },
+        {
+          "text": "Electronic Mail",
+          "antwort": "Application Level",
+          "tipp": "E-Mail ist ein Dienst, den die Benutzerin direkt verwendet."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Welchen OSI-Schichten entspricht die oberste Ebene der TCP/IP-Architektur (Application Level)?",
+      "optionen": [
+        {
+          "text": "Nur der Schicht 7",
+          "warum": "TCP/IP hat nur vier Ebenen für die sieben OSI-Schichten. Die oberste Ebene fasst deshalb mehrere Schichten zusammen."
+        },
+        {
+          "text": "Den Schichten 5 bis 7",
+          "richtig": true
+        },
+        {
+          "text": "Den Schichten 4 bis 7",
+          "warum": "Die Schicht 4 (Transport) hat in TCP/IP eine eigene Ebene, auf der TCP und UDP liegen."
+        },
+        {
+          "text": "Den Schichten 1 bis 2",
+          "warum": "Das sind die untersten Schichten. Sie entsprechen der untersten TCP/IP-Ebene."
+        }
+      ]
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Welche dieser Angaben finden sich im TCP-Header?",
+      "optionen": [
+        {
+          "text": "Empfängerport",
+          "richtig": true
+        },
+        {
+          "text": "Lebenszeit",
+          "warum": "Die Lebenszeit wird von jedem Router heruntergezählt. Router arbeiten auf Schicht 3, das Feld steht im IP-Header."
+        },
+        {
+          "text": "Quittungsnummer",
+          "richtig": true
+        },
+        {
+          "text": "Fenstergrösse",
+          "richtig": true
+        },
+        {
+          "text": "Empfängeradresse (IP-Nummer)",
+          "warum": "Adressen von Rechnern stehen im IP-Header. Der TCP-Header enthält die Adressen der Dienste."
+        },
+        {
+          "text": "Sequenznummer",
+          "richtig": true
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Ein Browser sendet diese Anfrage an einen Webserver:<br><code>GET /bilder/logo.gif HTTP/1.0</code><br>Was verlangt er damit?",
+      "optionen": [
+        {
+          "text": "Er will die Datei /bilder/logo.gif auf dem Server speichern.",
+          "warum": "GET heisst «holen». Zum Senden von Daten an den Server gibt es andere Methoden."
+        },
+        {
+          "text": "Er will die IP-Adresse des Servers erfahren.",
+          "warum": "Namen in IP-Adressen übersetzen ist die Aufgabe von DNS, nicht von HTTP."
+        },
+        {
+          "text": "Er will die Datei /bilder/logo.gif vom Server abrufen.",
+          "richtig": true
+        },
+        {
+          "text": "Er will die Verbindung zum Server verschlüsseln.",
+          "warum": "Eine einzelne HTTP-Anfrage verschlüsselt nichts. Verschlüsselt wird bei HTTPS die ganze Verbindung."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Der Webserver antwortet mit der Zeile <code>HTTP/1.0 200 OK</code>. Was bedeutet «200 OK»?",
+      "optionen": [
+        {
+          "text": "Die Anfrage war erfolgreich, das gewünschte Dokument folgt.",
+          "richtig": true
+        },
+        {
+          "text": "Das Dokument ist 200 Byte gross.",
+          "warum": "Die Grösse steht in einer eigenen Zeile (Content-Length). 200 ist ein Statuscode."
+        },
+        {
+          "text": "Die Antwort wird über den Port 200 gesendet.",
+          "warum": "Ports stehen im TCP-Header, nicht in der HTTP-Antwort. 200 ist ein Statuscode."
+        },
+        {
+          "text": "Die Antwort hat 200 Millisekunden gedauert.",
+          "warum": "HTTP meldet keine Laufzeiten. 200 ist ein Statuscode."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was ist der wesentliche Unterschied zwischen HTTP und HTTPS?",
+      "optionen": [
+        {
+          "text": "HTTPS ist schneller, weil die Daten komprimiert werden.",
+          "warum": "Das «S» steht nicht für Geschwindigkeit, sondern für «Secure»."
+        },
+        {
+          "text": "HTTPS arbeitet auf OSI-Schicht 3 statt auf Schicht 7.",
+          "warum": "Beide sind Anwendungsprotokolle auf Schicht 7."
+        },
+        {
+          "text": "Bei HTTPS kann der Browser Dateien nur abrufen, nicht senden.",
+          "warum": "Die Methoden (GET, POST …) sind bei beiden dieselben."
+        },
+        {
+          "text": "Bei HTTPS wird die Verbindung verschlüsselt.",
+          "richtig": true
+        }
+      ]
+    }
+  ]
+}

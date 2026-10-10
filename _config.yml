@@ -1,7 +1,9 @@
 # ---------------------------------------------------------------------------
 #  Übungschecks Informatik Grundlagen – wird laufend um weitere Einheiten
 #  ergänzt (Stand: Zahlensysteme, Hardware/Software, Verschlüsselung,
-#  Netzwerktechnik-Grundlagen)
+#  Netzwerktechnik-Grundlagen, IP-Netze und Subnetting, OSI/Router/Switch).
+#  Die Nummern der Einheiten folgen den Kursblöcken; Block 5 (PC-Zusammenbau)
+#  ist ein Praktikum und fehlt deshalb.
 #  Jekyll-Konfiguration für GitHub Pages
 # ---------------------------------------------------------------------------
 

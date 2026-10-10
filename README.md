@@ -47,7 +47,7 @@ was keinen eigenen hat) sowie `weg` (Kurz-Rechenweg, erscheint nach der richtige
 | Eigenschaft | Bedeutung |
 |---|---|
 | `label`, `nach` | Text vor und nach dem Eingabefeld |
-| `format` | `zahl`, `bin`, `hex`, `ziffern`, `mantisse` oder `text` |
+| `format` | `zahl`, `bin`, `hex`, `ziffern`, `mantisse`, `ip` oder `text` |
 | `antwort` | richtige Antwort, bei mehreren gültigen Schreibweisen eine Liste |
 | `tipp` | Tipp bei falscher Antwort |
 | `haeufig` | Liste von `{wert, tipp}`: Tipp für einen bekannten Fehler (hat Vorrang vor `tipp`) |
@@ -63,6 +63,8 @@ Was das Prüfen alles akzeptiert:
   (`5/8`, `2^34`, `16*2^30`), eine nachgestellte Einheit (`931 GiB`).
 - **`bin`, `hex`, `ziffern`:** Trenner (`1100'1010`, `1100 1010`), Präfix `0b`/`0x`,
   Suffix `b`/`h`, tiefgestellte Basis (`₂`), Gross- und Kleinschreibung bei Hex.
+- **`ip`:** IPv4-Adresse oder Netzmaske als vier Zahlen von 0 bis 255 mit Punkten
+  (`192.168.1.20`); führende Nullen und Leerzeichen stören nicht.
 - **`text`:** Gross-/Kleinschreibung und Satzzeichen werden ignoriert.
 
 Nach jeder Änderung an einer Datei in `assets/checks/` lohnt sich ein Blick in die Seite:

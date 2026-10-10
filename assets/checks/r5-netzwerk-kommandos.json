@@ -1,0 +1,123 @@
+{
+  "id": "R5",
+  "titel": "Netzwerk-Kommandos",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Mit welchem Kommando (Windows) finden Sie das heraus?",
+      "optionen": ["ipconfig /all", "nslookup", "tracert", "netstat"],
+      "spalte": "Fragestellung",
+      "antwortspalte": "Kommando",
+      "zeilen": [
+        {
+          "text": "Welche IP-Adresse gehört zum Namen www.fhnw.ch?",
+          "antwort": "nslookup",
+          "tipp": "Gesucht ist das Kommando, das den Dienst DNS befragt. Sein Name enthält «ns» für «name server»."
+        },
+        {
+          "text": "Welche IP-Adresse und welche MAC-Adresse hat mein eigener Rechner?",
+          "antwort": "ipconfig /all",
+          "tipp": "Gesucht ist das Kommando, das die Konfiguration des eigenen Rechners anzeigt."
+        },
+        {
+          "text": "Über wie viele Router (Hops) führt der Weg zu einem Server?",
+          "antwort": "tracert",
+          "tipp": "Gesucht ist das Kommando, das eine Route nachverfolgt («trace route»)."
+        },
+        {
+          "text": "Welche Verbindungen und Ports sind auf meinem Rechner gerade aktiv?",
+          "antwort": "netstat",
+          "tipp": "Gesucht ist das Kommando für die Netzwerk-Statistik des eigenen Rechners."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "In der Ausgabe von <code>ipconfig /all</code> steht die Zeile «Physische Adresse: 8C-16-45-2B-90-E3». Was ist das?",
+      "optionen": [
+        {
+          "text": "Die IPv6-Adresse des Rechners",
+          "warum": "Eine IPv6-Adresse hat 8 Blöcke zu je 16 Bit, getrennt durch Doppelpunkte. Hier stehen 6 Bytes."
+        },
+        {
+          "text": "Die Adresse des DHCP-Servers",
+          "warum": "Der DHCP-Server wird mit seiner IP-Adresse in einer eigenen Zeile angezeigt."
+        },
+        {
+          "text": "Die MAC-Adresse der Netzwerkkarte",
+          "richtig": true
+        },
+        {
+          "text": "Die Portnummer des Rechners",
+          "warum": "Eine Portnummer ist eine einzelne Zahl und gehört zu einem Dienst, nicht zur Hardware."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "In derselben Ausgabe steht «DHCP aktiviert: Ja». Was bedeutet das?",
+      "optionen": [
+        {
+          "text": "Der Rechner hat seine IP-Adresse automatisch von einem DHCP-Server erhalten.",
+          "richtig": true
+        },
+        {
+          "text": "Der Rechner verteilt selbst IP-Adressen an andere Geräte.",
+          "warum": "Die Zeile beschreibt den Rechner als Client, nicht als Server."
+        },
+        {
+          "text": "Die Verbindung des Rechners ist verschlüsselt.",
+          "warum": "DHCP hat nichts mit Verschlüsselung zu tun. Es geht um die Vergabe von Adressen."
+        },
+        {
+          "text": "Die IP-Adresse wurde von Hand fest eingetragen.",
+          "warum": "Das wäre der Fall bei «DHCP aktiviert: Nein»."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Sie rufen <code>tracert</code> für einen Webserver auf und erhalten:<br><code>1 &nbsp; 3 ms &nbsp; 2 ms &nbsp; 2 ms &nbsp; 192.168.0.1</code><br><code>2 &nbsp; 11 ms &nbsp; 10 ms &nbsp; 12 ms &nbsp; 10.44.0.1</code><br><code>3 &nbsp; 16 ms &nbsp; 15 ms &nbsp; 15 ms &nbsp; 198.51.100.7</code><br>Was bedeuten die drei Zeitangaben in jeder Zeile?",
+      "optionen": [
+        {
+          "text": "Die Zeiten für Hinweg, Rückweg und die Summe von beiden",
+          "warum": "Dann müsste die dritte Zahl jeweils die Summe der ersten beiden sein. Rechnen Sie nach."
+        },
+        {
+          "text": "Die Zeiten von drei einzelnen Anfragen an diese Station",
+          "richtig": true
+        },
+        {
+          "text": "Die Zeiten zu den drei nächsten Stationen",
+          "warum": "Jede Station hat ihre eigene Zeile. Alle drei Zeiten einer Zeile gehören zur selben Station."
+        },
+        {
+          "text": "Stunden, Minuten und Sekunden seit dem Start",
+          "warum": "Die Einheit steht dabei: Es sind Millisekunden."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Zur selben <code>tracert</code>-Ausgabe: Welche Station ist sehr wahrscheinlich Ihr eigener Router (das Standardgateway)?",
+      "optionen": [
+        {
+          "text": "<code>198.51.100.7</code>",
+          "warum": "Die letzte Zeile ist das Ziel, also der Webserver."
+        },
+        {
+          "text": "<code>10.44.0.1</code>",
+          "warum": "Das ist bereits die zweite Station auf dem Weg. Der eigene Router kommt zuerst."
+        },
+        {
+          "text": "<code>192.168.0.1</code>",
+          "richtig": true
+        },
+        {
+          "text": "Keine, der eigene Router erscheint in der Ausgabe nie.",
+          "warum": "Der eigene Router ist die erste Zwischenstation jedes Pakets, das Ihr Netz verlässt."
+        }
+      ]
+    }
+  ]
+}

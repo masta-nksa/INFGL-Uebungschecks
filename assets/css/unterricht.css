@@ -818,6 +818,7 @@ a { color: var(--accent); }
 .check-eingabe.check-bin,
 .check-eingabe.check-mantisse { width: 14rem; }
 .check-eingabe.check-text     { width: 12rem; }
+.check-eingabe.check-ip       { width: 12rem; }
 .check-eingabe.breit          { width: 17rem; }
 .check-eingabe:focus-visible,
 .check-auswahl:focus-visible,

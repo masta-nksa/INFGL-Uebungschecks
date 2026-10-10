@@ -1,0 +1,239 @@
+{
+  "id": "I4",
+  "titel": "IP-Header, Fragmentierung und Portnummern",
+  "aufgaben": [
+    {
+      "typ": "mehrfach",
+      "frage": "Welche dieser Felder gehören zum IP-Header?",
+      "optionen": [
+        {
+          "text": "Lebenszeit",
+          "richtig": true
+        },
+        {
+          "text": "Sequenznummer",
+          "warum": "Die Sequenznummer nummeriert die Daten einer TCP-Verbindung. Sie steht im TCP-Header."
+        },
+        {
+          "text": "Fragmentabstand",
+          "richtig": true
+        },
+        {
+          "text": "Empfängeradresse (IP-Nummer)",
+          "richtig": true
+        },
+        {
+          "text": "Senderport",
+          "warum": "Ports bezeichnen Dienste und gehören zur Transportebene, also in den TCP-Header."
+        },
+        {
+          "text": "Kopfprüfsumme",
+          "richtig": true
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie jeder Beschreibung das passende Feld des IP-Headers zu.",
+      "optionen": ["Version", "Lebenszeit", "Kopfprüfsumme", "MF-Bit", "Fragmentabstand"],
+      "spalte": "Beschreibung",
+      "antwortspalte": "Feld",
+      "zeilen": [
+        {
+          "text": "Wird von jedem Router um 1 verkleinert. Bei 0 wird das Paket verworfen.",
+          "antwort": "Lebenszeit",
+          "tipp": "Gesucht ist das Feld, das verhindert, dass ein Paket endlos im Netz kreist."
+        },
+        {
+          "text": "Zeigt an, dass nach diesem Fragment noch weitere folgen.",
+          "antwort": "MF-Bit",
+          "tipp": "MF steht für «More Fragments»."
+        },
+        {
+          "text": "Gibt an, an welche Stelle des ursprünglichen Pakets ein Fragment gehört.",
+          "antwort": "Fragmentabstand",
+          "tipp": "Gesucht ist eine Positionsangabe, nicht ein einzelnes Bit."
+        },
+        {
+          "text": "Damit lassen sich Übertragungsfehler im Header erkennen.",
+          "antwort": "Kopfprüfsumme",
+          "tipp": "Fehler erkennt man mit einem Wert, der aus dem Inhalt berechnet und mitgeschickt wird."
+        },
+        {
+          "text": "Zeigt an, ob es sich um ein IPv4- oder ein IPv6-Paket handelt.",
+          "antwort": "Version",
+          "tipp": "Die 4 und die 6 in IPv4 und IPv6 sind Nummern wovon?"
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Weshalb muss ein Router ein IP-Paket manchmal fragmentieren?",
+      "optionen": [
+        {
+          "text": "Weil die Lebenszeit des Pakets abgelaufen ist.",
+          "warum": "Ist die Lebenszeit abgelaufen, wird das Paket verworfen, nicht zerlegt."
+        },
+        {
+          "text": "Weil das Paket grösser ist als die MTU des nächsten Netzes.",
+          "richtig": true
+        },
+        {
+          "text": "Weil die Kopfprüfsumme nicht stimmt.",
+          "warum": "Eine falsche Prüfsumme zeigt einen Übertragungsfehler an. Mit der Paketgrösse hat sie nichts zu tun."
+        },
+        {
+          "text": "Weil das Ziel in einem privaten Adressbereich liegt.",
+          "warum": "Private Adressen werden mit NAT übersetzt. Mit der Paketgrösse hat das nichts zu tun."
+        }
+      ]
+    },
+    {
+      "typ": "tabelle",
+      "frage": "Ein IP-Paket mit 960 Byte Daten (Bytes 0 bis 959) wird in drei Fragmente zu je 320 Byte Daten zerlegt. Ergänzen Sie MF-Bit und Fragment-Offset.",
+      "kopf": [
+        "Fragment",
+        "Datenbytes",
+        "MF-Bit",
+        "Fragment-Offset"
+      ],
+      "zeilen": [
+        [
+          "1",
+          "0 … 319",
+          {
+            "format": "zahl",
+            "antwort": 1,
+            "tipp": "Das MF-Bit ist 1, solange weitere Fragmente folgen."
+          },
+          {
+            "format": "zahl",
+            "antwort": 0,
+            "tipp": "Das erste Fragment beginnt ganz am Anfang des Pakets."
+          }
+        ],
+        [
+          "2",
+          "320 … 639",
+          {
+            "format": "zahl",
+            "antwort": 1,
+            "tipp": "Das MF-Bit ist 1, solange weitere Fragmente folgen."
+          },
+          {
+            "format": "zahl",
+            "antwort": 40,
+            "tipp": "Der Offset wird in Einheiten von 8 Byte gezählt.",
+            "haeufig": [
+              {
+                "wert": 320,
+                "tipp": "320 ist die Nummer des ersten Datenbytes. Der Offset zählt aber in Einheiten von 8 Byte."
+              },
+              {
+                "wert": 1,
+                "tipp": "Der Offset ist nicht die Nummer des Fragments, sondern seine Position im Paket, gezählt in Einheiten von 8 Byte."
+              }
+            ]
+          }
+        ],
+        [
+          "3",
+          "640 … 959",
+          {
+            "format": "zahl",
+            "antwort": 0,
+            "tipp": "Folgt nach dem letzten Fragment noch etwas?"
+          },
+          {
+            "format": "zahl",
+            "antwort": 80,
+            "tipp": "Der Offset wird in Einheiten von 8 Byte gezählt.",
+            "haeufig": [
+              {
+                "wert": 640,
+                "tipp": "640 ist die Nummer des ersten Datenbytes. Der Offset zählt aber in Einheiten von 8 Byte."
+              },
+              {
+                "wert": 2,
+                "tipp": "Der Offset ist nicht die Nummer des Fragments, sondern seine Position im Paket, gezählt in Einheiten von 8 Byte."
+              }
+            ]
+          }
+        ]
+      ],
+      "weg": "320 : 8 = 40 und 640 : 8 = 80. Nur beim letzten Fragment ist MF = 0."
+    },
+    {
+      "typ": "felder",
+      "frage": "Ein Fragment trägt den Fragment-Offset 25.",
+      "felder": [
+        {
+          "label": "Sein Datenteil beginnt bei Byte Nummer",
+          "format": "zahl",
+          "antwort": 200,
+          "nach": "des ursprünglichen Pakets.",
+          "tipp": "Der Offset zählt in Einheiten von 8 Byte.",
+          "haeufig": [
+            {
+              "wert": 25,
+              "tipp": "Der Offset ist nicht direkt die Bytenummer. Eine Offset-Einheit entspricht 8 Byte."
+            }
+          ]
+        }
+      ],
+      "weg": "25 · 8 = 200."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie jedem Dienst seine Portnummer zu.",
+      "optionen": ["23", "25", "80", "110"],
+      "spalte": "Dienst",
+      "antwortspalte": "Port",
+      "radio": true,
+      "zeilen": [
+        {
+          "text": "WWW (HTTP)",
+          "antwort": "80",
+          "tipp": "Die Portnummer für Webseiten ist zweistellig und grösser als die Nummern von Telnet und SMTP."
+        },
+        {
+          "text": "SMTP (E-Mail versenden)",
+          "antwort": "25",
+          "tipp": "Die beiden E-Mail-Dienste haben verschiedene Ports: Versenden liegt bei der kleineren Nummer."
+        },
+        {
+          "text": "POP3 (E-Mail abholen)",
+          "antwort": "110",
+          "tipp": "Die beiden E-Mail-Dienste haben verschiedene Ports: Abholen liegt bei der grösseren Nummer."
+        },
+        {
+          "text": "Telnet",
+          "antwort": "23",
+          "tipp": "Telnet ist ein sehr alter Dienst und liegt direkt hinter den beiden FTP-Ports 20 und 21."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was versteht man unter einem «Socket»?",
+      "optionen": [
+        {
+          "text": "Die Kombination aus IP-Adresse und Portnummer",
+          "richtig": true
+        },
+        {
+          "text": "Die Kombination aus IP-Adresse und Netzmaske",
+          "warum": "Diese Kombination bestimmt Netzteil und Hostteil. Ein Socket bezeichnet dagegen einen Dienst auf einem bestimmten Rechner."
+        },
+        {
+          "text": "Die Kombination aus MAC-Adresse und IP-Adresse",
+          "warum": "Beide bezeichnen ein Gerät. Für einen Socket fehlt die Angabe, welcher Dienst gemeint ist."
+        },
+        {
+          "text": "Ein Fragment eines IP-Pakets",
+          "warum": "Ein Socket ist kein Stück eines Pakets, sondern eine Adressangabe."
+        }
+      ]
+    }
+  ]
+}

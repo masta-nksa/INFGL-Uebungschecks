@@ -1,0 +1,224 @@
+{
+  "id": "I1",
+  "titel": "IP-Adresse und Netzmaske",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Ergänzen Sie die Angaben zur IPv4-Adresse.",
+      "felder": [
+        {
+          "label": "Eine IPv4-Adresse besteht aus",
+          "format": "zahl",
+          "antwort": 32,
+          "nach": "Bit.",
+          "tipp": "Die Adresse wird als 4 Bytes geschrieben. Wie viele Bit hat ein Byte?",
+          "haeufig": [
+            {
+              "wert": 4,
+              "tipp": "4 ist die Anzahl Bytes. Gefragt ist hier die Anzahl Bit."
+            },
+            {
+              "wert": 128,
+              "tipp": "128 Bit hat eine IPv6-Adresse. Gefragt ist IPv4."
+            }
+          ]
+        },
+        {
+          "label": "Jedes Byte kann dezimal Werte von 0 bis",
+          "format": "zahl",
+          "antwort": 255,
+          "nach": "annehmen.",
+          "tipp": "Der grösste Wert eines Bytes ist 1111'1111. Zählen Sie die Stellenwerte 128, 64, 32, … zusammen.",
+          "haeufig": [
+            {
+              "wert": 256,
+              "tipp": "Ein Byte hat zwar 256 verschiedene Werte, aber die Zählung beginnt bei 0."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typ": "tabelle",
+      "frage": "Schreiben Sie die IP-Adresse <code>10.150.36.75</code> Byte für Byte binär (je 8 Bit).",
+      "kopf": [
+        "Byte",
+        "Dezimal",
+        "Binär (8 Bit)"
+      ],
+      "zeilen": [
+        [
+          "1.",
+          "10",
+          {
+            "format": "bin",
+            "streng": true,
+            "antwort": "00001010",
+            "tipp": "Zerlegen Sie die Zahl in die Stellenwerte 128, 64, 32, 16, 8, 4, 2, 1.",
+            "haeufig": [
+              {
+                "wert": "1010",
+                "tipp": "Die Ziffern stimmen, aber ein Byte hat 8 Bit: Füllen Sie links mit Nullen auf."
+              }
+            ]
+          }
+        ],
+        [
+          "2.",
+          "150",
+          {
+            "format": "bin",
+            "streng": true,
+            "antwort": "10010110",
+            "tipp": "Zerlegen Sie die Zahl in die Stellenwerte 128, 64, 32, 16, 8, 4, 2, 1. Beginnen Sie mit 150 − 128."
+          }
+        ],
+        [
+          "3.",
+          "36",
+          {
+            "format": "bin",
+            "streng": true,
+            "antwort": "00100100",
+            "tipp": "Zerlegen Sie die Zahl in die Stellenwerte 128, 64, 32, 16, 8, 4, 2, 1.",
+            "haeufig": [
+              {
+                "wert": "100100",
+                "tipp": "Die Ziffern stimmen, aber ein Byte hat 8 Bit: Füllen Sie links mit Nullen auf."
+              }
+            ]
+          }
+        ],
+        [
+          "4.",
+          "75",
+          {
+            "format": "bin",
+            "streng": true,
+            "antwort": "01001011",
+            "tipp": "Zerlegen Sie die Zahl in die Stellenwerte 128, 64, 32, 16, 8, 4, 2, 1.",
+            "haeufig": [
+              {
+                "wert": "1001011",
+                "tipp": "Die Ziffern stimmen, aber ein Byte hat 8 Bit: Füllen Sie links mit Nullen auf."
+              }
+            ]
+          }
+        ]
+      ],
+      "weg": "10 = 8 + 2, 150 = 128 + 16 + 4 + 2, 36 = 32 + 4, 75 = 64 + 8 + 2 + 1."
+    },
+    {
+      "typ": "felder",
+      "frage": "Eine IP-Adresse lautet binär <code>1100'0110.0011'0011.0110'0100.0001'1001</code>. Wie lautet sie in der üblichen Dezimalschreibweise?",
+      "felder": [
+        {
+          "label": "IP-Adresse:",
+          "format": "ip",
+          "antwort": "198.51.100.25",
+          "tipp": "Rechnen Sie jedes Byte einzeln um: Zählen Sie die Stellenwerte (128, 64, 32, 16, 8, 4, 2, 1) aller Einsen zusammen."
+        }
+      ],
+      "weg": "128 + 64 + 4 + 2 = 198, 32 + 16 + 2 + 1 = 51, 64 + 32 + 4 = 100, 16 + 8 + 1 = 25."
+    },
+    {
+      "typ": "felder",
+      "frage": "Gegeben ist die Angabe <code>198.51.100.25 / 24</code>.",
+      "felder": [
+        {
+          "label": "Netzmaske dezimal:",
+          "format": "ip",
+          "antwort": "255.255.255.0",
+          "tipp": "Die Zahl nach dem Schrägstrich sagt, wie viele Bit zum Netzteil gehören. Diese Bits sind in der Netzmaske 1, alle anderen 0.",
+          "haeufig": [
+            {
+              "wert": "255.255.0.0",
+              "tipp": "Das wären nur 16 Einsen. Hier gehören 24 Bit zum Netzteil."
+            }
+          ]
+        },
+        {
+          "label": "Der Hostteil besteht aus",
+          "format": "zahl",
+          "antwort": 8,
+          "nach": "Bit.",
+          "tipp": "Die ganze Adresse hat 32 Bit. Was bleibt neben dem Netzteil übrig?",
+          "haeufig": [
+            {
+              "wert": 24,
+              "tipp": "24 Bit gehören zum Netzteil. Gefragt ist der Rest der 32 Bit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Ein Rechner hat die IP-Adresse <code>10.150.36.75</code> und die Netzmaske <code>255.255.0.0</code>. Welcher Teil der Adresse ist der Netzteil?",
+      "optionen": [
+        {
+          "text": "10",
+          "warum": "Das wäre bei der Netzmaske 255.0.0.0 so. Hier stehen zwei Bytes der Maske auf 255."
+        },
+        {
+          "text": "10.150.36",
+          "warum": "Das wäre bei der Netzmaske 255.255.255.0 so. Hier stehen nur zwei Bytes der Maske auf 255."
+        },
+        {
+          "text": "10.150",
+          "richtig": true
+        },
+        {
+          "text": "36.75",
+          "warum": "Das ist der Hostteil. Der Netzteil steht immer vorne, dort wo die Netzmaske Einsen hat."
+        }
+      ]
+    },
+    {
+      "typ": "felder",
+      "frage": "Wie viele Rechner (Hosts) lassen sich in einem Netz mit der Netzmaske <code>255.255.255.0</code> adressieren?",
+      "felder": [
+        {
+          "label": "Anzahl Rechner:",
+          "format": "zahl",
+          "antwort": 254,
+          "tipp": "Bestimmen Sie zuerst die Anzahl Hostbits und daraus die Anzahl Kombinationen. Zwei Kombinationen dürfen nicht an Rechner vergeben werden.",
+          "haeufig": [
+            {
+              "wert": 256,
+              "tipp": "So viele Kombinationen gibt es mit 8 Hostbits. «Alle Bits 0» und «alle Bits 1» dürfen aber nicht an Rechner vergeben werden."
+            },
+            {
+              "wert": 255,
+              "tipp": "Es sind zwei reservierte Kombinationen, nicht nur eine: «alle Hostbits 0» und «alle Hostbits 1»."
+            }
+          ]
+        }
+      ],
+      "weg": "8 Hostbits: 2<sup>8</sup> − 2 = 254."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Der Rechner <code>10.150.36.75</code> (Netzmaske <code>255.255.0.0</code>) will ein Paket an <code>10.151.36.75</code> senden. Was geschieht?",
+      "optionen": [
+        {
+          "text": "Das Ziel liegt im selben Netz, das Paket wird direkt zugestellt.",
+          "warum": "Vergleichen Sie die Netzteile genau: Beide Bytes des Netzteils müssen übereinstimmen."
+        },
+        {
+          "text": "Das Ziel liegt in einem anderen Netz, das Paket geht an den Router.",
+          "richtig": true
+        },
+        {
+          "text": "Das Paket wird verworfen, weil sich die beiden Adressen zu ähnlich sind.",
+          "warum": "Ähnlichkeit spielt keine Rolle. Entscheidend ist nur, ob der Netzteil gleich ist oder nicht."
+        },
+        {
+          "text": "Der Rechner fragt den DHCP-Server, wohin das Paket soll.",
+          "warum": "DHCP vergibt Adressen, es leitet keine Pakete weiter."
+        }
+      ],
+      "tipp": "Bestimmen Sie mit der Netzmaske den Netzteil beider Adressen und vergleichen Sie."
+    }
+  ]
+}

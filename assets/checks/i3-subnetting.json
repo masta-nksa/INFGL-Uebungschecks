@@ -1,0 +1,243 @@
+{
+  "id": "I3",
+  "titel": "Subnetting",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Ein Netz soll in 100 Subnetze unterteilt werden.",
+      "felder": [
+        {
+          "label": "Zusätzlich benötigte Netz-Bits:",
+          "format": "zahl",
+          "antwort": 7,
+          "tipp": "Schreiben Sie «Anzahl Netze − 1» binär. Die Anzahl Stellen ist die Anzahl benötigter Bits.",
+          "haeufig": [
+            {
+              "wert": 6,
+              "tipp": "Mit 6 Bit lassen sich nur 2<sup>6</sup> = 64 Subnetze unterscheiden. Das reicht nicht."
+            },
+            {
+              "wert": 100,
+              "tipp": "Gesucht ist die Anzahl Bits, nicht die Anzahl Netze."
+            }
+          ]
+        },
+        {
+          "label": "Damit tatsächlich realisierbare Subnetze:",
+          "format": "zahl",
+          "antwort": 128,
+          "tipp": "Mit jedem zusätzlichen Netz-Bit verdoppelt sich die Anzahl der Subnetze.",
+          "haeufig": [
+            {
+              "wert": 100,
+              "tipp": "100 Subnetze werden benötigt. Mit den gewählten Bits entstehen aber mehr: Es ist immer eine Zweierpotenz."
+            }
+          ]
+        }
+      ],
+      "weg": "100 − 1 = 99 = 110'0011<sub>2</sub>, das sind 7 Stellen. 2<sup>7</sup> = 128."
+    },
+    {
+      "typ": "felder",
+      "frage": "Das Netz <code>192.168.80.0 / 24</code> soll in 30 Subnetze unterteilt werden. Bestimmen Sie die neue Netzmaske.",
+      "felder": [
+        {
+          "label": "Zusätzlich benötigte Netz-Bits:",
+          "format": "zahl",
+          "antwort": 5,
+          "tipp": "Schreiben Sie 30 − 1 binär und zählen Sie die Stellen.",
+          "haeufig": [
+            {
+              "wert": 4,
+              "tipp": "Mit 4 Bit gibt es nur 16 Subnetze. Das reicht nicht für 30."
+            }
+          ]
+        },
+        {
+          "label": "Neue Schreibweise: 192.168.80.0 /",
+          "format": "zahl",
+          "antwort": 29,
+          "tipp": "Zählen Sie die zusätzlichen Netz-Bits zu den bisherigen 24 dazu."
+        },
+        {
+          "label": "4. Byte der Netzmaske, binär:",
+          "format": "bin",
+          "streng": true,
+          "antwort": "11111000",
+          "tipp": "Die zusätzlichen Netz-Bits stehen im 4. Byte ganz links und sind 1. Der Rest des Bytes (Hostteil) ist 0. Geben Sie alle 8 Bit an."
+        },
+        {
+          "label": "Netzmaske dezimal:",
+          "format": "ip",
+          "antwort": "255.255.255.248",
+          "tipp": "Die ersten drei Bytes bleiben 255. Rechnen Sie das 4. Byte um: Zählen Sie die Stellenwerte (128, 64, 32, …) der Einsen zusammen.",
+          "haeufig": [
+            {
+              "wert": "255.255.255.5",
+              "tipp": "In der Netzmaske steht nicht die Anzahl Bits, sondern der Dezimalwert des Bytes mit den gesetzten Einsen."
+            },
+            {
+              "wert": "255.255.255.240",
+              "tipp": "240 entspricht 4 gesetzten Bits (1111'0000). Sie brauchen ein Bit mehr."
+            }
+          ]
+        }
+      ],
+      "weg": "30 − 1 = 29 = 1'1101<sub>2</sub>, also 5 Bit. 24 + 5 = 29. 1111'1000<sub>2</sub> = 128 + 64 + 32 + 16 + 8 = 248."
+    },
+    {
+      "typ": "felder",
+      "frage": "Weiter mit den Subnetzen <code>192.168.80.0 / 29</code>: Wie gross ist ein einzelnes Subnetz?",
+      "felder": [
+        {
+          "label": "IP-Nummern pro Subnetz:",
+          "format": "zahl",
+          "antwort": 8,
+          "tipp": "Wie viele Bit bleiben von 32 für den Hostteil? Mit h Hostbits gibt es 2<sup>h</sup> Kombinationen.",
+          "haeufig": [
+            {
+              "wert": 3,
+              "tipp": "3 ist die Anzahl Hostbits. Gefragt ist, wie viele Kombinationen damit möglich sind."
+            }
+          ]
+        },
+        {
+          "label": "Davon für Rechner nutzbar:",
+          "format": "zahl",
+          "antwort": 6,
+          "tipp": "Zwei Kombinationen im Hostteil dürfen nicht an Rechner vergeben werden.",
+          "haeufig": [
+            {
+              "wert": 8,
+              "tipp": "«Alle Hostbits 0» und «alle Hostbits 1» dürfen nicht an Rechner vergeben werden."
+            }
+          ]
+        }
+      ],
+      "weg": "32 − 29 = 3 Hostbits: 2<sup>3</sup> = 8 Nummern, davon 8 − 2 = 6 nutzbar."
+    },
+    {
+      "typ": "felder",
+      "frage": "Notieren Sie den Nummernbereich des <strong>zweiten</strong> Subnetzes von <code>192.168.80.0 / 29</code> (Netz-Bits <code>00001</code>).",
+      "felder": [
+        {
+          "label": "von",
+          "format": "ip",
+          "antwort": "192.168.80.8",
+          "tipp": "Das erste Subnetz (Netz-Bits 00000) beginnt bei .0. Jedes Subnetz umfasst gleich viele Nummern, das zweite schliesst direkt an.",
+          "haeufig": [
+            {
+              "wert": "192.168.80.0",
+              "tipp": "Das ist der Anfang des ersten Subnetzes (Netz-Bits 00000). Gefragt ist das zweite."
+            },
+            {
+              "wert": "192.168.80.1",
+              "tipp": "Schreiben Sie das 4. Byte binär: zuerst die Netz-Bits 00001, dann die Hostbits alle auf 0."
+            }
+          ]
+        },
+        {
+          "label": "bis",
+          "format": "ip",
+          "antwort": "192.168.80.15",
+          "tipp": "Die letzte Nummer eines Subnetzes hat alle Hostbits auf 1.",
+          "haeufig": [
+            {
+              "wert": "192.168.80.16",
+              "tipp": "Das ist bereits die erste Nummer des nächsten Subnetzes."
+            }
+          ]
+        }
+      ],
+      "weg": "Netz-Bits 00001, Hostbits 000 bis 111: 0000'1000<sub>2</sub> = 8 bis 0000'1111<sub>2</sub> = 15."
+    },
+    {
+      "typ": "felder",
+      "frage": "In welchem der Subnetze von <code>192.168.80.0 / 29</code> liegt die IP-Nummer <code>192.168.80.203</code>? Geben Sie den Netzbereich an.",
+      "felder": [
+        {
+          "label": "von",
+          "format": "ip",
+          "antwort": "192.168.80.200",
+          "tipp": "Schreiben Sie 203 binär. Die ersten 5 Bit sind Netz-Bits und bleiben stehen. Setzen Sie die restlichen 3 Bit alle auf 0."
+        },
+        {
+          "label": "bis",
+          "format": "ip",
+          "antwort": "192.168.80.207",
+          "tipp": "Gleiche Netz-Bits wie bei «von», aber die 3 Hostbits alle auf 1."
+        }
+      ],
+      "weg": "203 = 1100'1011<sub>2</sub>. Netz-Bits 11001, Hostbits 000 bis 111: 1100'1000<sub>2</sub> = 200 bis 1100'1111<sub>2</sub> = 207."
+    },
+    {
+      "typ": "felder",
+      "frage": "Sie haben den Adressbereich <code>172.22.X.X</code> (also / 16) und möchten 40 Subnetze realisieren.",
+      "felder": [
+        {
+          "label": "Netzmaske dezimal:",
+          "format": "ip",
+          "antwort": "255.255.252.0",
+          "tipp": "Bestimmen Sie zuerst die Anzahl zusätzlicher Netz-Bits (40 − 1 binär schreiben). Diese Bits stehen jetzt im <strong>dritten</strong> Byte ganz links.",
+          "haeufig": [
+            {
+              "wert": "255.255.248.0",
+              "tipp": "248 entspricht 5 gesetzten Bits, das ergibt nur 32 Subnetze."
+            },
+            {
+              "wert": "255.255.255.252",
+              "tipp": "Der bisherige Netzteil ist 16 Bit lang. Die zusätzlichen Netz-Bits schliessen direkt daran an, also im dritten Byte."
+            }
+          ]
+        },
+        {
+          "label": "Tatsächlich realisierbare Subnetze:",
+          "format": "zahl",
+          "antwort": 64,
+          "tipp": "2 hoch Anzahl der zusätzlichen Netz-Bits."
+        },
+        {
+          "label": "Die IP-Nummer 172.22.118.40 liegt im Subnetz von",
+          "format": "ip",
+          "antwort": "172.22.116.0",
+          "tipp": "Schreiben Sie das dritte Byte (118) binär. Die ersten 6 Bit sind Netz-Bits. Setzen Sie alle Hostbits auf 0, auch das ganze vierte Byte."
+        },
+        {
+          "label": "bis",
+          "format": "ip",
+          "antwort": "172.22.119.255",
+          "tipp": "Gleiche Netz-Bits, aber alle Hostbits auf 1: die letzten 2 Bit des dritten Bytes und das ganze vierte Byte.",
+          "haeufig": [
+            {
+              "wert": "172.22.119.0",
+              "tipp": "Auch das vierte Byte gehört ganz zum Hostteil. Bei der letzten Nummer stehen alle Hostbits auf 1."
+            }
+          ]
+        }
+      ],
+      "weg": "40 − 1 = 39 = 10'0111<sub>2</sub>, also 6 Bit: 1111'1100<sub>2</sub> = 252, 2<sup>6</sup> = 64 Subnetze. 118 = 0111'0110<sub>2</sub>, Netz-Bits 011101: 0111'0100<sub>2</sub> = 116 bis 0111'0111<sub>2</sub> = 119."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Sie verlängern den Netzteil um ein weiteres Bit. Was ändert sich?",
+      "optionen": [
+        {
+          "text": "Die Anzahl Subnetze verdoppelt sich, und auch die Anzahl Adressen pro Subnetz verdoppelt sich.",
+          "warum": "Die Gesamtzahl der Adressen bleibt gleich. Wenn es mehr Subnetze gibt, kann nicht jedes gleichzeitig grösser werden."
+        },
+        {
+          "text": "Die Anzahl Subnetze steigt um eins, die Anzahl Adressen pro Subnetz sinkt um eins.",
+          "warum": "Ein Bit hat zwei Zustände. Die Änderung ist deshalb keine Addition, sondern eine Multiplikation."
+        },
+        {
+          "text": "Die Anzahl Subnetze verdoppelt sich, die Anzahl Adressen pro Subnetz halbiert sich.",
+          "richtig": true
+        },
+        {
+          "text": "Die Anzahl Subnetze halbiert sich, die Anzahl Adressen pro Subnetz verdoppelt sich.",
+          "warum": "Das wäre der Fall, wenn Sie den Netzteil um ein Bit verkürzen."
+        }
+      ]
+    }
+  ]
+}

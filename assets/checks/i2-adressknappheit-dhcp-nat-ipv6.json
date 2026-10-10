@@ -1,0 +1,181 @@
+{
+  "id": "I2",
+  "titel": "Private Adressen, DHCP, NAT und IPv6",
+  "aufgaben": [
+    {
+      "typ": "mehrfach",
+      "frage": "Welche dieser Adressen liegen in einem privaten Adressbereich und werden im Internet nicht geroutet?",
+      "optionen": [
+        {
+          "text": "172.50.0.1",
+          "warum": "Der private 172er-Bereich umfasst im zweiten Byte nur einen Teil der Werte. 50 liegt ausserhalb."
+        },
+        {
+          "text": "10.20.30.40",
+          "richtig": true
+        },
+        {
+          "text": "192.168.178.20",
+          "richtig": true
+        },
+        {
+          "text": "192.186.1.1",
+          "warum": "Lesen Sie das zweite Byte genau: Hier steht 186, nicht 168."
+        },
+        {
+          "text": "172.25.1.1",
+          "richtig": true
+        }
+      ],
+      "tipp": "Es gibt drei private Bereiche: einen, der mit 10 beginnt, einen mit 172 und einen mit 192.168."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Ein Notebook verbindet sich neu mit dem WLAN und erhält seine IP-Adresse über DHCP. Bringen Sie die vier Nachrichten in die richtige Reihenfolge.",
+      "optionen": ["1. Phase", "2. Phase", "3. Phase", "4. Phase"],
+      "spalte": "Nachricht",
+      "antwortspalte": "Phase",
+      "zeilen": [
+        {
+          "text": "DHCP-OFFER: Ein DHCP-Server bietet dem Client eine Konfiguration an.",
+          "antwort": "2. Phase",
+          "tipp": "Ein Angebot kann erst kommen, nachdem jemand danach gefragt hat."
+        },
+        {
+          "text": "DHCP-ACK: Der DHCP-Server bestätigt und liefert alle Parameter.",
+          "antwort": "4. Phase",
+          "tipp": "ACK steht für «acknowledge» (bestätigen). Eine Bestätigung steht am Schluss."
+        },
+        {
+          "text": "DHCP-DISCOVER: Der Client fragt per Broadcast nach einer Konfiguration.",
+          "antwort": "1. Phase",
+          "tipp": "Der Client kennt noch keinen Server. Wie macht er sich zuerst bemerkbar?"
+        },
+        {
+          "text": "DHCP-REQUEST: Der Client fordert das erste Angebot an.",
+          "antwort": "3. Phase",
+          "tipp": "Anfordern kann der Client ein Angebot erst, wenn er eines erhalten hat."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was bedeutet die «Lease-Dauer» bei der dynamischen Zuweisung durch DHCP?",
+      "optionen": [
+        {
+          "text": "Die Zeit, die der DHCP-Server für eine Antwort braucht.",
+          "warum": "Es geht nicht um eine Antwortzeit, sondern darum, wie lange eine Zuweisung gilt."
+        },
+        {
+          "text": "Der Zeitraum, für den die zugewiesene Konfiguration gültig ist.",
+          "richtig": true
+        },
+        {
+          "text": "Die maximale Zeit, die ein Datenpaket im Netz unterwegs sein darf.",
+          "warum": "Das beschreibt das Feld «Lebenszeit» im IP-Header, nicht die Lease-Dauer."
+        },
+        {
+          "text": "Die Vertragsdauer mit dem Internetanbieter.",
+          "warum": "Die Lease-Dauer ist eine technische Einstellung des DHCP-Servers, kein Vertrag."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Ein Netzwerkdrucker soll von DHCP immer dieselbe IP-Adresse erhalten (manuelle Zuweisung). Woran erkennt der DHCP-Server den Drucker?",
+      "optionen": [
+        {
+          "text": "An der MAC-Adresse des Druckers",
+          "richtig": true
+        },
+        {
+          "text": "An der Portnummer des Druckers",
+          "warum": "Portnummern bezeichnen Dienste auf einem Rechner, nicht das Gerät selbst."
+        },
+        {
+          "text": "An der Netzmaske des Druckers",
+          "warum": "Die Netzmaske ist für alle Geräte im selben Netz gleich und wird erst von DHCP geliefert."
+        },
+        {
+          "text": "An der bisherigen IP-Adresse des Druckers",
+          "warum": "Beim Anfragen hat das Gerät noch keine IP-Adresse. Es braucht ein Merkmal, das fest zum Gerät gehört."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "In einem Haushalt sind 12 Geräte gleichzeitig online. Der Internetanbieter stellt nur eine einzige offizielle IP-Adresse zur Verfügung. Welches Verfahren macht das möglich?",
+      "optionen": [
+        {
+          "text": "Klassisches NAT",
+          "warum": "Beim klassischen NAT sind nur so viele Verbindungen gleichzeitig möglich, wie offizielle Adressen vorhanden sind."
+        },
+        {
+          "text": "DHCP",
+          "warum": "DHCP verteilt die internen Adressen automatisch, schafft aber keine zusätzlichen offiziellen Adressen."
+        },
+        {
+          "text": "Subnetting",
+          "warum": "Subnetting unterteilt ein Netz in kleinere Netze. Es übersetzt keine Adressen."
+        },
+        {
+          "text": "NAPT",
+          "richtig": true
+        }
+      ],
+      "tipp": "Gesucht ist das Verfahren, das die Verbindungen zusätzlich über Portnummern unterscheidet."
+    },
+    {
+      "typ": "felder",
+      "frage": "Ergänzen Sie die Angaben zu IPv6.",
+      "felder": [
+        {
+          "label": "Eine IPv6-Adresse besteht aus",
+          "format": "zahl",
+          "antwort": 128,
+          "nach": "Bit.",
+          "tipp": "Der Adressbereich wurde gegenüber IPv4 (32 Bit) vervierfacht.",
+          "haeufig": [
+            {
+              "wert": 64,
+              "tipp": "Das ist nur das Doppelte von IPv4. Der Adressbereich wurde stärker erweitert."
+            },
+            {
+              "wert": 32,
+              "tipp": "32 Bit hat eine IPv4-Adresse."
+            }
+          ]
+        },
+        {
+          "label": "Sie wird in",
+          "format": "zahl",
+          "antwort": 8,
+          "nach": "Blöcken zu je 16 Bit notiert.",
+          "tipp": "Teilen Sie die Gesamtzahl der Bits durch 16."
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Welche Kurzschreibweise der IPv6-Adresse <code>2001:0db8:0000:0000:0000:ff00:0042:8329</code> ist korrekt?",
+      "optionen": [
+        {
+          "text": "<code>2001:db8:ff00:42:8329</code>",
+          "warum": "Hier fehlen die drei Null-Blöcke spurlos. Ausgelassene Null-Blöcke müssen markiert werden."
+        },
+        {
+          "text": "<code>2001:db8::ff:42:8329</code>",
+          "warum": "Im Block ff00 stehen die Nullen hinten. Nur führende Nullen dürfen weggelassen werden."
+        },
+        {
+          "text": "<code>2001:db8::ff00:42:8329</code>",
+          "richtig": true
+        },
+        {
+          "text": "<code>21:db8::ff00:42:8329</code>",
+          "warum": "Im Block 2001 stehen die Nullen in der Mitte. Nur führende Nullen dürfen weggelassen werden."
+        }
+      ]
+    }
+  ]
+}

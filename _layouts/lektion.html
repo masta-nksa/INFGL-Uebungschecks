@@ -56,10 +56,16 @@ layout: default
   </section>
   {%- endif %}
 
-  {%- assign nr_prev = page.lektion | minus: 1 -%}
-  {%- assign nr_next = page.lektion | plus: 1 -%}
-  {%- assign vorige   = lektionen | where: "lektion", nr_prev | first -%}
-  {%- assign naechste = lektionen | where: "lektion", nr_next | first -%}
+  {%- comment -%}
+    Nachbarn aus der sortierten Liste bestimmen, nicht über Nummer ± 1:
+    Die Nummern folgen den Kursblöcken und haben Lücken (Block 5 ist ein Praktikum).
+  {%- endcomment -%}
+  {%- assign vorige = nil -%}
+  {%- assign naechste = nil -%}
+  {%- for l in lektionen -%}
+    {%- if l.lektion < page.lektion -%}{%- assign vorige = l -%}{%- endif -%}
+    {%- if l.lektion > page.lektion -%}{%- unless naechste -%}{%- assign naechste = l -%}{%- endunless -%}{%- endif -%}
+  {%- endfor -%}
   <nav class="pager" aria-label="Weitere Einheiten">
     {%- if vorige %}
     <a class="pager-prev" href="{{ vorige.url | relative_url }}"><span>&larr; Einheit {{ vorige.lektion }}</span>{{ vorige.titel }}</a>
