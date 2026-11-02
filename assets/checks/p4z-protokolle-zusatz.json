@@ -33,7 +33,7 @@
     },
     {
       "typ": "mehrfach",
-      "frage": "Prüfungsaufgabe 16: Welche Angaben sind in einem TCP-Header zu finden? (In der Prüfung sind 2 Angaben zu nennen.) Wählen Sie alle zutreffenden aus.",
+      "frage": "Prüfungsaufgabe 16: Nennen Sie 2 Angaben, die in einem TCP-Header zu finden sind. Wählen Sie mindestens zwei aus.",
       "optionen": [
         {
           "text": "Empfängerport",
@@ -90,11 +90,12 @@
       ],
       "nachlesen": [
         {
-          "text": "Protokollköpfe (TCP/IP)",
-          "href": "/lektionen/r0-theorie.html#tcpip"
+          "text": "Der TCP-Header",
+          "href": "/lektionen/r0-theorie.html#tcp-header"
         }
       ],
-      "weg": "Im TCP-Header stehen (ungefähr nach Wichtigkeit): Empfängerport, Senderport, Sequenznummer, Quittungsnummer, Datenabstand, Flags, Fenstergrösse, Prüfsumme, Urgent-Zeiger."
+      "weg": "Die weiteren Angaben, die im TCP-Header stehen, sind ebenfalls richtig: Empfängerport, Senderport, Sequenznummer, Quittungsnummer, Datenabstand, Flags, Fenstergrösse, Prüfsumme, Urgent-Zeiger (ungefähr nach Wichtigkeit geordnet).",
+      "mindestens": 2
     },
     {
       "typ": "wahl",

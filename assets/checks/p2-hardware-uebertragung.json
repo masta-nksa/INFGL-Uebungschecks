@@ -37,7 +37,7 @@
     },
     {
       "typ": "mehrfach",
-      "frage": "Prüfungsaufgabe 14 (2 Punkte): Welche der folgenden Anschlüsse sind typische Schnittstellen heutiger Computer? Wählen Sie alle zutreffenden aus.",
+      "frage": "Prüfungsaufgabe 14 (2 Punkte): Nennen Sie zwei typische Schnittstellen heutiger Computer. Wählen Sie mindestens zwei aus.",
       "optionen": [
         {
           "text": "USB (Universal Serial Bus)",
@@ -70,7 +70,8 @@
           "href": "/lektionen/h0-theorie.html#computersysteme"
         }
       ],
-      "weg": "In der Prüfung genügen zwei Nennungen. Typisch sind USB, Firewire, Ethernet und SATA."
+      "weg": "Ebenfalls richtig sind die übrigen angekreuzten Möglichkeiten: USB, Firewire, Ethernet und SATA sind typische Schnittstellen.",
+      "mindestens": 2
     },
     {
       "typ": "wahl",

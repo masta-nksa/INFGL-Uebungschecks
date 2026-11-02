@@ -142,6 +142,21 @@ Als Merkhilfe: **Adressen von Rechnern stehen im IP-Header, Ports von Diensten i
 TCP-Header.** Die Sequenznummer sagt, an welche Stelle die Daten gehören, die
 Quittungsnummer bestätigt den Empfang.
 
+### Die Felder des TCP-Headers {#tcp-header}
+
+Der TCP-Header steht vor den Daten der Schicht 4. Seine wichtigsten Felder:
+
+- **Senderport** und **Empfängerport:** welcher Dienst auf dem Sender bzw. Empfänger gemeint ist.
+- **Sequenznummer:** die Stelle, an die diese Daten im Datenstrom gehören (so lässt sich die Reihenfolge wiederherstellen).
+- **Quittungsnummer:** bestätigt, bis zu welcher Stelle der Empfänger Daten erhalten hat.
+- **Datenabstand:** wo der TCP-Header endet und die Daten beginnen (Länge des Headers).
+- **Flags:** einzelne Bits mit Steuerfunktion, z. B. zum Aufbau oder Abbau der Verbindung.
+- **Fenstergrösse:** wie viele Daten der Empfänger aktuell annehmen kann, bevor er quittieren muss.
+- **Prüfsumme:** erkennt Übertragungsfehler in Header und Daten.
+- **Urgent-Zeiger:** zeigt auf dringende Daten, die vorgezogen werden sollen.
+
+Nicht im TCP-Header stehen die IP-Adressen, die Lebenszeit und der Fragmentabstand: Das sind Felder des IP-Headers.
+
 ### HTTP und HTTPS
 
 **HTTP (Hypertext Transfer Protocol)** ist das Protokoll der Schicht 7, mit dem

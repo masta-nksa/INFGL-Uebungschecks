@@ -37,7 +37,7 @@ was keinen eigenen hat) sowie `weg` (Kurz-Rechenweg, erscheint nach der richtige
 | `felder` | eine oder mehrere Eingabefelder | `felder`: Liste von Feldern (siehe unten) |
 | `tabelle` | Tabelle mit Eingabefeldern in Zellen | `kopf`, `zeilen` (Text oder Feld pro Zelle) |
 | `wahl` | genau eine richtige Antwort | `optionen`: `{text, richtig?, warum?}` |
-| `mehrfach` | mehrere richtige Antworten | `optionen`: `{text, richtig?, warum?}` |
+| `mehrfach` | mehrere richtige Antworten | `optionen`: `{text, richtig?, warum?}`; optional `mindestens: n` (n richtige genügen, falsche zählen weiterhin) |
 | `zuordnung` | Zeilen einer Option zuordnen | `optionen`, `zeilen`: `{text, antwort, tipp?}`, `radio` (Auswahlknöpfe statt Liste), `spalte`, `antwortspalte` |
 
 `warum` ist der Tipp, der erscheint, wenn genau diese falsche Option gewählt wurde.

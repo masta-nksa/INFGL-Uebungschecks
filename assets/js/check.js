@@ -232,10 +232,15 @@
     });
     var falschGewaehlt = marken.indexOf('falsch') !== -1;
     var fehlt = item.optionen.some(function (o, i) { return o.richtig && indizes.indexOf(i) === -1; });
+    if (item.mindestens && !falschGewaehlt) {
+      var richtige = indizes.filter(function (i) { return item.optionen[i].richtig; }).length;
+      if (richtige >= item.mindestens) return { status: 'ok', marken: marken, tipps: [] };
+      return { status: 'falsch', marken: marken, tipps: ['Nennen Sie mindestens ' + item.mindestens + ' Angaben.'].concat(item.tipp ? [item.tipp] : []) };
+    }
     if (!falschGewaehlt && !fehlt) return { status: 'ok', marken: marken, tipps: [] };
     var tipps = [];
     item.optionen.forEach(function (o, i) { if (marken[i] === 'falsch' && o.warum) tipps.push(o.warum); });
-    if (!falschGewaehlt && fehlt) tipps.push('Es fehlt noch mindestens eine richtige Antwort.');
+    if (!falschGewaehlt && fehlt && !item.mindestens) tipps.push('Es fehlt noch mindestens eine richtige Antwort.');
     if (item.tipp) tipps.push(item.tipp);
     return { status: 'falsch', marken: marken, tipps: tipps };
   }
@@ -403,7 +408,7 @@
         zeilen.push({ tr: tr, lesen: lesen, leeren: function () { radios.forEach(function (r) { r.checked = false; }); } });
       } else {
         var sel = h('select', { id: id, class: 'check-auswahl', 'aria-label': z.text.replace(/<[^>]*>/g, '') },
-          [h('option', { value: '' }, '– wählen –')].concat(item.optionen.map(function (o) { return h('option', { value: o }, o.replace(/<[^>]*>/g, '')); })));
+          [h('option', { value: '' }, '– wählen –')].concat(mischeIndizes(item.optionen.length).map(function (i) { var o = item.optionen[i]; return h('option', { value: o }, o.replace(/<[^>]*>/g, '')); })));
         tr.appendChild(h('td', {}, sel));
         zeilen.push({ tr: tr, lesen: function () { return sel.value; }, leeren: function () { sel.value = ''; } });
       }
