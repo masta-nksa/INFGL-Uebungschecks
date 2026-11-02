@@ -65,7 +65,7 @@ darstellen.
 ## Schritt 2: Ordner und Datei anlegen {#vorbereitung}
 
 1. Legen Sie einen Ordner `meinewebseite` an und darin einen Unterordner `bilder`.
-2. Kopieren Sie ein Bild in `bilder` (zum Beispiel `titel.jpg`).
+2. Laden Sie das [Startpaket mit Bildern]({{ "/assets/webseite-startpaket.zip" | relative_url }}) herunter (Titelbild `titel.jpg` und zwölf Fotos), entpacken Sie es und kopieren Sie den Inhalt in `bilder`. Sie dürfen auch eigene Bilder verwenden.
 3. Öffnen Sie den Editor, legen Sie eine neue Datei an und speichern Sie sie als
    `index.html` im Ordner `meinewebseite` (Zeichensatz **UTF-8**).
 

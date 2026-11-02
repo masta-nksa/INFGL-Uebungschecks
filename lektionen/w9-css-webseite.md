@@ -290,8 +290,8 @@ horizontalen Linien, nur die vertikalen oder den ganzen Rahmen
 ## Schritt 10: Galerie und Positionierung {#galerie}
 
 Legen Sie `gallery.html` an (Kopie von `index.html`, Link in der Navigation ergänzen)
-und setzen Sie in `<main>` eine Liste mit Ihren Bildern ein. Statt `1.jpg` bis `12.jpg`
-verwenden Sie Ihre eigenen Dateinamen:
+und setzen Sie in `<main>` eine Liste mit Ihren Bildern ein. Die Fotos `1.jpg` bis `12.jpg`
+liegen im Startpaket aus Einheit 8 (Ordner `bilder/gallery`), Sie können auch eigene verwenden:
 
 ```html
 <main>
