@@ -1,0 +1,35 @@
+---
+layout: pruefung
+pruefung: 1
+titel: "Formative Prüfung 1"
+kurz: "Alle 25 Aufgaben der formativen Prüfung 1 mit unveränderten Zahlen in zwei Teilen (Zahlensysteme und Hardware, Netzwerke), mit Zusatzaufgaben, Links zur Theorie und Musterlösung."
+permalink: /formative-pruefung-1.html
+lernziele:
+  - text: "Teil 1A, Zahlensysteme: Sie rechnen zwischen Zahlensystemen um, lesen ASCII-Text, bestimmen Zahlenbereiche (unsigned, signed) und rechnen mit Float- und Binärbrüchen."
+    theorie: "/lektionen/z0-theorie.html#binaer-hex"
+    check: "/lektionen/p1-zahlensysteme.html"
+    check_label: "Aufgaben"
+    zusatz: "/lektionen/p1z-zahlensysteme-zusatz.html"
+    lsg: "/lektionen/p9-musterloesung.html#teil1"
+  - text: "Teil 1B, Hardware: Sie unterscheiden, was zur CPU gehört, und nennen typische Schnittstellen heutiger Computer."
+    theorie: "/lektionen/h0-theorie.html#computersysteme"
+    check: "/lektionen/p1h-hardware.html"
+    check_label: "Aufgaben"
+    lsg: "/lektionen/p9-musterloesung.html#teil1"
+  - text: "Teil 2, Netzwerke: Sie kennen Übertragungs- und Modulationsarten und erkennen und berechnen Übertragungsfehler (Hamming-Code, BCC)."
+    theorie: "/lektionen/n0-theorie.html#hamming"
+    check: "/lektionen/p2-uebertragung.html"
+    check_label: "Aufgaben"
+    lsg: "/lektionen/p9-musterloesung.html#teil2"
+  - text: "Teil 2, Netzwerke: Sie kennen den IP-Header und die IP-Nummer und bestimmen Netmask, Anzahl Subnetze und Netzbereich bei einer Subnetz-Aufgabe."
+    theorie: "/lektionen/i0-theorie.html#subnetting"
+    check: "/lektionen/p3-ip-subnetting.html"
+    check_label: "Aufgaben"
+    lsg: "/lektionen/p9-musterloesung.html#teil2"
+  - text: "Teil 2, Netzwerke: Sie nennen die OSI-Schichten, ordnen aktiven Netzwerkelementen ihre Schichten zu, kennen TCP/IP-Header, Netztopologien und das passende Netzwerk-Kommando."
+    theorie: "/lektionen/r0-theorie.html#osi"
+    check: "/lektionen/p4-osi-protokolle.html"
+    check_label: "Aufgaben"
+    zusatz: "/lektionen/p4z-protokolle-zusatz.html"
+    lsg: "/lektionen/p9-musterloesung.html#teil2"
+---

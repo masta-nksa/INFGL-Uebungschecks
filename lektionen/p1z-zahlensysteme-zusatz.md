@@ -1,17 +1,17 @@
 ---
-lektion: 8
+pruefung: 1
 zielgruppe: sus
 art: pruefung
 check: p1z-zahlensysteme-zusatz
-titel: "Prüfung 1, Teil 1: Zahlensysteme, Zusatzaufgaben"
+titel: "Prüfung 1, Teil 1A: Zahlensysteme, Zusatzaufgaben"
 kurz: "Float, Binärbrüche und Dezimalbrüche (Prüfungsaufgaben 9, 10, 11)"
-reihenfolge: 11
+reihenfolge: 12
 theorie: "/lektionen/z0-theorie.html#gleitkommazahlen"
 ---
 
-# Prüfung 1, Teil 1: Zahlensysteme, Zusatzaufgaben
+# Prüfung 1, Teil 1A: Zahlensysteme, Zusatzaufgaben
 
-**Einheit 8 · Zusatzaufgaben · ca. 8 Minuten · Taschenrechner erlaubt**
+**Formative Prüfung 1 · Zusatzaufgaben · ca. 8 Minuten · Taschenrechner erlaubt**
 
 ## Ziel
 

@@ -54,6 +54,10 @@
           <span class="nav-ohne-seite" title="{{ ohne.titel }} (ohne Übungschecks)">{{ ohne.lektion }}</span>
           {%- endif %}
           {%- endfor %}
+          {%- assign pruefungsseite = site.pages | where: "layout", "pruefung" | first -%}
+          {%- if pruefungsseite %}
+          <a class="nav-pruefung" href="{{ pruefungsseite.url | relative_url }}"{% if page.pruefung %} aria-current="page"{% endif %}>{{ pruefungsseite.titel }}</a>
+          {%- endif %}
         </nav>
         {%- comment -%}
           Bis das Skript am Seitenende den Knopf aktiviert, bleibt er

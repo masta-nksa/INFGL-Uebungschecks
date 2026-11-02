@@ -300,6 +300,7 @@ a { color: var(--accent); }
 .site-nav a:hover { background: var(--accent-soft); color: var(--accent); }
 .site-nav a[aria-current="page"] { background: var(--accent); color: #fff; }
 .site-nav .nav-ohne-seite { opacity: .45; cursor: default; }
+.site-nav .nav-pruefung { margin-left: .6rem; padding-inline: .8rem; white-space: nowrap; border: 1px solid var(--border-strong); }
 
 /* Design-Umschalter: ein kleiner Knopf, der der Reihe nach durchschaltet.
    Ohne JavaScript bleibt er über das hidden-Attribut ausgeblendet – dann

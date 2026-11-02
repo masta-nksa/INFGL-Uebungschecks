@@ -82,13 +82,13 @@ nicht geladen werden konnten.
    und `lektion: <Nummer der Einheit>`.
 3. Committen und pushen. Die Seite erscheint automatisch in der Liste der Einheit.
 
-## Einheit 8: Formative Prüfung 1
+## Formative Prüfung 1 (eigener Bereich, keine Einheit)
 
 Die 25 Aufgaben der formativen Prüfung 1 (Quelle: `Unterlagen/08_Formative_Prüf1_HTML`) stehen
-mit unveränderten Zahlen in sechs Seiten `lektionen/p1…p4z-*.md` (`art: pruefung`), gegliedert
-in vier Teile mit Kern- und Zusatzaufgaben (Zusatz: Dateiname mit `z`). Jede Aufgabe hat
+mit unveränderten Zahlen in sieben Seiten `lektionen/p1…p4z-*.md` (`art: pruefung`), gegliedert
+in Teil 1 (A Zahlensysteme, B Hardware) und Teil 2 (Netzwerke: Übertragung, IP, OSI) mit Zusatzaufgaben (Dateiname mit `z`). Jede Aufgabe hat
 `nachlesen`-Links auf die Theorie-Seiten. Die Musterlösung (`lektionen/p9-musterloesung.md`,
-`art: loesung`) ist eine feste Seite mit Rechenwegen; die Einheitsseite `lektion-8.md` verlinkt
+`art: loesung`) ist eine feste Seite mit Rechenwegen; die Einstiegsseite `formative-pruefung-1.md` (Layout `pruefung`, Menüpunkt ganz rechts in der Kopfzeile, Nummer 8 bleibt frei) verlinkt
 pro Teil Kernaufgaben, Zusatzaufgaben und Musterlösung (`check_label`, `zusatz`, `lsg` im
 Frontmatter von `lernziele`). Ausnahme zur Regel «keine Musterlösungen»: Bei dieser Prüfung
 ausdrücklich gewünscht.

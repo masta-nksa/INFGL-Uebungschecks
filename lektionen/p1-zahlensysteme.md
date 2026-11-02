@@ -1,17 +1,17 @@
 ---
-lektion: 8
+pruefung: 1
 zielgruppe: sus
 art: pruefung
 check: p1-zahlensysteme
-titel: "Prüfung 1, Teil 1: Zahlensysteme"
+titel: "Prüfung 1, Teil 1A: Zahlensysteme"
 kurz: "Umrechnen zwischen Dezimal, Binär, Hex und der 9er- und 13er-Basis, ASCII-Text, unsigned und signed (Prüfungsaufgaben 5, 6, 7, 12, 13)"
 reihenfolge: 10
 theorie: "/lektionen/z0-theorie.html#binaer-hex"
 ---
 
-# Prüfung 1, Teil 1: Zahlensysteme
+# Prüfung 1, Teil 1A: Zahlensysteme
 
-**Einheit 8 · Kernaufgaben · ca. 12 Minuten · Taschenrechner und ASCII-Tabelle erlaubt**
+**Formative Prüfung 1 · Aufgaben · ca. 12 Minuten · Taschenrechner und ASCII-Tabelle erlaubt**
 
 ## Ziel
 

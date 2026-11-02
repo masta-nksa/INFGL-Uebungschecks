@@ -1,0 +1,60 @@
+---
+layout: default
+---
+{%- comment -%}
+  Einstiegsseite der Formativen Prüfung 1 (eigener Bereich, nicht Teil der nummerierten Einheiten).
+{%- endcomment -%}
+{%- assign material  = site.pages | where: "typ", "material" | where: "pruefung", page.pruefung | sort: "reihenfolge" -%}
+{%- assign fuer_sus  = material | where: "zielgruppe", "sus" -%}
+
+<div class="wrap">
+
+  <nav class="breadcrumb" aria-label="Sie sind hier">
+    <a href="{{ '/' | relative_url }}">Übersicht</a> <span aria-hidden="true">/</span> {{ page.titel }}
+  </nav>
+
+  <header class="lektion-header">
+    <p class="eyebrow">Prüfungsvorbereitung</p>
+    <h1>{{ page.titel }}</h1>
+    <p class="lead">{{ page.kurz }}</p>
+  </header>
+
+  {%- if page.lernziele %}
+  <section class="material-block block-lernziele">
+    <h2><span class="block-icon" aria-hidden="true">&#127919;</span> Lernziele</h2>
+    <p class="block-hint">Jedes Lernziel verweist auf den passenden Theorie-Abschnitt und den passenden Check.</p>
+    <ol class="lernziele-list">
+      {%- for lz in page.lernziele %}
+      <li>
+        <p>{{ lz.text }}</p>
+        <p class="lernziel-links">
+          <a href="{{ lz.theorie | relative_url }}">Theorie</a>
+          {%- if lz.check %} <span aria-hidden="true">&middot;</span> <a href="{{ lz.check | relative_url }}">{{ lz.check_label | default: "Check" }}</a>{%- endif %}
+          {%- if lz.zusatz %} <span aria-hidden="true">&middot;</span> <a href="{{ lz.zusatz | relative_url }}">Zusatzaufgaben</a>{%- endif %}
+          {%- if lz.lsg %} <span aria-hidden="true">&middot;</span> <a href="{{ lz.lsg | relative_url }}">Musterlösung</a>{%- endif %}
+        </p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif %}
+
+  {%- if fuer_sus.size > 0 %}
+  <section class="material-block block-sus">
+    <h2><span class="block-icon" aria-hidden="true">&#9997;</span> Übungschecks</h2>
+    <p class="block-hint">Wählen Sie eine Seite. Teil 1: Zahlensysteme und Hardware, Teil 2: Netzwerke. Die Zusatzaufgaben dienen zum Vertiefen.</p>
+    <ul class="card-list">
+      {%- for m in fuer_sus %}
+      <li class="card">
+        <a href="{{ m.url | relative_url }}">
+          <span class="badge badge-{{ m.art }}">{{ site.art_labels[m.art] }}</span>
+          <strong>{{ m.titel }}</strong>
+          <span class="card-kurz">{{ m.kurz }}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+</div>

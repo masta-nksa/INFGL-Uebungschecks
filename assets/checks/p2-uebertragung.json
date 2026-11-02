@@ -1,78 +1,7 @@
 {
   "id": "P2",
-  "titel": "Formative Prüfung 1: Hardware, Übertragung und Fehlererkennung",
+  "titel": "Formative Prüfung 1: Übertragung und Fehlererkennung",
   "aufgaben": [
-    {
-      "typ": "wahl",
-      "frage": "Prüfungsaufgabe 1 (1 Punkt): Der Prozessor ist das Kernstück des Computers. Was gehört nicht zur CPU?",
-      "optionen": [
-        {
-          "text": "ALU (Arithmetical Logical Unit)",
-          "warum": "Die ALU ist das Rechenwerk und gehört zur CPU."
-        },
-        {
-          "text": "Arbeitsspeicher (Random Access Memory)",
-          "richtig": true
-        },
-        {
-          "text": "Register",
-          "warum": "Register sind die schnellsten Speicherplätze und liegen in der CPU."
-        },
-        {
-          "text": "Cache-Speicher",
-          "warum": "Der Cache ist ein schneller Zwischenspeicher in bzw. bei der CPU."
-        }
-      ],
-      "nachlesen": [
-        {
-          "text": "CPU und PC-Aufbau",
-          "href": "/lektionen/h0-theorie.html#computersysteme"
-        },
-        {
-          "text": "Von-Neumann-Rechner",
-          "href": "/lektionen/h0-theorie.html#vonneumann"
-        }
-      ],
-      "weg": "Der Arbeitsspeicher (RAM) ist ein eigenes Bauteil ausserhalb der CPU."
-    },
-    {
-      "typ": "mehrfach",
-      "frage": "Prüfungsaufgabe 14 (2 Punkte): Nennen Sie zwei typische Schnittstellen heutiger Computer. Wählen Sie mindestens zwei aus.",
-      "optionen": [
-        {
-          "text": "USB (Universal Serial Bus)",
-          "richtig": true
-        },
-        {
-          "text": "Firewire",
-          "richtig": true
-        },
-        {
-          "text": "Ethernet",
-          "richtig": true
-        },
-        {
-          "text": "SATA (Anschlüsse für externe Laufwerke)",
-          "richtig": true
-        },
-        {
-          "text": "ALU (Arithmetical Logical Unit)",
-          "warum": "Die ALU ist ein Teil der CPU, keine Schnittstelle nach aussen."
-        },
-        {
-          "text": "Register",
-          "warum": "Register sind Speicherplätze in der CPU, keine Schnittstelle."
-        }
-      ],
-      "nachlesen": [
-        {
-          "text": "Schnittstellen im PC",
-          "href": "/lektionen/h0-theorie.html#computersysteme"
-        }
-      ],
-      "weg": "Ebenfalls richtig sind die übrigen angekreuzten Möglichkeiten: USB, Firewire, Ethernet und SATA sind typische Schnittstellen.",
-      "mindestens": 2
-    },
     {
       "typ": "wahl",
       "frage": "Prüfungsaufgabe 17 (2 Punkte): Was bedeutet der Begriff «Halbduplex»?",

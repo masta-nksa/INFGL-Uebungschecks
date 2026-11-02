@@ -9,6 +9,8 @@ layout: default
 {%- assign lektionsseite = false -%}
 {%- if page.lektion -%}
   {%- assign lektionsseite = site.pages | where: "layout", "lektion" | where: "lektion", page.lektion | first -%}
+{%- elsif page.pruefung -%}
+  {%- assign lektionsseite = site.pages | where: "layout", "pruefung" | where: "pruefung", page.pruefung | first -%}
 {%- endif -%}
 
 <div class="wrap wrap-narrow">
@@ -16,7 +18,7 @@ layout: default
   <nav class="breadcrumb" aria-label="Sie sind hier">
     <a href="{{ '/' | relative_url }}">Übersicht</a>
     {%- if lektionsseite %}
-    <span aria-hidden="true">/</span> <a href="{{ lektionsseite.url | relative_url }}">Einheit {{ page.lektion }}</a>
+    <span aria-hidden="true">/</span> <a href="{{ lektionsseite.url | relative_url }}">{% if page.lektion %}Einheit {{ page.lektion }}{% else %}{{ lektionsseite.titel }}{% endif %}</a>
     {%- endif %}
     <span aria-hidden="true">/</span> {{ page.titel }}
   </nav>
@@ -26,6 +28,8 @@ layout: default
       <span class="badge badge-{{ page.art }}">{{ site.art_labels[page.art] }}</span>
       {%- if page.lektion %}
       <span class="badge badge-zielgruppe-sus">Einheit {{ page.lektion }}</span>
+      {%- elsif page.pruefung %}
+      <span class="badge badge-zielgruppe-sus">Formative Prüfung {{ page.pruefung }}</span>
       {%- endif %}
     </div>
   </div>
@@ -45,7 +49,7 @@ layout: default
 
   <nav class="pager">
     {%- if lektionsseite %}
-    <a class="pager-prev" href="{{ lektionsseite.url | relative_url }}"><span>&larr; Zurück</span>Einheit {{ page.lektion }}: {{ lektionsseite.titel }}</a>
+    <a class="pager-prev" href="{{ lektionsseite.url | relative_url }}"><span>&larr; Zurück</span>{% if page.lektion %}Einheit {{ page.lektion }}: {% endif %}{{ lektionsseite.titel }}</a>
     {%- else %}
     <a class="pager-prev" href="{{ '/' | relative_url }}"><span>&larr; Zurück</span>Zur Übersicht</a>
     {%- endif %}
