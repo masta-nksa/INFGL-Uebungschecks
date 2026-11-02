@@ -184,7 +184,7 @@ p.klein { font-size: 0.85rem; color: var(--muted); }
 }
 
 #cv caption { text-align: left; font-weight: 600; padding-bottom: 0.6rem; }
-#cv th, #cv td { text-align: left; padding: 0.8rem 1.2rem; }
+#cv th, #cv td { text-align: left; vertical-align: top; padding: 0.8rem 1.2rem; }
 #cv th { background: var(--accent); color: var(--on-accent); }
 #cv td { border-top: 1px solid var(--border); }
 #cv tr:hover td { background: color-mix(in srgb, var(--accent) 12%, transparent); }

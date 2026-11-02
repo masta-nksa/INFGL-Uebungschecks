@@ -93,6 +93,7 @@ p.klein {
 
 #cv th, #cv td {
   text-align: left;
+  vertical-align: top;
   padding: 0.4em 1em;
   border-bottom: 1px solid gray;
 }

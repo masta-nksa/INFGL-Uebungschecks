@@ -238,21 +238,37 @@ bleiben gleich.
 <main>
   <h2>Wer bin ich</h2>
   <table id="cv" border="1">
-    <caption>Mein Lebenslauf</caption>
+    <caption>Lebenslauf</caption>
     <tr>
-      <th>Jahr</th>
+      <th>Bereich</th>
+      <th>Zeitraum</th>
       <th>Station</th>
     </tr>
     <tr>
-      <td>2020</td>
-      <td>Matura</td>
+      <th rowspan="3">Ausbildung</th>
+      <td>2013–2016</td>
+      <td>Sekundarschule, Aarau</td>
     </tr>
     <tr>
+      <td>2016–2020</td>
+      <td>Kantonsschule Aarau, Matura</td>
+    </tr>
+    <tr>
+      <td>seit 2026</td>
+      <td>FHNW, Studium Wirtschaftsinformatik</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Berufserfahrung</th>
       <td>2021</td>
-      <td>Praktikum</td>
+      <td>Praktikum IT-Support, Muster AG, Olten</td>
     </tr>
     <tr>
-      <td colspan="2">Seit 2026: Studium Wirtschaftsinformatik</td>
+      <td>2022–2025</td>
+      <td>Nebenjob Kundenberatung, Beispiel Elektro, Aarau</td>
+    </tr>
+    <tr>
+      <th>Sprachen</th>
+      <td colspan="2">Deutsch (Muttersprache), Englisch (C1), Französisch (B1)</td>
     </tr>
   </table>
 </main>
@@ -275,8 +291,12 @@ trennen Sie mit `<br>` innerhalb der Zelle. Geben Sie der Tabelle eine **Klasse*
 (`<table class="kurzprofil">`), nicht eine ID: Es könnten später mehrere solche Tabellen
 auf der Seite stehen.
 
+Im Lebenslauf sehen Sie beide Arten, Zellen zu verbinden: Die Zelle «Ausbildung» geht mit
+`rowspan="3"` über drei **Zeilen**, die Zelle mit den Sprachen mit `colspan="2"` über zwei **Spalten**.
+
 **Aufgabe 2:** Ersetzen Sie die Angaben im Lebenslauf durch Ihre eigenen und fügen Sie eine weitere
-Zeile hinzu. Verbinden Sie danach in einer Zeile zwei Zellen mit `rowspan`.
+Station hinzu. Passen Sie dabei den Wert von `rowspan` an. Was passiert, wenn er nicht mehr zur
+Anzahl der Zeilen passt?
 
 ## Schritt 7: Formular {#formulare}
 
