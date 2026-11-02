@@ -15,6 +15,10 @@ Druckvorschau, Strg+P) und `mobile.css` (`media="(max-width: 600px)"`, wirkt bei
 als zusätzliche `<link>`-Zeilen im `<head>` und funktionieren mit beiden Hauptdesigns. Sie zeigen, dass
 dasselbe HTML je nach Ausgabegerät anders aussehen kann.
 
+**Umschalter zum Zeigen:** `umschalter.js` blendet unten rechts eine Leiste ein (Design: Einfach/Modern,
+Ausgabe: Bildschirm/Handy/Druck) und tauscht live die Stylesheets, ohne das HTML zu ändern. Handy und
+Druck werden dabei mit schmaler Seite bzw. A4-Breite nachgestellt. Beim echten Drucken (Strg+P) ist die Leiste ausgeblendet.
+
 Von der Website nicht verlinkt (nur für die Lehrperson). Die Dateien werden von GitHub Pages
 trotzdem ausgeliefert und sind unter `<baseurl>/musterloesung-webseite/index.html` erreichbar,
 wer die Adresse kennt. Soll das nicht sein, den Ordner in `_config.yml` unter `exclude:` eintragen.

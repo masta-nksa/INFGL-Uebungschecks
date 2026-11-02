@@ -28,7 +28,7 @@ Am Schluss haben Sie einen Ordner `meinewebseite` mit drei Seiten:
 ```
 meinewebseite/
 ├── index.html      Startseite
-├── ich.html        Wer bin ich (mit Tabelle)
+├── ich.html        Lebenslauf (mit Tabelle)
 ├── kontakt.html    Kontakt (mit Formular)
 └── bilder/         Ihre Bilder
 ```
@@ -124,7 +124,7 @@ Ersetzen Sie den Inhalt von `<body>`:
   </header>
   <nav>
     <a href="./index.html" class="aktiv">Startseite</a> |
-    <a href="./ich.html">Wer bin ich</a> |
+    <a href="./ich.html">Lebenslauf</a> |
     <a href="./kontakt.html">Kontakt</a>
   </nav>
   <main>
@@ -179,7 +179,7 @@ Ergänzen Sie im Bereich `<main>`:
     <li>Design mit CSS</li>
   </ol>
   <hr>
-  <p>Erste Zeile<br>zweite Zeile im selben Absatz</p>
+  <p>Max Muster<br>Musterstrasse 1<br>5000 Aarau</p>
   <p class="klein">Stand: November 2026</p>
 </main>
 ```
@@ -231,14 +231,14 @@ Schreibweise (Gross-/Kleinschreibung zählt!).
 ## Schritt 6: Zweite Seite mit Tabelle {#tabellen}
 
 Legen Sie `ich.html` an. Kopieren Sie dazu `index.html`, speichern Sie sie unter dem
-neuen Namen und ersetzen Sie nur den Inhalt von `<main>`. Setzen Sie die Klasse `aktiv` jetzt beim Link «Wer bin ich» statt bei der Startseite. Kopf, Navigation und Fuss
+neuen Namen und ersetzen Sie nur den Inhalt von `<main>`. Setzen Sie die Klasse `aktiv` jetzt beim Link «Lebenslauf» statt bei der Startseite. Kopf, Navigation und Fuss
 bleiben gleich.
 
 ```html
 <main>
-  <h2>Wer bin ich</h2>
+  <h2>Lebenslauf</h2>
   <table id="cv" border="1">
-    <caption>Lebenslauf</caption>
+    <caption>Meine Stationen</caption>
     <tr>
       <th>Bereich</th>
       <th>Zeitraum</th>
@@ -284,17 +284,10 @@ bleiben gleich.
 
 `border="1"` zeigt den Rahmen nur zum Testen. Den Rahmen gestalten wir später mit CSS.
 
-**Aufgabe 1:** Ersetzen Sie auf `index.html` den Beispielabsatz mit dem Zeilenumbruch
-(«Erste Zeile …») durch eine kleine Tabelle «Kurzprofil» mit drei Zeilen (Name, Studium,
-Interessen). Jede Zeile hat eine Kopfzelle `<th>` und eine Zelle `<td>`. Mehrere Interessen
-trennen Sie mit `<br>` innerhalb der Zelle. Geben Sie der Tabelle eine **Klasse**
-(`<table class="kurzprofil">`), nicht eine ID: Es könnten später mehrere solche Tabellen
-auf der Seite stehen.
-
 Im Lebenslauf sehen Sie beide Arten, Zellen zu verbinden: Die Zelle «Ausbildung» geht mit
 `rowspan="3"` über drei **Zeilen**, die Zelle mit den Sprachen mit `colspan="2"` über zwei **Spalten**.
 
-**Aufgabe 2:** Ersetzen Sie die Angaben im Lebenslauf durch Ihre eigenen und fügen Sie eine weitere
+**Aufgabe:** Ersetzen Sie die Angaben im Lebenslauf durch Ihre eigenen und fügen Sie eine weitere
 Station hinzu. Passen Sie dabei den Wert von `rowspan` an. Was passiert, wenn er nicht mehr zur
 Anzahl der Zeilen passt?
 

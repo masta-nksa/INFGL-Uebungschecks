@@ -189,22 +189,6 @@ p.klein { font-size: 0.85rem; color: var(--muted); }
 #cv td { border-top: 1px solid var(--border); }
 #cv tr:hover td { background: color-mix(in srgb, var(--accent) 12%, transparent); }
 
-.kurzprofil {
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-bottom: 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.kurzprofil caption { text-align: left; font-weight: 600; padding-bottom: 0.6rem; }
-.kurzprofil th, .kurzprofil td { text-align: left; vertical-align: top; padding: 0.6rem 1.2rem; }
-.kurzprofil th { color: var(--muted); font-weight: 600; }
-.kurzprofil tr + tr th, .kurzprofil tr + tr td { border-top: 1px solid var(--border); }
-
 /* ---------- Galerie: Grid statt float ---------- */
 #album {
   display: block;

@@ -13,6 +13,8 @@
     <!-- Zusätzlich je nach Ausgabe: Drucker und schmale Bildschirme (Handy) -->
     <link rel="stylesheet" media="print" href="./print.css">
     <link rel="stylesheet" media="(max-width: 600px)" href="./mobile.css">
+    <!-- Nur zum Zeigen: Leiste zum Umschalten des Designs (Einfach/Modern, Bildschirm/Handy/Druck) -->
+    <script src="./umschalter.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,7 +22,7 @@
     </header>
     <nav>
       <a href="./index.html" class="aktiv">Startseite</a> |
-      <a href="./ich.html">Wer bin ich</a> |
+      <a href="./ich.html">Lebenslauf</a> |
       <a href="./gallery.html">Fotos</a> |
       <a href="./kontakt.html">Kontakt</a>
     </nav>
@@ -40,21 +42,7 @@
         <li>Design mit CSS</li>
       </ol>
       <hr>
-      <table class="kurzprofil">
-        <caption>Kurzprofil</caption>
-        <tr>
-          <th>Name</th>
-          <td>Max Muster</td>
-        </tr>
-        <tr>
-          <th>Studium</th>
-          <td>Wirtschaftsinformatik</td>
-        </tr>
-        <tr>
-          <th>Interessen</th>
-          <td>Fotografie<br>Reisen<br>Daten</td>
-        </tr>
-      </table>
+      <p>Max Muster<br>Musterstrasse 1<br>5000 Aarau</p>
       <p><a href="./ich.html">Mehr über mich</a></p>
       <p><a href="https://www.fhnw.ch" target="_blank">FHNW (öffnet in neuem Tab)</a></p>
       <p><a href="mailto:max.muster@example.ch">E-Mail an mich</a></p>
