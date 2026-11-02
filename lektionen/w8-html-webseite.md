@@ -268,7 +268,14 @@ bleiben gleich.
 
 `border="1"` zeigt den Rahmen nur zum Testen. Den Rahmen gestalten wir später mit CSS.
 
-**Aufgabe:** Ersetzen Sie die Angaben durch Ihre eigenen und fügen Sie eine weitere
+**Aufgabe 1:** Ersetzen Sie auf `index.html` den Beispielabsatz mit dem Zeilenumbruch
+(«Erste Zeile …») durch eine kleine Tabelle «Kurzprofil» mit drei Zeilen (Name, Studium,
+Interessen). Jede Zeile hat eine Kopfzelle `<th>` und eine Zelle `<td>`. Mehrere Interessen
+trennen Sie mit `<br>` innerhalb der Zelle. Geben Sie der Tabelle eine **Klasse**
+(`<table class="kurzprofil">`), nicht eine ID: Es könnten später mehrere solche Tabellen
+auf der Seite stehen.
+
+**Aufgabe 2:** Ersetzen Sie die Angaben im Lebenslauf durch Ihre eigenen und fügen Sie eine weitere
 Zeile hinzu. Verbinden Sie danach in einer Zeile zwei Zellen mit `rowspan`.
 
 ## Schritt 7: Formular {#formulare}

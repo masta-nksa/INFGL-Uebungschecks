@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="./style.css">
     <!-- Zweites Design: obige Zeile auskommentieren, diese aktivieren -->
     <!-- <link rel="stylesheet" href="./style-modern.css"> -->
+    <!-- Zusätzlich je nach Ausgabe: Drucker und schmale Bildschirme (Handy) -->
+    <link rel="stylesheet" media="print" href="./print.css">
+    <link rel="stylesheet" media="(max-width: 600px)" href="./mobile.css">
   </head>
   <body>
     <header>
@@ -37,7 +40,21 @@
         <li>Design mit CSS</li>
       </ol>
       <hr>
-      <p>Erste Zeile<br>zweite Zeile im selben Absatz</p>
+      <table class="kurzprofil">
+        <caption>Kurzprofil</caption>
+        <tr>
+          <th>Name</th>
+          <td>Max Muster</td>
+        </tr>
+        <tr>
+          <th>Studium</th>
+          <td>Wirtschaftsinformatik</td>
+        </tr>
+        <tr>
+          <th>Interessen</th>
+          <td>Fotografie<br>Reisen<br>Daten</td>
+        </tr>
+      </table>
       <p><a href="./ich.html">Mehr über mich</a></p>
       <p><a href="https://www.fhnw.ch" target="_blank">FHNW (öffnet in neuem Tab)</a></p>
       <p><a href="mailto:max.muster@example.ch">E-Mail an mich</a></p>

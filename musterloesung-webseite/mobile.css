@@ -1,0 +1,99 @@
+/* Handy-Stylesheet (nur zum Zeigen).
+   Eingebunden mit media="(max-width: 600px)": Der Browser verwendet es nur,
+   wenn das Fenster höchstens 600 Pixel breit ist (Handy, schmales Fenster).
+   Es liegt NACH dem normalen Stylesheet und überschreibt nur, was auf dem
+   kleinen Bildschirm anders sein muss. Es funktioniert mit style.css und
+   style-modern.css. Zum Ausprobieren das Browserfenster schmal ziehen.
+   Voraussetzung: <meta name="viewport" …> im <head>. */
+
+/* Kopf: niedriger und kleinere Schrift */
+header {
+  min-height: 0;
+  height: 140px;
+}
+
+header p {
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem 0 0;
+}
+
+/* Navigation: Links untereinander, grosse Tippflächen (mind. ca. 44 px hoch) */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0.5rem 0;
+  font-size: 0;                /* blendet die Trennzeichen « | » aus */
+}
+
+nav a {
+  display: block;
+  padding: 0.8rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 0;
+}
+
+/* Inhalt: weniger Rand, kleinere Überschriften */
+main {
+  width: auto;
+  padding: 1rem;
+}
+
+h2 { font-size: 1.3rem; }
+
+/* Bilder nie breiter als der Bildschirm */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tabelle: lässt sich seitlich wischen, statt die Seite zu verbreitern */
+#cv {
+  display: block;
+  overflow-x: auto;
+}
+
+/* Galerie: zwei Spalten, kein Hover-Zoom (es gibt keine Maus) */
+#album {
+  display: block;
+  width: auto;
+  padding: 0;
+  border: 0;
+}
+
+#album ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+#album li {
+  float: none;
+  padding: 0;
+}
+
+#album img,
+#album li:hover img {
+  width: 100%;
+  height: auto;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Formulare: über die ganze Breite, Schrift mind. 16 px (sonst zoomt iOS beim Tippen) */
+form {
+  max-width: none;
+  padding: 1rem;
+}
+
+input[type="text"], select {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.7rem;
+}
+
+input[type="submit"], input[type="reset"] {
+  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+}

@@ -1,0 +1,133 @@
+/* Druck-Stylesheet (nur zum Zeigen).
+   Eingebunden mit media="print": Der Browser verwendet es nur beim Drucken
+   (Strg+P bzw. Druckvorschau) und nur zusätzlich zum normalen Stylesheet.
+   Es funktioniert mit style.css und mit style-modern.css. */
+
+@page {
+  margin: 2cm;                 /* Seitenrand auf dem Papier */
+}
+
+/* Schwarz auf Weiss, Serifenschrift in Punkt (typisch für Papier) */
+html, body {
+  background: #fff !important;
+  color: #000 !important;
+  font: 12pt/1.4 Georgia, "Times New Roman", serif;
+}
+
+/* Effekte und Schatten braucht es auf Papier nicht */
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  transition: none !important;
+}
+
+/* Kopfbereich: Hintergrundbilder druckt der Browser meist nicht, also nur Text */
+header {
+  min-height: 0;
+  height: auto;
+  background: none;
+  border-bottom: 2pt solid #000;
+}
+
+header p {
+  width: auto;
+  margin: 0 0 0.5cm;
+  padding: 0;
+  color: #000;
+  font-size: 22pt;
+  text-align: left;
+}
+
+/* Navigation und Formulare sind auf Papier nutzlos */
+nav, form, input {
+  display: none !important;
+}
+
+main {
+  width: auto;
+  margin: 0;
+  padding: 0.5cm 0;
+}
+
+h2, h3 {
+  break-after: avoid;          /* Überschrift nie allein am Seitenende */
+}
+
+/* Links: Adresse ausschreiben, weil man auf Papier nicht klicken kann */
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+main a[href^="http"]::after {
+  content: " (" attr(href) ")";
+  font-size: 10pt;
+}
+
+/* Bilder: nie breiter als die Seite, nicht mitten im Bild umbrechen */
+img {
+  max-width: 100%;
+  break-inside: avoid;
+}
+
+.zentriert img {
+  width: 6cm;
+  transform: none !important;
+  border-radius: 0;
+}
+
+/* Tabelle mit einfachen Linien */
+#cv, .kurzprofil {
+  width: 100%;
+  border-collapse: collapse;
+  border: 0;
+  border-radius: 0;
+}
+
+#cv th, #cv td, .kurzprofil th, .kurzprofil td {
+  border: 0.5pt solid #000;
+  padding: 0.2cm 0.3cm;
+  background: none;
+  color: #000;
+}
+
+/* Galerie: ein festes Raster aus kleinen Bildern, ohne Zoom */
+#album {
+  display: block;
+  width: auto;
+  border: 0;
+  padding: 0;
+}
+
+#album ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.3cm;
+}
+
+#album li {
+  float: none;
+  padding: 0;
+}
+
+#album img,
+#album li:hover img {
+  width: 100%;
+  height: auto;
+  transform: none !important;
+  border-radius: 0;
+}
+
+/* Fuss */
+footer {
+  margin-top: 1cm;
+  padding: 0.3cm 0 0;
+  border-top: 0.5pt solid #000;
+  background: none;
+  color: #000;
+  font-size: 10pt;
+  text-align: left;
+}

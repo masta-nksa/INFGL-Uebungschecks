@@ -282,6 +282,23 @@ Attribut `border` aus dem HTML und gestalten Sie die Tabelle mit CSS:
 }
 ```
 
+Die kleine Tabelle auf `index.html` hat die **Klasse** `kurzprofil`, weil sie nicht einmalig
+sein muss. Gestalten Sie sie mit dem Klassen-Selektor `.kurzprofil` (Punkt statt `#`):
+
+```css
+.kurzprofil {
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+.kurzprofil th, .kurzprofil td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.3em 1em 0.3em 0;
+  border-bottom: 1px solid gray;
+}
+```
+
 **Aufgabe:** Geben Sie der Beschriftung (`caption`) eine Farbe. Zeigen Sie nur die
 horizontalen Linien, nur die vertikalen oder den ganzen Rahmen
 (`border: 1px solid gray;`). Auf `kontakt.html`: Geben Sie dem Absenden-Knopf mit

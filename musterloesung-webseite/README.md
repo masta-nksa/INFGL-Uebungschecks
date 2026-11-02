@@ -10,6 +10,11 @@ Stylesheet für **dieselben HTML-Dateien**. Zum Umschalten in jeder HTML-Datei d
 Kommentar im `<head>`). Am HTML ändert sich nichts, so zeigt sich, dass Inhalt und Design getrennt sind.
 `style.css` bleibt bewusst einfach und vermittelt die Basiskonzepte.
 
+**Drucker und Handy (nur zum Zeigen):** `print.css` (eingebunden mit `media="print"`, wirkt in der
+Druckvorschau, Strg+P) und `mobile.css` (`media="(max-width: 600px)"`, wirkt bei schmalem Fenster) stehen
+als zusätzliche `<link>`-Zeilen im `<head>` und funktionieren mit beiden Hauptdesigns. Sie zeigen, dass
+dasselbe HTML je nach Ausgabegerät anders aussehen kann.
+
 Von der Website nicht verlinkt (nur für die Lehrperson). Die Dateien werden von GitHub Pages
 trotzdem ausgeliefert und sind unter `<baseurl>/musterloesung-webseite/index.html` erreichbar,
 wer die Adresse kennt. Soll das nicht sein, den Ordner in `_config.yml` unter `exclude:` eintragen.
