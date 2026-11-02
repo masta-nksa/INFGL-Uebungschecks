@@ -160,6 +160,40 @@
         }
       ],
       "weg": "p1: d3 ⊕ d5 ⊕ d7 = 1 ⊕ 0 ⊕ 1 = 0 (stimmt). p2: d3 ⊕ d6 ⊕ d7 = 1 ⊕ 1 ⊕ 1 = 1 (falsch). p4: d5 ⊕ d6 ⊕ d7 = 0 ⊕ 1 ⊕ 1 = 0 (falsch). Falsch sind p2 und p4, also ist Bit 2 + 4 = 6 (d6) fehlerhaft. Korrigiert: 001'1001."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 24 (6 Punkte): Führen Sie die folgende BCC-Berechnung durch (4 Bit-Rest). Sendedaten (ohne BCC): <code>10100010000</code>. Dividieren Sie <code>10100010000 : 1101</code> schriftlich im Binärsystem.",
+      "felder": [
+        {
+          "label": "Ergebnis der Division (1 Punkt):",
+          "format": "bin",
+          "antwort": "1100011",
+          "tipp": "Dividieren Sie wie schriftlich im Dezimalsystem: Passt der Teiler (1101) in die aktuelle Stelle, schreiben Sie eine 1 und subtrahieren, sonst eine 0."
+        },
+        {
+          "label": "BCC (Rest, 4 Bit):",
+          "format": "bin",
+          "antwort": "1001",
+          "tipp": "Der Rest der Division ist der BCC.",
+          "streng": true
+        },
+        {
+          "label": "Sendedaten (mit BCC) (5 Punkte):",
+          "format": "bin",
+          "antwort": "101000100001001",
+          "tipp": "Hängen Sie den BCC hinten an die Sendedaten an.",
+          "streng": true,
+          "breit": true
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Zyklische Blockprüfung (BCC)",
+          "href": "/lektionen/n0-theorie.html#blockpruefung"
+        }
+      ],
+      "weg": "10100010000 : 1101 = 1100011, Rest 1001. Gesendet wird 10100010000 gefolgt vom BCC 1001: 101000100001001. (Hinweis: Die Prüfungslösung rechnet hier mit der schriftlichen Binärdivision, nicht mit der XOR-Division der Theorie.)"
     }
   ]
 }

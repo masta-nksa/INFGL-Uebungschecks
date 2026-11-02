@@ -85,7 +85,7 @@ nicht geladen werden konnten.
 ## Einheit 8: Formative Prüfung 1
 
 Die 25 Aufgaben der formativen Prüfung 1 (Quelle: `Unterlagen/08_Formative_Prüf1_HTML`) stehen
-mit unveränderten Zahlen in sieben Seiten `lektionen/p1…p4z-*.md` (`art: pruefung`), gegliedert
+mit unveränderten Zahlen in sechs Seiten `lektionen/p1…p4z-*.md` (`art: pruefung`), gegliedert
 in vier Teile mit Kern- und Zusatzaufgaben (Zusatz: Dateiname mit `z`). Jede Aufgabe hat
 `nachlesen`-Links auf die Theorie-Seiten. Die Musterlösung (`lektionen/p9-musterloesung.md`,
 `art: loesung`) ist eine feste Seite mit Rechenwegen; die Einheitsseite `lektion-8.md` verlinkt
