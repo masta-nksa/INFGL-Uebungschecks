@@ -1,0 +1,164 @@
+{
+  "id": "P2",
+  "titel": "Formative Prüfung 1: Hardware, Übertragung und Fehlererkennung",
+  "aufgaben": [
+    {
+      "typ": "wahl",
+      "frage": "Prüfungsaufgabe 1 (1 Punkt): Der Prozessor ist das Kernstück des Computers. Was gehört nicht zur CPU?",
+      "optionen": [
+        {
+          "text": "ALU (Arithmetical Logical Unit)",
+          "warum": "Die ALU ist das Rechenwerk und gehört zur CPU."
+        },
+        {
+          "text": "Arbeitsspeicher (Random Access Memory)",
+          "richtig": true
+        },
+        {
+          "text": "Register",
+          "warum": "Register sind die schnellsten Speicherplätze und liegen in der CPU."
+        },
+        {
+          "text": "Cache-Speicher",
+          "warum": "Der Cache ist ein schneller Zwischenspeicher in bzw. bei der CPU."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "CPU und PC-Aufbau",
+          "href": "/lektionen/h0-theorie.html#computersysteme"
+        },
+        {
+          "text": "Von-Neumann-Rechner",
+          "href": "/lektionen/h0-theorie.html#vonneumann"
+        }
+      ],
+      "weg": "Der Arbeitsspeicher (RAM) ist ein eigenes Bauteil ausserhalb der CPU."
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Prüfungsaufgabe 14 (2 Punkte): Welche der folgenden Anschlüsse sind typische Schnittstellen heutiger Computer? Wählen Sie alle zutreffenden aus.",
+      "optionen": [
+        {
+          "text": "USB (Universal Serial Bus)",
+          "richtig": true
+        },
+        {
+          "text": "Firewire",
+          "richtig": true
+        },
+        {
+          "text": "Ethernet",
+          "richtig": true
+        },
+        {
+          "text": "SATA (Anschlüsse für externe Laufwerke)",
+          "richtig": true
+        },
+        {
+          "text": "ALU (Arithmetical Logical Unit)",
+          "warum": "Die ALU ist ein Teil der CPU, keine Schnittstelle nach aussen."
+        },
+        {
+          "text": "Register",
+          "warum": "Register sind Speicherplätze in der CPU, keine Schnittstelle."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Schnittstellen im PC",
+          "href": "/lektionen/h0-theorie.html#computersysteme"
+        }
+      ],
+      "weg": "In der Prüfung genügen zwei Nennungen. Typisch sind USB, Firewire, Ethernet und SATA."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Prüfungsaufgabe 17 (2 Punkte): Was bedeutet der Begriff «Halbduplex»?",
+      "optionen": [
+        {
+          "text": "Verkehr in beiden Richtungen, aber zu einer bestimmten Zeit nur in eine Richtung. Der Übertragungskanal wird abwechslungsweise in beiden Richtungen genutzt (z. B. drahtlose Gegensprechanlage).",
+          "richtig": true
+        },
+        {
+          "text": "Verkehr nur in eine Richtung (z. B. Radio, Fernsehen).",
+          "warum": "Das ist Simplex. Beim Halbduplex ist der Verkehr in beiden Richtungen möglich."
+        },
+        {
+          "text": "Verkehr in beiden Richtungen gleichzeitig (z. B. Telefon).",
+          "warum": "Das ist Vollduplex. Beim Halbduplex geht es nicht gleichzeitig."
+        },
+        {
+          "text": "Es werden immer acht Bits gleichzeitig übertragen.",
+          "warum": "Das beschreibt die parallele Übertragung, nicht die Richtung des Verkehrs."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Übertragungsarten",
+          "href": "/lektionen/n0-theorie.html#kommunikation"
+        }
+      ],
+      "weg": "Halbduplex: beide Richtungen, aber abwechslungsweise (Walkie-Talkie)."
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Prüfungsaufgabe 18 (3 Punkte): Welche 3 Modulationsarten unterscheidet man?",
+      "optionen": [
+        {
+          "text": "Amplitudenmodulation",
+          "richtig": true
+        },
+        {
+          "text": "Frequenzmodulation",
+          "richtig": true
+        },
+        {
+          "text": "Phasenmodulation",
+          "richtig": true
+        },
+        {
+          "text": "Paritätsmodulation",
+          "warum": "Parität ist ein Verfahren zur Fehlererkennung, keine Modulationsart."
+        },
+        {
+          "text": "Laufzeitmodulation",
+          "warum": "Moduliert werden Amplitude, Frequenz oder Phase der Trägerwelle."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Modulationsarten",
+          "href": "/lektionen/n0-theorie.html#modulation"
+        }
+      ],
+      "weg": "Moduliert wird die Amplitude, die Frequenz oder die Phase des Trägersignals."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 8 (4 Punkte): Hamming-Code. Sie erhalten den Bitstrom <code>001'1011</code> (Bits p1 p2 d3 p4 d5 d6 d7). In der Übertragung hat sich ein Bitfehler eingeschlichen. Dank dem Hammingcode kann er gefunden und korrigiert werden. Was muss korrigiert werden?",
+      "felder": [
+        {
+          "label": "Fehlerhaftes Bit (Position 1 bis 7):",
+          "format": "zahl",
+          "antwort": 6,
+          "tipp": "Prüfen Sie p1 (d3, d5, d7), p2 (d3, d6, d7) und p4 (d5, d6, d7) auf gerade Parität. Das fehlerhafte Bit liegt in der Schnittmenge der Gruppen, die nicht stimmen."
+        },
+        {
+          "label": "Korrigierter Bitstrom:",
+          "format": "bin",
+          "antwort": "0011001",
+          "tipp": "Kippen Sie das fehlerhafte Bit (0 wird 1 und umgekehrt).",
+          "streng": true
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Hamming-Code",
+          "href": "/lektionen/n0-theorie.html#hamming"
+        }
+      ],
+      "weg": "p1: d3 ⊕ d5 ⊕ d7 = 1 ⊕ 0 ⊕ 1 = 0 (stimmt). p2: d3 ⊕ d6 ⊕ d7 = 1 ⊕ 1 ⊕ 1 = 1 (falsch). p4: d5 ⊕ d6 ⊕ d7 = 0 ⊕ 1 ⊕ 1 = 0 (falsch). Falsch sind p2 und p4, also ist Bit 2 + 4 = 6 (d6) fehlerhaft. Korrigiert: 001'1001."
+    }
+  ]
+}

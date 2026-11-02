@@ -1,0 +1,132 @@
+{
+  "id": "P3",
+  "titel": "Formative Prüfung 1: IP-Nummern und Subnetting",
+  "aufgaben": [
+    {
+      "typ": "wahl",
+      "frage": "Prüfungsaufgabe 2 (1 Punkt): Welches Feld gehört nicht zum IP-Header?",
+      "optionen": [
+        {
+          "text": "Kopfprüfsumme",
+          "warum": "Die Kopfprüfsumme (Header Checksum) ist ein Feld des IP-Headers."
+        },
+        {
+          "text": "Zielport",
+          "richtig": true
+        },
+        {
+          "text": "Fragmentabstand",
+          "warum": "Der Fragmentabstand (Fragment Offset) steht im IP-Header, er wird bei der Fragmentierung gebraucht."
+        },
+        {
+          "text": "Lebenszeit",
+          "warum": "Die Lebenszeit (Time to Live, TTL) steht im IP-Header."
+        },
+        {
+          "text": "Version",
+          "warum": "Die Version (4 oder 6) steht im IP-Header."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "IP-Header",
+          "href": "/lektionen/i0-theorie.html#header-fragmentierung"
+        }
+      ],
+      "weg": "Ports (Sender- und Zielport) gehören zum TCP- bzw. UDP-Header, nicht zum IP-Header."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Prüfungsaufgabe 4 (1 Punkt): Welche Aussage über die IP-Nummer ist nicht korrekt?",
+      "optionen": [
+        {
+          "text": "Eine IP-Nummer besteht aus 32 Bits.",
+          "warum": "Das stimmt für IPv4: vier Bytes zu je 8 Bit."
+        },
+        {
+          "text": "Eine IP-Nummer wird in Host-ID und Netz-ID eingeteilt.",
+          "warum": "Das stimmt, die Netzmaske legt die Grenze fest."
+        },
+        {
+          "text": "Eine IP-Nummer kann mit einer eindeutigen Postadresse verglichen werden.",
+          "warum": "Das stimmt: Sie adressiert ein Gerät in einem Netz, wie eine Postadresse ein Haus in einem Ort."
+        },
+        {
+          "text": "Eine IP-Nummer adressiert einen bestimmten Dienst im Internet.",
+          "richtig": true
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "IP-Adresse und Netzmaske",
+          "href": "/lektionen/i0-theorie.html#ip-adresse"
+        },
+        {
+          "text": "Portnummern",
+          "href": "/lektionen/i0-theorie.html#header-fragmentierung"
+        }
+      ],
+      "weg": "Den Dienst adressiert die Portnummer, die IP-Nummer adressiert das Gerät."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 25 (6 Punkte): Sie haben den IP-Adressbereich <code>64.25.X.X</code> und möchten 12 Subnetze realisieren. a) Wie heisst die binäre und die dezimale Netmask für diese Aufgabe? b) Wie viele Subnetze sind mit Ihrer Netmask tatsächlich realisierbar? c) In welchem Subnetz liegt die IP-Nummer <code>64.25.155.234</code> (bitte Netzbereich angeben)?",
+      "felder": [
+        {
+          "label": "a) Zusätzliche Bits für die Subnetze:",
+          "format": "zahl",
+          "antwort": 4,
+          "tipp": "Mit 2 Bit gibt es 4 Netze, mit 3 Bit 8 Netze, mit 4 Bit 16 Netze. Wie viele Bit braucht man mindestens für 12?"
+        },
+        {
+          "label": "a) Netmask binär:",
+          "format": "ipbin",
+          "antwort": "1111'1111.1111'1111.1111'0000.0000'0000",
+          "tipp": "Die ersten 16 Bit (zwei Bytes) sind schon Netzadresse, dazu kommen die zusätzlichen Bits.",
+          "breit": true
+        },
+        {
+          "label": "a) Netmask dezimal:",
+          "format": "ip",
+          "antwort": "255.255.240.0",
+          "tipp": "Wandeln Sie jedes Byte der binären Netmask in eine Dezimalzahl um. 1111'0000 ist 128 + 64 + 32 + 16."
+        },
+        {
+          "label": "b) Realisierbare Subnetze:",
+          "format": "zahl",
+          "antwort": 16,
+          "tipp": "Mit der gewählten Anzahl Bits gilt: Anzahl Subnetze = 2<sup>Bits</sup>.",
+          "haeufig": [
+            {
+              "wert": 12,
+              "tipp": "12 war die Anforderung. Realisierbar sind alle Kombinationen der zusätzlichen Bits."
+            }
+          ]
+        },
+        {
+          "label": "c) Subnetz von:",
+          "format": "ip",
+          "antwort": "64.25.144.0",
+          "tipp": "Schreiben Sie das 3. Byte (155) binär: 1001'1011. Die ersten 4 Bit (1001) sind die Subnetz-Nummer, der Rest ist Host. Setzen Sie die Host-Bits auf 0."
+        },
+        {
+          "label": "c) Subnetz bis:",
+          "format": "ip",
+          "antwort": "64.25.159.255",
+          "tipp": "Setzen Sie im 3. Byte alle Host-Bits auf 1 (1001'1111), im 4. Byte alle Bits auf 1."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Subnetting",
+          "href": "/lektionen/i0-theorie.html#subnetting"
+        },
+        {
+          "text": "IP-Adresse und Netzmaske",
+          "href": "/lektionen/i0-theorie.html#ip-adresse"
+        }
+      ],
+      "weg": "Für 12 Subnetze braucht es 4 zusätzliche Bit (16 Netze): 1111'1111.1111'1111.1111'0000.0000'0000 = 255.255.240.0, es sind 16 Subnetze möglich. Das 3. Byte von 64.25.155.234 ist 1001'1011; die Subnetz-Bits 1001 ergeben das Subnetz 64.25.144.0 bis 64.25.159.255."
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "P4",
+  "titel": "Formative Prüfung 1: OSI-Modell und Netzwerkelemente",
+  "aufgaben": [
+    {
+      "typ": "wahl",
+      "frage": "Prüfungsaufgabe 3 (1 Punkt): In jeder Internet-Einführung können Sie nachlesen, dass die TCP/IP-Protokollfamilie die technische Grundlage des Internets bildet. Was bedeutet «TCP/IP»?",
+      "optionen": [
+        {
+          "text": "Transfer Control Protocol / Internet Protocol",
+          "warum": "Das T steht nicht für «Transfer»."
+        },
+        {
+          "text": "Transmission Control Protocol / Integration Protocol",
+          "warum": "Das I in IP steht nicht für «Integration»."
+        },
+        {
+          "text": "Transmission Contact Protocol / Internet Protocol",
+          "warum": "Das C in TCP steht nicht für «Contact»."
+        },
+        {
+          "text": "Transmission Control Protocol / Internet Protocol",
+          "richtig": true
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "TCP/IP",
+          "href": "/lektionen/r0-theorie.html#tcpip"
+        }
+      ],
+      "weg": "TCP = Transmission Control Protocol, IP = Internet Protocol."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Prüfungsaufgabe 19 (1 Punkt): Welche Adressierung wird auf dem OSI-Layer 4 vorgenommen?",
+      "optionen": [
+        {
+          "text": "Portadressierung (welcher Dienst soll angesprochen werden)",
+          "richtig": true
+        },
+        {
+          "text": "IP-Adressierung (welches Gerät in welchem Netz)",
+          "warum": "Die IP-Adressierung gehört zur Vermittlungsschicht (Layer 3)."
+        },
+        {
+          "text": "MAC-Adressierung (welche Netzwerkkarte)",
+          "warum": "Die MAC-Adressierung gehört zur Sicherungsschicht (Layer 2)."
+        },
+        {
+          "text": "Hostname-Adressierung (Namen von Geräten)",
+          "warum": "Namen werden per DNS aufgelöst, das ist ein Dienst der Anwendungsschicht."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "OSI-Modell",
+          "href": "/lektionen/r0-theorie.html#osi"
+        },
+        {
+          "text": "Portnummern",
+          "href": "/lektionen/i0-theorie.html#header-fragmentierung"
+        }
+      ],
+      "weg": "Layer 4 (Transportschicht) arbeitet mit Portnummern: Sie wählen den Dienst auf dem Zielgerät."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Prüfungsaufgabe 21 (2 Punkte): Mit welchem Netzwerk-Kommando können Sie sich Ihre IP-Nummer und Ihre MAC-Adresse anzeigen lassen?",
+      "optionen": [
+        {
+          "text": "ipconfig /all",
+          "richtig": true
+        },
+        {
+          "text": "nslookup",
+          "warum": "nslookup fragt den DNS-Server nach der IP-Nummer eines Namens, es zeigt nicht Ihre eigene MAC-Adresse."
+        },
+        {
+          "text": "tracert",
+          "warum": "tracert zeigt den Weg der Pakete zu einem Ziel, nicht Ihre eigenen Adressen."
+        },
+        {
+          "text": "netstat",
+          "warum": "netstat zeigt bestehende Verbindungen und offene Ports, nicht Ihre eigene MAC-Adresse."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Netzwerk-Kommandos",
+          "href": "/lektionen/r0-theorie.html#kommandos"
+        }
+      ],
+      "weg": "«ipconfig /all» (in der Prüfungslösung «ipconfig -all») zeigt IP-Nummer, Netzmaske, Gateway, DNS-Server und die MAC-Adresse (physische Adresse)."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Prüfungsaufgabe 22 (3.5 Punkte): Wie heissen die 7 Schichten des OSI-Modells? Ordnen Sie jeder Schicht den Namen zu.",
+      "optionen": [
+        "Bitübertragung (Physical)",
+        "Sicherung (Data Link)",
+        "Vermittlung (Network)",
+        "Transport (Transport)",
+        "Kommunikation (Session)",
+        "Darstellung (Presentation)",
+        "Anwendung (Application)"
+      ],
+      "spalte": "Schicht",
+      "antwortspalte": "Name",
+      "zeilen": [
+        {
+          "text": "Schicht 1 (unterste)",
+          "antwort": "Bitübertragung (Physical)",
+          "tipp": "Auf der untersten Schicht werden die einzelnen Bits als Signale auf das Medium gebracht."
+        },
+        {
+          "text": "Schicht 2",
+          "antwort": "Sicherung (Data Link)",
+          "tipp": "Hier arbeiten MAC-Adressen und Switches, Übertragungsfehler werden erkannt."
+        },
+        {
+          "text": "Schicht 3",
+          "antwort": "Vermittlung (Network)",
+          "tipp": "Hier wird mit IP-Adressen der Weg durch mehrere Netze gesucht (Router)."
+        },
+        {
+          "text": "Schicht 4",
+          "antwort": "Transport (Transport)",
+          "tipp": "Hier arbeiten TCP und UDP mit Portnummern."
+        },
+        {
+          "text": "Schicht 5",
+          "antwort": "Kommunikation (Session)",
+          "tipp": "Diese Schicht steuert Beginn, Ablauf und Ende einer Sitzung zwischen zwei Anwendungen."
+        },
+        {
+          "text": "Schicht 6",
+          "antwort": "Darstellung (Presentation)",
+          "tipp": "Diese Schicht wandelt Datenformate um (Zeichencodierung, Verschlüsselung)."
+        },
+        {
+          "text": "Schicht 7 (oberste)",
+          "antwort": "Anwendung (Application)",
+          "tipp": "Hier liegen die Protokolle, mit denen Programme direkt arbeiten (HTTP, SMTP, DNS)."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "OSI-Modell",
+          "href": "/lektionen/r0-theorie.html#osi"
+        }
+      ],
+      "weg": "Von unten nach oben: Physical, Data Link, Network, Transport, Session, Presentation, Application (auf Deutsch: Bitübertragung, Sicherung, Vermittlung, Transport, Kommunikation, Darstellung, Anwendung)."
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Prüfungsaufgabe 23 (5 Punkte): Vervollständigen Sie die nachstehende Tabelle. Welches aktive Netzwerkelement durchläuft die genannten Netzwerkschichten?",
+      "optionen": [
+        "Repeater",
+        "Switch",
+        "Router",
+        "Gateway"
+      ],
+      "spalte": "Durchlaufene Netzwerkschichten",
+      "antwortspalte": "Aktives Netzwerkelement",
+      "zeilen": [
+        {
+          "text": "1 bis 3",
+          "antwort": "Router",
+          "tipp": "Dieses Element arbeitet mit IP-Adressen, also bis zur Vermittlungsschicht (Schicht 3)."
+        },
+        {
+          "text": "1 bis 7",
+          "antwort": "Gateway",
+          "tipp": "Dieses Element muss den Inhalt verstehen und arbeitet deshalb bis zur obersten Schicht."
+        },
+        {
+          "text": "1-3",
+          "antwort": "Router",
+          "tipp": "Dieses Element arbeitet mit IP-Adressen, also bis zur Vermittlungsschicht (Schicht 3)."
+        },
+        {
+          "text": "1",
+          "antwort": "Repeater",
+          "tipp": "Dieses Element frischt nur das Signal auf und arbeitet deshalb nur auf der untersten Schicht."
+        },
+        {
+          "text": "1 bis 2",
+          "antwort": "Switch",
+          "tipp": "Dieses Element wertet MAC-Adressen aus und arbeitet bis zur Sicherungsschicht (Schicht 2)."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Aktive Netzwerkelemente",
+          "href": "/lektionen/r0-theorie.html#netzwerkelemente"
+        }
+      ],
+      "weg": "Repeater: Schicht 1. Switch: Schichten 1 bis 2. Router: Schichten 1 bis 3. Gateway: Schichten 1 bis 7."
+    }
+  ]
+}

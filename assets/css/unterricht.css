@@ -780,9 +780,13 @@ a { color: var(--accent); }
 
 .badge-uebungscheck { background: #e3ecff; color: #24479c; }
 .badge-theorie       { background: #dff0f3; color: #17636e; }
+.badge-pruefung      { background: #fdeed6; color: #8a4b00; }
+.badge-loesung       { background: #e2f3e4; color: #1d5e2a; }
 @media (prefers-color-scheme: dark) {
   .badge-uebungscheck { background: #1c2b4d; color: #9fbcff; }
   .badge-theorie       { background: #12343a; color: #7fd0da; }
+  .badge-pruefung      { background: #43300f; color: #f0c07a; }
+  .badge-loesung       { background: #163a1d; color: #8fd89c; }
 }
 
 .visuell-versteckt {
@@ -815,6 +819,8 @@ a { color: var(--accent); }
   font-size: .9rem; font-weight: 700;
 }
 .check-frage code { font-weight: 500; }
+.check-nachlesen { margin: -.4rem 0 .8rem 2.65rem; font-size: .88rem; color: var(--text-muted, inherit); }
+.check-nachlesen a { color: var(--accent); }
 
 /* Eingabefelder */
 .check-feld { display: flex; flex-wrap: wrap; gap: .5rem .6rem; align-items: center; margin: .5rem 0; }
@@ -828,6 +834,8 @@ a { color: var(--accent); }
 .check-eingabe.check-bin,
 .check-eingabe.check-mantisse { width: 14rem; }
 .check-eingabe.check-text     { width: 12rem; }
+.check-eingabe.check-ipbin    { width: 21rem; }
+
 .check-eingabe.check-ip       { width: 12rem; }
 .check-eingabe.breit          { width: 17rem; }
 .check-eingabe:focus-visible,

@@ -1,0 +1,104 @@
+{
+  "id": "P1Z",
+  "titel": "Formative Prüfung 1: Zahlensysteme, Zusatzaufgaben",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 9 (4 Punkte): Untenstehende Bitfolge ist in einem Float (32 Bit) gespeichert. Um welche Zahl handelt es sich? <br>Vorzeichen: <code>1</code> · Exponent: <code>1000'0101</code> · Mantisse: <code>011011000…</code> (restliche Bits 0)",
+      "felder": [
+        {
+          "label": "Exponent als Dezimalzahl (e<sub>1</sub>–e<sub>8</sub>):",
+          "format": "zahl",
+          "antwort": 133,
+          "tipp": "Lesen Sie die acht Exponentenbits als Binärzahl: 128 + 4 + 1."
+        },
+        {
+          "label": "Exponent nach Abzug des Bias 127:",
+          "format": "zahl",
+          "antwort": 6,
+          "tipp": "Ziehen Sie vom gespeicherten Exponenten den Bias 127 ab."
+        },
+        {
+          "label": "Dezimalzahl:",
+          "format": "zahl",
+          "antwort": -91,
+          "tipp": "Das Vorzeichenbit 1 bedeutet negativ. Setzen Sie vor die Mantisse eine führende 1 (1,011011), und verschieben Sie das Komma um 6 Stellen nach rechts.",
+          "haeufig": [
+            {
+              "wert": 91,
+              "tipp": "Das Vorzeichenbit ist 1: Die Zahl ist negativ."
+            }
+          ]
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Gleitkommazahlen (Float)",
+          "href": "/lektionen/z0-theorie.html#gleitkommazahlen"
+        }
+      ],
+      "weg": "Vorzeichen 1 = negativ. Exponent 1000'0101 = 133, minus Bias 127 = 6. Mantisse 1,011011. Komma 6 Stellen nach rechts: 1011011<sub>2</sub> = 64 + 16 + 8 + 2 + 1 = 91, also −91."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 10 (2 Punkte): Wandeln Sie folgende Binärbrüche in Dezimalbrüche um.",
+      "felder": [
+        {
+          "label": "0.1101 =",
+          "format": "zahl",
+          "antwort": 0.8125,
+          "tipp": "Nach dem Komma gelten die Wertigkeiten ½, ¼, ⅛, 1/16 …"
+        },
+        {
+          "label": "101.0111 =",
+          "format": "zahl",
+          "antwort": 5.4375,
+          "tipp": "Vor dem Komma: 4 + 1. Nach dem Komma die Wertigkeiten ½, ¼, ⅛, 1/16 für die Stellen mit einer 1."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Binärbrüche",
+          "href": "/lektionen/z0-theorie.html#binaerbrueche"
+        }
+      ],
+      "weg": "0.1101 = ½ + ¼ + 1/16 = 0.8125. 101.0111 = 5 + ¼ + ⅛ + 1/16 = 5.4375."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 11 (2 Punkte): Wandeln Sie folgende Dezimalbrüche in Binärbrüche um (mindestens 10 Kommastellen, falls nötig).",
+      "felder": [
+        {
+          "label": "6.25 =",
+          "format": "bin",
+          "antwort": "110.01",
+          "tipp": "Vor dem Komma: 6 = 110. Nach dem Komma: 0.25 wiederholt mit 2 multiplizieren.",
+          "bruch": true
+        },
+        {
+          "label": "0.33 =",
+          "format": "bin",
+          "antwort": [
+            "0.0101010001",
+            "0.01010100011",
+            "0.010101000111",
+            "0.0101010001111",
+            "0.01010100011110",
+            "0.010101000111101",
+            "0.0101010001111010"
+          ],
+          "tipp": "Multiplizieren Sie den Nachkommateil wiederholt mit 2 und notieren Sie die Vorkommaziffern. Brechen Sie nach 10 Kommastellen ab.",
+          "bruch": true,
+          "breit": true
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Dezimalbrüche in Binärbrüche",
+          "href": "/lektionen/z0-theorie.html#binaerbrueche"
+        }
+      ],
+      "weg": "6.25 = 110.01<sub>2</sub> (0.25 → 0, 1). 0.33 ergibt abbrechend nach 10 Stellen 0.0101010001<sub>2</sub> und bricht nie ab."
+    }
+  ]
+}

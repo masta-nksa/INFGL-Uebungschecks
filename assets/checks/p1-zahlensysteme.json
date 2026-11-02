@@ -1,0 +1,210 @@
+{
+  "id": "P1",
+  "titel": "Formative Prüfung 1: Zahlensysteme",
+  "aufgaben": [
+    {
+      "typ": "tabelle",
+      "frage": "Prüfungsaufgabe 5 (4.5 Punkte): Ergänzen Sie die nachstehende Tabelle.",
+      "kopf": [
+        "Dezimal",
+        "Hexadezimal",
+        "9er-System",
+        "Binär"
+      ],
+      "zeilen": [
+        [
+          {
+            "label": "",
+            "format": "zahl",
+            "antwort": 33,
+            "tipp": "Wandeln Sie die Binärzahl 10'0001 in eine Dezimalzahl um (Wertigkeiten 32, 16, 8, 4, 2, 1)."
+          },
+          {
+            "label": "",
+            "format": "hex",
+            "antwort": "21",
+            "tipp": "Bilden Sie von rechts 4er-Gruppen (0010 und 0001) und übersetzen Sie jede in eine Hexziffer."
+          },
+          "36<sub>9</sub>",
+          "10'0001<sub>2</sub>"
+        ],
+        [
+          {
+            "label": "",
+            "format": "zahl",
+            "antwort": 1717,
+            "tipp": "Wandeln Sie die Binärzahl in Hex um (4er-Gruppen von rechts) und dann in Dezimal: 16<sup>2</sup>, 16<sup>1</sup>, 16<sup>0</sup>."
+          },
+          {
+            "label": "",
+            "format": "hex",
+            "antwort": "6B5",
+            "tipp": "Bilden Sie von rechts 4er-Gruppen: 0110, 1011, 0101. B steht für 11."
+          },
+          {
+            "label": "",
+            "format": "ziffern",
+            "antwort": "2317",
+            "tipp": "Teilen Sie die Dezimalzahl wiederholt durch 9 und notieren Sie die Reste von unten nach oben.",
+            "basis": 9
+          },
+          "110'1011'0101<sub>2</sub>"
+        ],
+        [
+          {
+            "label": "",
+            "format": "zahl",
+            "antwort": 195,
+            "tipp": "Wandeln Sie zuerst in Hex um (1100 = C, 0011 = 3) und rechnen Sie dann 12 · 16 + 3."
+          },
+          {
+            "label": "",
+            "format": "hex",
+            "antwort": "C3",
+            "tipp": "Bilden Sie die 4er-Gruppen 1100 und 0011. Die Gruppe 1100 ist 12, also C."
+          },
+          {
+            "label": "",
+            "format": "ziffern",
+            "antwort": "236",
+            "tipp": "Teilen Sie die Dezimalzahl wiederholt durch 9 und notieren Sie die Reste von unten nach oben.",
+            "basis": 9
+          },
+          "1100'0011<sub>2</sub>"
+        ]
+      ],
+      "nachlesen": [
+        {
+          "text": "Zahlensysteme umrechnen",
+          "href": "/lektionen/z0-theorie.html#binaer-hex"
+        }
+      ],
+      "weg": "33 = 21<sub>16</sub> = 36<sub>9</sub> = 10'0001<sub>2</sub>; 1717 = 6B5<sub>16</sub> = 2317<sub>9</sub> = 110'1011'0101<sub>2</sub>; 195 = C3<sub>16</sub> = 236<sub>9</sub> = 1100'0011<sub>2</sub>."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 6: Wandeln Sie vom 7er- ins 10er- und ins 13er-System um: <code>23562</code><sub>7</sub>",
+      "felder": [
+        {
+          "label": "23562<sub>7</sub> =",
+          "format": "zahl",
+          "antwort": 6120,
+          "nach": "<sub>10</sub>",
+          "tipp": "Multiplizieren Sie jede Ziffer mit der Potenz von 7 ihrer Stelle (7<sup>4</sup> = 2401, 7<sup>3</sup> = 343, …) und addieren Sie."
+        },
+        {
+          "label": "= ",
+          "format": "ziffern",
+          "antwort": "2A2A",
+          "nach": "<sub>13</sub>",
+          "tipp": "Teilen Sie die Dezimalzahl wiederholt durch 13 und notieren Sie die Reste von unten nach oben. Reste 10 und mehr werden zu Buchstaben (A = 10).",
+          "basis": 13
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Andere Basen umrechnen",
+          "href": "/lektionen/z0-theorie.html#binaer-hex"
+        }
+      ],
+      "weg": "23562<sub>7</sub> = 2·2401 + 3·343 + 5·49 + 6·7 + 2 = 6120. Danach durch 13 teilen: 6120 = 2·2197 + 10·169 + 2·13 + 10, also 2A2A<sub>13</sub>."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 7 (4 Punkte): Folgendes ist die Hex-Darstellung des ASCII-Codes eines kurzen Textes. Wie lautet er? <br><code>49 73 74 20 65 73 20 57 69 6E 74 65 72 3F</code>",
+      "felder": [
+        {
+          "label": "Text:",
+          "format": "text",
+          "antwort": "Ist es Winter?",
+          "tipp": "Jedes Hex-Paar ist ein Zeichen. Grossbuchstaben beginnen bei 41<sub>16</sub> (A), Kleinbuchstaben bei 61<sub>16</sub> (a), 20<sub>16</sub> ist das Leerzeichen.",
+          "breit": true
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "ASCII-Code",
+          "href": "/lektionen/z0-theorie.html#bits-bytes"
+        },
+        {
+          "text": "Hexadezimalzahlen",
+          "href": "/lektionen/z0-theorie.html#binaer-hex"
+        }
+      ],
+      "weg": "49 = I, 73 = s, 74 = t, 20 = Leerzeichen, 65 = e, 73 = s, 20 = Leerzeichen, 57 = W, 69 = i, 6E = n, 74 = t, 65 = e, 72 = r, 3F = ?  Ergebnis: «Ist es Winter?»."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 12 (2 Punkte): Welchen Dezimalzahlen entspricht die Binärzahl <code>001110</code>, wenn sie als unsigned (ohne Vorzeichen) bzw. als signed (Zweierkomplement) gelesen wird?",
+      "felder": [
+        {
+          "label": "unsigned:",
+          "format": "zahl",
+          "antwort": 14,
+          "tipp": "Addieren Sie die Wertigkeiten aller Stellen mit einer 1: 8 + 4 + 2."
+        },
+        {
+          "label": "signed:",
+          "format": "zahl",
+          "antwort": 14,
+          "tipp": "Das höchstwertige Bit ist 0, die Zahl ist also positiv und wird gleich gelesen wie unsigned."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Zweierkomplement",
+          "href": "/lektionen/z0-theorie.html#zweierkomplement"
+        }
+      ],
+      "weg": "001110 = 8 + 4 + 2 = 14. Das erste Bit ist 0, deshalb ist die Zahl auch im Zweierkomplement positiv: 14."
+    },
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 13 (4 Punkte): Vorgegeben sei eine Wortlänge von 6 Bit. Welcher Zahlenbereich lässt sich damit darstellen: a) unsigned (nur positiv), b) signed (Zweierkomplement)?",
+      "felder": [
+        {
+          "label": "a) unsigned, kleinste Zahl:",
+          "format": "zahl",
+          "antwort": 0
+        },
+        {
+          "label": "a) unsigned, grösste Zahl:",
+          "format": "zahl",
+          "antwort": 63,
+          "tipp": "Mit 6 Bit gibt es 2<sup>6</sup> = 64 Bitfolgen. Die kleinste ist 0, die grösste daher 64 − 1.",
+          "haeufig": [
+            {
+              "wert": 64,
+              "tipp": "Die Zählung beginnt bei 0: 64 Werte reichen von 0 bis 63."
+            }
+          ]
+        },
+        {
+          "label": "b) signed, kleinste Zahl:",
+          "format": "zahl",
+          "antwort": -32,
+          "tipp": "Bei n Bit reicht der Bereich von −2<sup>n−1</sup> bis 2<sup>n−1</sup> − 1. Hier ist n = 6."
+        },
+        {
+          "label": "b) signed, grösste Zahl:",
+          "format": "zahl",
+          "antwort": 31,
+          "tipp": "Die positive Seite reicht bis 2<sup>n−1</sup> − 1.",
+          "haeufig": [
+            {
+              "wert": 32,
+              "tipp": "Die positive Seite reicht nur bis 31, denn die 0 gehört zu den nicht-negativen Zahlen."
+            }
+          ]
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Wertebereich: unsigned und signed",
+          "href": "/lektionen/z0-theorie.html#zweierkomplement"
+        }
+      ],
+      "weg": "unsigned: 0 bis 2<sup>6</sup> − 1 = 63. signed: −2<sup>5</sup> = −32 bis 2<sup>5</sup> − 1 = +31."
+    }
+  ]
+}

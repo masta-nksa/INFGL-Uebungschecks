@@ -136,6 +136,14 @@ darstellen. Der Bereich ist nicht symmetrisch, weil die 0 zu den nicht-negativen
 Zahlen zählt und damit auf der positiven Seite ein Wert „fehlt“ (bei 4 Bit: −8 bis
 +7, bei 8 Bit: −128 bis +127).
 
+**Mit und ohne Vorzeichen:** Wird eine Bitfolge als Zahl *ohne* Vorzeichen gelesen
+(englisch *unsigned*), zählen alle Bit als Wertigkeiten und der Bereich reicht von 0 bis
+2ⁿ − 1 (bei 4 Bit: 0 bis 15). Wird sie als Zahl *mit* Vorzeichen gelesen (*signed*,
+im Zweierkomplement), gilt der Bereich oben (bei 4 Bit: −8 bis +7). Positive Zahlen
+sehen in beiden Darstellungen gleich aus: `0101` ist unsigned und signed 5. Erst wenn
+das erste Bit 1 ist, unterscheiden sich die beiden Lesarten: `1011` ist unsigned 11,
+signed aber −5.
+
 **Der grosse Vorteil:** Mit dem Zweierkomplement wird Subtraktion zu einer normalen
 Addition — *a* − *b* rechnet man als *a* + (Zweierkomplement von *b*). Ein Übertrag,
 der über die vorgegebene Bitbreite hinausgeht, wird dabei einfach verworfen.

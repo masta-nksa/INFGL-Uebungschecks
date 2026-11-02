@@ -1,0 +1,129 @@
+{
+  "id": "P4Z",
+  "titel": "Formative Prüfung 1: Protokolle und Topologie, Zusatzaufgaben",
+  "aufgaben": [
+    {
+      "typ": "felder",
+      "frage": "Prüfungsaufgabe 15 (1 Punkt): Wie viele Bits belegt eine MAC-Adresse im «Ethernet-Header»?",
+      "felder": [
+        {
+          "label": "Anzahl Bits:",
+          "format": "zahl",
+          "antwort": 48,
+          "tipp": "Eine MAC-Adresse besteht aus 6 Bytes.",
+          "haeufig": [
+            {
+              "wert": 6,
+              "tipp": "6 ist die Anzahl Bytes. Gefragt sind die Bits."
+            }
+          ]
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "MAC-Adresse (Schicht 2)",
+          "href": "/lektionen/r0-theorie.html#osi"
+        },
+        {
+          "text": "Switch und MAC-Adressen",
+          "href": "/lektionen/r0-theorie.html#netzwerkelemente"
+        }
+      ],
+      "weg": "Eine MAC-Adresse hat 6 Bytes = 48 Bits."
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Prüfungsaufgabe 16: Welche Angaben sind in einem TCP-Header zu finden? (In der Prüfung sind 2 Angaben zu nennen.) Wählen Sie alle zutreffenden aus.",
+      "optionen": [
+        {
+          "text": "Empfängerport",
+          "richtig": true
+        },
+        {
+          "text": "Senderport",
+          "richtig": true
+        },
+        {
+          "text": "Sequenznummer",
+          "richtig": true
+        },
+        {
+          "text": "Quittungsnummer",
+          "richtig": true
+        },
+        {
+          "text": "Datenabstand",
+          "richtig": true
+        },
+        {
+          "text": "Flags",
+          "richtig": true
+        },
+        {
+          "text": "Fenstergrösse",
+          "richtig": true
+        },
+        {
+          "text": "Prüfsumme",
+          "richtig": true
+        },
+        {
+          "text": "Urgent-Zeiger",
+          "richtig": true
+        },
+        {
+          "text": "Lebenszeit (Time to Live)",
+          "warum": "Die Lebenszeit steht im IP-Header, nicht im TCP-Header."
+        },
+        {
+          "text": "Fragmentabstand",
+          "warum": "Der Fragmentabstand steht im IP-Header, nicht im TCP-Header."
+        },
+        {
+          "text": "Version",
+          "warum": "Die Version steht im IP-Header, nicht im TCP-Header."
+        },
+        {
+          "text": "IP-Adresse des Empfängers",
+          "warum": "IP-Adressen stehen im IP-Header. Der TCP-Header enthält Ports."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Protokollköpfe (TCP/IP)",
+          "href": "/lektionen/r0-theorie.html#tcpip"
+        }
+      ],
+      "weg": "Im TCP-Header stehen (ungefähr nach Wichtigkeit): Empfängerport, Senderport, Sequenznummer, Quittungsnummer, Datenabstand, Flags, Fenstergrösse, Prüfsumme, Urgent-Zeiger."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Prüfungsaufgabe 20 (2 Punkte): Was versteht man unter der «Netztopologie»?",
+      "optionen": [
+        {
+          "text": "Die physikalische Anordnung der Geräte im Netz (Stern-, Bus- und Ring-Topologie).",
+          "richtig": true
+        },
+        {
+          "text": "Die Übertragungsgeschwindigkeit, mit der Daten im Netz fliessen.",
+          "warum": "Die Geschwindigkeit ist die Datenrate, nicht die Anordnung der Geräte."
+        },
+        {
+          "text": "Die Reihenfolge der sieben Schichten des OSI-Modells.",
+          "warum": "Das ist der Aufbau des OSI-Modells, nicht die Topologie."
+        },
+        {
+          "text": "Die Software, mit der ein Netz verwaltet wird.",
+          "warum": "Die Topologie beschreibt die Anordnung der Geräte, nicht Software."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Netzarten und Topologien",
+          "href": "/lektionen/r0-theorie.html#topologien"
+        }
+      ],
+      "weg": "Die Netztopologie ist die physikalische Anordnung der Geräte im Netz: Stern, Bus oder Ring."
+    }
+  ]
+}

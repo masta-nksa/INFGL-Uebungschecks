@@ -37,7 +37,7 @@ layout: default
   <article class="prose">
     {{ content }}
     {%- if page.check %}
-    <div class="check-app" data-json="{{ '/assets/checks/' | append: page.check | append: '.json' | relative_url }}">
+    <div class="check-app" data-json="{{ '/assets/checks/' | append: page.check | append: '.json' | relative_url }}" data-base="{{ site.baseurl }}">
       <noscript><p class="hinweis"><strong>JavaScript nötig.</strong> Die Aufgaben werden im Browser geprüft. Bitte aktivieren Sie JavaScript.</p></noscript>
     </div>
     {%- endif %}

@@ -47,7 +47,7 @@ was keinen eigenen hat) sowie `weg` (Kurz-Rechenweg, erscheint nach der richtige
 | Eigenschaft | Bedeutung |
 |---|---|
 | `label`, `nach` | Text vor und nach dem Eingabefeld |
-| `format` | `zahl`, `bin`, `hex`, `ziffern`, `mantisse`, `ip` oder `text` |
+| `format` | `zahl`, `bin`, `hex`, `ziffern`, `mantisse`, `ip`, `ipbin` oder `text` |
 | `antwort` | richtige Antwort, bei mehreren gültigen Schreibweisen eine Liste |
 | `tipp` | Tipp bei falscher Antwort |
 | `haeufig` | Liste von `{wert, tipp}`: Tipp für einen bekannten Fehler (hat Vorrang vor `tipp`) |
@@ -57,6 +57,8 @@ was keinen eigenen hat) sowie `weg` (Kurz-Rechenweg, erscheint nach der richtige
 | `basis` | bei `ziffern`: Zahlensystem, damit unzulässige Ziffern erkannt werden |
 | `breit` | breiteres Eingabefeld |
 
+Zusätzlich kann jede Aufgabe `nachlesen` haben: eine Liste von `{text, href}`. Sie erscheint als Zeile «Nachlesen: …» unter der Frage. `href` ist seitenrelativ (`/lektionen/z0-theorie.html#binaer-hex`), `baseurl` ergänzt die Seite selbst (Attribut `data-base` in `_layouts/material.html`).
+
 Was das Prüfen alles akzeptiert:
 
 - **`zahl`:** Dezimalpunkt oder -komma, Trenner `'` und Leerzeichen, einfache Ausdrücke
@@ -65,6 +67,8 @@ Was das Prüfen alles akzeptiert:
   Suffix `b`/`h`, tiefgestellte Basis (`₂`), Gross- und Kleinschreibung bei Hex.
 - **`ip`:** IPv4-Adresse oder Netzmaske als vier Zahlen von 0 bis 255 mit Punkten
   (`192.168.1.20`); führende Nullen und Leerzeichen stören nicht.
+- **`ipbin`:** Adresse oder Netzmaske binär als 32 Bit, mit oder ohne Punkte und Trenner
+  (`1111'1111.1111'1111.1111'0000.0000'0000`).
 - **`text`:** Gross-/Kleinschreibung und Satzzeichen werden ignoriert.
 
 Nach jeder Änderung an einer Datei in `assets/checks/` lohnt sich ein Blick in die Seite:
@@ -77,6 +81,17 @@ nicht geladen werden konnten.
 2. `lektionen/<name>.md` anlegen: Kopf wie in den bestehenden Dateien, mit `check: <name>`
    und `lektion: <Nummer der Einheit>`.
 3. Committen und pushen. Die Seite erscheint automatisch in der Liste der Einheit.
+
+## Einheit 8: Formative Prüfung 1
+
+Die 25 Aufgaben der formativen Prüfung 1 (Quelle: `Unterlagen/08_Formative_Prüf1_HTML`) stehen
+mit unveränderten Zahlen in sieben Seiten `lektionen/p1…p4z-*.md` (`art: pruefung`), gegliedert
+in vier Teile mit Kern- und Zusatzaufgaben (Zusatz: Dateiname mit `z`). Jede Aufgabe hat
+`nachlesen`-Links auf die Theorie-Seiten. Die Musterlösung (`lektionen/p9-musterloesung.md`,
+`art: loesung`) ist eine feste Seite mit Rechenwegen; die Einheitsseite `lektion-8.md` verlinkt
+pro Teil Kernaufgaben, Zusatzaufgaben und Musterlösung (`check_label`, `zusatz`, `lsg` im
+Frontmatter von `lernziele`). Ausnahme zur Regel «keine Musterlösungen»: Bei dieser Prüfung
+ausdrücklich gewünscht.
 
 ## Hinweis zu den Antworten
 

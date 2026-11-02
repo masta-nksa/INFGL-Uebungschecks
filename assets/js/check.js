@@ -77,6 +77,12 @@
     return teile.every(function (n) { return n <= 255; }) ? teile : null;
   }
 
+  // Netzmaske oder Adresse binär: 32 Bit, meist in vier Bytes mit Punkten; Trenner ' und Leerzeichen stören nicht.
+  function ipbinBits(roh) {
+    var s = sauber(roh).replace(/[\s'’`´]/g, '').replace(/\./g, '');
+    return /^[01]{32}$/.test(s) ? s : null;
+  }
+
   function textNorm(roh) {
     return sauber(roh).toLowerCase().replace(/[«»"'’.,;:!?()]/g, '').replace(/\s+/g, ' ');
   }
@@ -136,6 +142,15 @@
       gleich: function (roh, soll) {
         var a = ipTeile(roh), b = ipTeile(String(soll));
         return !!a && !!b && a.join('.') === b.join('.');
+      }
+    },
+    ipbin: {
+      fehler: function (roh) {
+        return ipbinBits(roh) ? null : 'Bitte 32 Bit eingeben, in vier Gruppen zu je 8 Bit mit Punkten getrennt (z. B. 11110000.00000000.00000000.00000000).';
+      },
+      gleich: function (roh, soll) {
+        var a = ipbinBits(roh), b = ipbinBits(String(soll));
+        return !!a && !!b && a === b;
       }
     },
     text: {
@@ -409,7 +424,7 @@
     };
   }
 
-  function baueAufgabe(item, nr) {
+  function baueAufgabe(item, nr, base) {
     var feedback = h('div', { class: 'check-feedback', 'aria-live': 'polite' });
     var teil = h('div', { class: 'check-teil' });
     var bereich = h('section', { class: 'check-aufgabe' });
@@ -471,6 +486,14 @@
     });
 
     bereich.appendChild(h('h2', { class: 'check-frage' }, [h('span', { class: 'check-nr', 'aria-hidden': 'true' }, String(nr)), h('span', { html: '<span class="visuell-versteckt">Aufgabe ' + nr + ': </span>' + item.frage })]));
+    if (item.nachlesen && item.nachlesen.length) {
+      var links = [];
+      item.nachlesen.forEach(function (n, i) {
+        if (i > 0) links.push(', ');
+        links.push(h('a', { href: (base || '') + n.href }, n.text));
+      });
+      bereich.appendChild(h('p', { class: 'check-nachlesen' }, [h('span', {}, 'Nachlesen: ')].concat(links)));
+    }
     bereich.appendChild(teil);
     bereich.appendChild(h('div', { class: 'check-aktion' }, knopf));
     bereich.appendChild(feedback);
@@ -478,8 +501,8 @@
     return { el: bereich, pruefen: pruefen, zuruecksetzen: zuruecksetzen };
   }
 
-  function baueCheck(container, daten) {
-    var aufgaben = daten.aufgaben.map(function (item, i) { return baueAufgabe(item, i + 1); });
+  function baueCheck(container, daten, base) {
+    var aufgaben = daten.aufgaben.map(function (item, i) { return baueAufgabe(item, i + 1, base); });
     var liste = h('div', { class: 'check-liste' }, aufgaben.map(function (a) { return a.el; }));
     var ergebnis = h('p', { class: 'check-ergebnis', 'aria-live': 'polite' });
 
@@ -517,7 +540,7 @@
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();
       }).then(function (daten) {
-        baueCheck(app, daten);
+        baueCheck(app, daten, app.getAttribute('data-base') || '');
       }).catch(function () {
         app.innerHTML = '<p class="hinweis"><strong>Die Aufgaben konnten nicht geladen werden.</strong> Laden Sie die Seite neu. Bleibt der Fehler bestehen, informieren Sie Ihre Lehrperson.</p>';
       });
@@ -532,6 +555,7 @@
     bewerteFelder: bewerteFelder,
     bewerteWahl: bewerteWahl,
     bewerteMehrfach: bewerteMehrfach,
-    bewerteZuordnung: bewerteZuordnung
+    bewerteZuordnung: bewerteZuordnung,
+    ipbinBits: ipbinBits
   };
 }));
