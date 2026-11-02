@@ -283,7 +283,7 @@ den BMI berechnet:
   <form id="bmi" action="https://www.inolten.ch/web/bmi.php" method="post">
     <label for="gewicht">Gewicht in kg:</label><br>
     <input type="text" id="gewicht" name="gewicht" size="10"><br>
-    <label for="groesse">Grösse in cm:</label><br>
+    <label for="groesse">Grösse in m:</label><br>
     <input type="text" id="groesse" name="groesse" size="10"><br><br>
     <input type="submit" value="Berechnen">
     <input type="reset" value="Formular leeren">
@@ -335,6 +335,12 @@ Suchmaschinen:
 <meta name="author" content="Max Muster">
 <meta name="description" content="Persönliche Webseite von Max Muster">
 <meta name="keywords" content="Muster, Lebenslauf, Projekte">
+```
+
+Für die Darstellung auf dem Handy gehört zusätzlich diese Zeile in den `<head>`:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
 (Die Suchmaschine Google ignoriert `keywords`, `description` kann dagegen im Suchergebnis erscheinen.)

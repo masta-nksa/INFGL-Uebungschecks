@@ -1,0 +1,290 @@
+/* Zweites Design für DIESELBEN HTML-Dateien (nur zum Zeigen).
+   Austausch: In jeder HTML-Datei die Zeile mit style.css auskommentieren und die
+   Zeile mit style-modern.css aktivieren. Am HTML ändert sich sonst nichts.
+
+   Neu gegenüber style.css: CSS-Variablen, Flexbox, Grid, Dark Mode, sticky Navigation,
+   Media Queries, Zähler, Übergänge. Die Selektoren sind dieselben (header, nav, main,
+   footer, .aktiv, .klein, .zentriert, #cv, #album, #bmi). */
+
+/* ---------- Farben und Masse als Variablen ---------- */
+:root {
+  --bg: #fbf9f4;
+  --surface: #ffffff;
+  --text: #1f2430;
+  --muted: #5c6475;
+  --accent: #b58729;
+  --accent-dark: #8a6416;
+  --on-accent: #1b1405;
+  --border: #e6e0d2;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgb(31 36 48 / 0.08);
+  --breite: 1000px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Dark Mode: gleiche Variablen, andere Werte */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161b;
+    --surface: #1d2027;
+    --text: #eceff4;
+    --muted: #a3abbb;
+    --accent: #d4a54a;
+    --accent-dark: #e6bd6c;
+    --border: #2c303a;
+    --shadow: 0 6px 24px rgb(0 0 0 / 0.4);
+  }
+}
+
+/* ---------- Grundlagen ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h2, h3 { line-height: 1.25; margin: 0 0 0.5em; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 1em; }
+a { color: var(--accent-dark); }
+img { max-width: 100%; }
+hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+/* ---------- Kopfbereich: Hero mit Verlauf über dem Bild ---------- */
+header {
+  min-height: 55vh;
+  display: grid;
+  align-items: end;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 0.05) 0%, rgb(0 0 0 / 0.7) 100%),
+    url(./bilder/titel.jpg) center / cover no-repeat;
+}
+
+header p {
+  width: min(var(--breite), 100% - 2.5rem);
+  margin: 0 auto;
+  padding: 3rem 0;
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw + 1rem, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 0.5);
+}
+
+/* ---------- Navigation: Flexbox, bleibt beim Scrollen oben ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.6rem 1rem;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  font-size: 0;               /* blendet die Trennzeichen « | » im HTML aus */
+}
+
+nav a {
+  font-size: 1rem;            /* nur die Links wieder normal gross */
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+nav a:hover { background: var(--border); }
+
+nav a.aktiv {                 /* die Klasse aus dem HTML */
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+/* ---------- Inhalt: begrenzte Breite, zentriert ---------- */
+main {
+  width: min(var(--breite), 100% - 2.5rem);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+main > h2:not(:first-child) { margin-top: 2.5rem; }
+
+/* Aufzählung als Karten (Grid) */
+main > ul {
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+main > ul > li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+}
+
+/* nummerierte Liste als Schritte (CSS-Zähler) */
+main > ol {
+  list-style: none;
+  counter-reset: schritt;
+  margin: 0 0 1em;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+main > ol > li {
+  counter-increment: schritt;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+main > ol > li::before {
+  content: counter(schritt);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+}
+
+p.klein { font-size: 0.85rem; color: var(--muted); }
+.zentriert { text-align: center; }
+.zentriert img { border-radius: var(--radius); box-shadow: var(--shadow); transition: transform 0.4s; }
+.zentriert img:hover { transform: scale(1.1); }
+
+/* ---------- Tabelle ---------- */
+#cv {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+#cv caption { text-align: left; font-weight: 600; padding-bottom: 0.6rem; }
+#cv th, #cv td { text-align: left; padding: 0.8rem 1.2rem; }
+#cv th { background: var(--accent); color: var(--on-accent); }
+#cv td { border-top: 1px solid var(--border); }
+#cv tr:hover td { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+
+/* ---------- Galerie: Grid statt float ---------- */
+#album {
+  display: block;
+  width: auto;
+  border: 0;
+  padding: 0;
+}
+
+#album ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+#album li {
+  position: relative;         /* nötig, damit z-index beim Vergrössern greift */
+}
+
+#album img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-Zoom wie in Einheit 9: Das Bild wird gross und liegt über den anderen */
+#album li:hover { z-index: 5; }
+
+#album li:hover img {
+  transform: scale(1.8);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
+}
+
+/* ---------- Formulare ---------- */
+form {
+  max-width: 480px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+label { font-weight: 600; }
+
+input[type="text"], select {
+  width: 100%;
+  margin: 0.25rem 0 0.5rem;
+  padding: 0.6rem 0.8rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+}
+
+input[type="text"]:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+input[type="radio"] { accent-color: var(--accent); margin-right: 0.4rem; }
+
+input[type="submit"], input[type="reset"] {
+  padding: 0.6rem 1.3rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+input[type="submit"] { background: var(--accent); color: var(--on-accent); }
+input[type="reset"] { background: transparent; color: var(--text); }
+input[type="submit"]:hover, input[type="reset"]:hover { transform: translateY(-2px); }
+
+/* ---------- Fuss ---------- */
+footer {
+  padding: 1.5rem 1.25rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
