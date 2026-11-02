@@ -8,3 +8,5 @@ Von der Website nicht verlinkt (nur für die Lehrperson). Die Dateien werden von
 trotzdem ausgeliefert und sind unter `<baseurl>/musterloesung-webseite/index.html` erreichbar,
 wer die Adresse kennt. Soll das nicht sein, den Ordner in `_config.yml` unter `exclude:` eintragen.
 Das Favicon aus Einheit 8 fehlt hier bewusst (eigene Übung).
+
+Eine zweite Beispielseite mit modernem Design und denselben Inhalten liegt in `../musterloesung-webseite-modern/` (nur zum Zeigen). Diese hier bleibt bewusst einfach.

@@ -1,0 +1,258 @@
+/* Zweite Beispielseite: modernes Design mit denselben Inhalten.
+   Nur zum Zeigen, bewusst komplexer als die einfache Musterlösung.
+   Neu gegenüber der einfachen Seite: CSS-Variablen, Flexbox, Grid,
+   Media Queries (Handy/Desktop), Dark Mode, sticky Navigation. */
+
+/* ---------- Farben und Masse als Variablen ---------- */
+:root {
+  --bg: #fbf9f4;
+  --surface: #ffffff;
+  --text: #1f2430;
+  --muted: #5c6475;
+  --accent: #b58729;
+  --accent-dark: #8a6416;
+  --border: #e6e0d2;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgb(31 36 48 / 0.08);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Dark Mode: gleiche Variablen, andere Werte */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161b;
+    --surface: #1d2027;
+    --text: #eceff4;
+    --muted: #a3abbb;
+    --accent: #d4a54a;
+    --accent-dark: #e6bd6c;
+    --border: #2c303a;
+    --shadow: 0 6px 24px rgb(0 0 0 / 0.4);
+  }
+}
+
+/* ---------- Grundlagen ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.6em; }
+h1 { font-size: clamp(1.9rem, 4vw + 1rem, 3rem); }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.1rem; }
+p { margin: 0 0 1em; }
+a { color: var(--accent-dark); }
+img { max-width: 100%; display: block; }
+
+/* ---------- Kopf und Navigation (Flexbox) ---------- */
+.site-header {
+  position: sticky;          /* bleibt beim Scrollen oben */
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.bar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.8rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+
+.site-nav a {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background-color 0.2s;
+}
+
+.site-nav a:hover { background: var(--border); }
+
+.site-nav a[aria-current="page"] {   /* aktuelle Seite, statt Klasse "aktiv" */
+  background: var(--accent);
+  color: #1b1405;
+  font-weight: 600;
+}
+
+/* ---------- Startseite: Hero mit Hintergrundbild ---------- */
+.hero {
+  min-height: 70vh;
+  display: grid;
+  align-items: end;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 0.1) 0%, rgb(0 0 0 / 0.7) 100%),
+    url(./bilder/titel.jpg) center / cover no-repeat;
+  color: #fff;
+}
+
+.hero-text {
+  width: min(1100px, 100% - 2.5rem);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.hero .lead { font-size: 1.2rem; max-width: 36em; }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; opacity: 0.85; }
+
+/* ---------- Seitenbreite ---------- */
+.container { width: min(1100px, 100% - 2.5rem); margin: 0 auto; padding: 3rem 0; }
+.container.narrow { width: min(760px, 100% - 2.5rem); }
+.container > section + section { margin-top: 3rem; }
+
+/* ---------- Karten (Grid) ---------- */
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card, .panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.5rem;
+}
+
+.card p { margin: 0; color: var(--muted); }
+.panel + .panel { margin-top: 1.5rem; }
+
+/* nummerierte Liste als Schritte (CSS-Zähler) */
+.steps { list-style: none; counter-reset: schritt; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.steps li {
+  counter-increment: schritt;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.steps li::before {
+  content: counter(schritt);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #1b1405;
+  font-weight: 700;
+}
+
+/* Text und Bild nebeneinander, auf dem Handy untereinander */
+.split { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 760px) { .split { grid-template-columns: 1fr 1fr; } }
+
+.teaser { position: relative; display: block; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.teaser img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.5s; }
+.teaser:hover img { transform: scale(1.05); }
+.teaser span {
+  position: absolute; left: 1rem; bottom: 1rem;
+  background: rgb(0 0 0 / 0.65); color: #fff;
+  padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.9rem;
+}
+
+.klein { font-size: 0.85rem; color: var(--muted); }
+
+/* ---------- Buttons ---------- */
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #1b1405;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.2s;
+}
+.button:hover { transform: translateY(-2px); }
+.button-ghost { background: transparent; color: inherit; }
+.hero .button-ghost { color: #fff; border-color: #fff; }
+
+/* ---------- Tabelle ---------- */
+.table-wrap { overflow-x: auto; }   /* auf schmalen Bildschirmen scrollbar */
+
+#cv {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+#cv caption { text-align: left; font-weight: 600; padding-bottom: 0.6rem; }
+#cv th, #cv td { text-align: left; padding: 0.8rem 1.2rem; }
+#cv thead th { background: var(--accent); color: #1b1405; }
+#cv tbody tr + tr td { border-top: 1px solid var(--border); }
+#cv tbody tr:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+
+/* ---------- Galerie (Grid) ---------- */
+#album {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+#album a { display: block; border-radius: 10px; overflow: hidden; }
+#album img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.4s; }
+#album a:hover img { transform: scale(1.08); }
+
+/* ---------- Formulare ---------- */
+.field { display: grid; gap: 0.3rem; margin-bottom: 1rem; }
+label, legend { font-weight: 600; }
+
+input[type="text"], select {
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+}
+input[type="text"]:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+fieldset { border: 1.5px solid var(--border); border-radius: 10px; margin: 0 0 1rem; padding: 0.6rem 1rem 0.8rem; }
+.choice { display: inline-flex; align-items: center; gap: 0.4rem; margin-right: 1.2rem; font-weight: 400; }
+
+/* ---------- Fuss ---------- */
+.site-footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5rem 1.25rem; color: var(--muted); font-size: 0.9rem; }
+.site-footer p { margin: 0; }
+
+/* weniger Bewegung, wenn gewünscht */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
