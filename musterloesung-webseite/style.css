@@ -1,0 +1,135 @@
+/* Musterlösung Einheit 9: Stylesheet für alle Seiten */
+
+/* Schritt 4: Grundeinstellungen und Box-Modell */
+* {
+  margin: 0;    /* Aussenabstand */
+  padding: 0;   /* Innenabstand */
+}
+
+html, body {
+  font: 100% Arial, sans-serif;
+}
+
+p {
+  line-height: 1.4;
+}
+
+/* Schritt 5: Kopfbereich */
+header {
+  background-image: url(./bilder/titel.jpg);
+  background-size: cover;
+  height: 250px;
+}
+
+header p {
+  font-size: 2em;
+  text-align: right;
+  color: white;
+  padding: 0.4em 0.4em 0 0;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px black;
+}
+
+/* Schritt 7: Navigation */
+nav {
+  background-color: #B58729;
+  padding: 0.5em 0 0.5em 1em;
+}
+
+nav a:link {
+  color: #000000;
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #CEB98E;
+}
+
+nav a:active {
+  background-color: #CEFF8E;
+}
+
+nav a.aktiv {
+  font-weight: bold;      /* Klasse: die aktuelle Seite */
+}
+
+/* Schritt 8: Inhalt, Text und Fuss */
+main {
+  padding: 2em;
+}
+
+main h2, main h3, main p, main ul, main ol {
+  padding-bottom: 0.7em;
+}
+
+main ul, main ol {
+  padding-left: 2em;
+}
+
+footer {
+  background-color: #CEB98E;
+  padding: 0.5em 2em;
+  font-size: 0.8em;
+}
+
+p.klein {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.zentriert {
+  text-align: center;
+}
+
+/* Schritt 9: Tabelle (ich.html) und Formular (kontakt.html) */
+#cv {
+  border-collapse: collapse;   /* doppelte Rahmenlinien zusammenfassen */
+}
+
+#cv th, #cv td {
+  text-align: left;
+  padding: 0.4em 1em;
+  border-bottom: 1px solid gray;
+}
+
+#cv th {
+  font-size: 1.2em;
+  background-color: #CEB98E;
+}
+
+input[type="submit"] {
+  background-color: #B58729;
+  padding: 0.2em 0.8em;
+}
+
+/* Schritt 10: Galerie (gallery.html) */
+#album {
+  display: inline-block;      /* so gross wie der Inhalt */
+  border: 1px solid #aaa;
+  width: 80%;
+  padding: 5px;
+}
+
+#album ul {
+  padding-left: 0;
+  list-style-type: none;      /* keine Aufzählungspunkte */
+}
+
+#album li {
+  float: left;                /* nebeneinander, bei Platzmangel umbrechen */
+  padding: 5px 0 0 5px;
+}
+
+#album img {
+  height: 150px;
+  transition: all 1s ease-in-out;
+}
+
+#album img:hover {
+  transform: scale(2);
+}
