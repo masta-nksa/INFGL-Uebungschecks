@@ -11,7 +11,7 @@ Es gibt keinen Build-Schritt und kein eingechecktes HTML.
 
 ```
 ├── index.md                    Startseite
-├── lektion-1.md, lektion-2.md  Einheitsseiten (Liste der Checks einer Einheit)
+├── lektion-1.md … lektion-9.md Einheitsseiten (Liste der Checks einer Einheit)
 ├── lektionen/*.md              Kopf jedes Checks: Titel, Ziel, Hilfsmittel
 ├── assets/checks/*.json        Die Aufgaben mit Antworten und Tipps
 ├── assets/js/check.js          Prüflogik und Darstellung
@@ -112,3 +112,7 @@ bundle exec jekyll serve
 
 Die Vorschau läuft dann unter <http://localhost:4000/INFGL-Uebungschecks/>. Der Wert
 `baseurl` in `_config.yml` muss dem Repository-Namen entsprechen.
+
+## Mitprogrammier-Seiten (Einheit 8 und 9)
+
+Einheit 8 (HTML) und 9 (CSS) haben keine JSON-Checks, sondern je eine Seite mit `art: praxis` (Badge «Mitprogrammieren», `lektionen/w8-…`, `w9-…`): Schritt für Schritt zum Abtippen. Lernziele verlinken auf Schritt-Anker (`theorie_label: "Schritt"` in `lernziele`).

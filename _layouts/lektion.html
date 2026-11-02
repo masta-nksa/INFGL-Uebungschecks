@@ -29,7 +29,7 @@ layout: default
       <li>
         <p>{{ lz.text }}</p>
         <p class="lernziel-links">
-          <a href="{{ lz.theorie | relative_url }}">Theorie</a>
+          <a href="{{ lz.theorie | relative_url }}">{{ lz.theorie_label | default: "Theorie" }}</a>
           {%- if lz.check %} <span aria-hidden="true">&middot;</span> <a href="{{ lz.check | relative_url }}">{{ lz.check_label | default: "Check" }}</a>{%- endif %}
           {%- if lz.zusatz %} <span aria-hidden="true">&middot;</span> <a href="{{ lz.zusatz | relative_url }}">Zusatzaufgaben</a>{%- endif %}
           {%- if lz.lsg %} <span aria-hidden="true">&middot;</span> <a href="{{ lz.lsg | relative_url }}">Musterlösung</a>{%- endif %}

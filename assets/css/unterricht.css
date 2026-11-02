@@ -513,6 +513,7 @@ a { color: var(--accent); }
 .badge-musterloesung { background: #dff3e6; color: #1c6b3a; }
 .badge-ablaufplan    { background: #ecebf7; color: #4a3f9e; }
 .badge-glossar       { background: #f3e8f7; color: #7a3388; }
+.badge-praxis        { background: #e2f2f4; color: #17636e; }
 .badge-auftrag       { background: #e2f2f4; color: #17636e; }
 .badge-input         { background: #fdeee0; color: #94531a; }
 .badge-info          { background: #ecedf1; color: #4b5263; }
@@ -525,6 +526,7 @@ a { color: var(--accent); }
   .badge-musterloesung { background: #16321f; color: #7fd6a0; }
   .badge-ablaufplan    { background: #262246; color: #b3a9ee; }
   .badge-glossar       { background: #331c38; color: #dda6e8; }
+  .badge-praxis        { background: #12343a; color: #7fd0da; }
   .badge-auftrag       { background: #12343a; color: #7fd0da; }
   .badge-input         { background: #3a2612; color: #eab278; }
   .badge-info          { background: #262a35; color: #a7afc2; }

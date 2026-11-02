@@ -44,6 +44,7 @@ plugins:
 art_labels:
   uebungscheck: "Übungscheck"
   theorie: "Theorie"
+  praxis: "Mitprogrammieren"
   pruefung: "Prüfung"
   loesung: "Musterlösung"
 
