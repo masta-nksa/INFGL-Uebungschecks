@@ -1,0 +1,200 @@
+{
+  "id": "D2",
+  "titel": "Das ER-Modell",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie die Begriffe zu.",
+      "optionen": [
+        "Entität",
+        "Attribut",
+        "Beziehung",
+        "Primärschlüssel",
+        "Fremdschlüssel"
+      ],
+      "zeilen": [
+        {
+          "text": "Objekt, Person, Begriff oder Ereignis, das als Tabelle umgesetzt wird (z. B. «Kunde»)",
+          "antwort": "Entität",
+          "tipp": "Eine Entität wird zu einer Tabelle."
+        },
+        {
+          "text": "Eigenschaft einer Entität (z. B. «Vorname»)",
+          "antwort": "Attribut",
+          "tipp": "Attribute sind die Spalten."
+        },
+        {
+          "text": "Verknüpfung zweier Entitäten (z. B. Kunde gibt Bestellung auf)",
+          "antwort": "Beziehung",
+          "tipp": "Sie verbindet Entitäten."
+        },
+        {
+          "text": "Attribut, das jeden Datensatz einer Tabelle eindeutig bestimmt",
+          "antwort": "Primärschlüssel",
+          "tipp": "Eindeutig in der eigenen Tabelle."
+        },
+        {
+          "text": "Primärschlüssel einer anderen Tabelle, der zum Verweisen verwendet wird",
+          "antwort": "Fremdschlüssel",
+          "tipp": "Er stammt aus einer anderen Tabelle."
+        }
+      ],
+      "spalte": "Beschreibung",
+      "antwortspalte": "Begriff",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#er-modell"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Welche Beziehung besteht?",
+      "optionen": [
+        "1:1",
+        "1:n",
+        "m:n"
+      ],
+      "zeilen": [
+        {
+          "text": "Kunde – Bestellung (eine Bestellung gehört zu genau einem Kunden)",
+          "antwort": "1:n",
+          "tipp": "Ein Kunde kann viele Bestellungen haben, eine Bestellung aber nur einen Kunden."
+        },
+        {
+          "text": "Film – Schauspieler",
+          "antwort": "m:n",
+          "tipp": "Ein Film hat mehrere Schauspieler, ein Schauspieler spielt in mehreren Filmen."
+        },
+        {
+          "text": "Person – Reisepass (ein gültiger Pass)",
+          "antwort": "1:1",
+          "tipp": "Jede Person hat einen Pass, jeder Pass gehört einer Person."
+        },
+        {
+          "text": "Abteilung – Mitarbeiter (jeder arbeitet in genau einer Abteilung)",
+          "antwort": "1:n",
+          "tipp": "Viele Mitarbeiter, aber nur eine Abteilung pro Mitarbeiter."
+        },
+        {
+          "text": "Student – Kurs",
+          "antwort": "m:n",
+          "tipp": "Ein Student besucht mehrere Kurse, ein Kurs hat mehrere Studenten."
+        }
+      ],
+      "spalte": "Paar",
+      "antwortspalte": "Beziehung",
+      "radio": true,
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#er-modell"
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Wie setzt man eine m:n-Beziehung in einer relationalen Datenbank um?",
+      "optionen": [
+        {
+          "text": "Mit einer Zwischentabelle, die die Fremdschlüssel beider Tabellen enthält",
+          "richtig": true
+        },
+        {
+          "text": "Mit mehreren Werten in einem Feld, z. B. «1, 2, 3»",
+          "warum": "Mehrere Werte in einem Feld verletzen die 1. Normalform."
+        },
+        {
+          "text": "Man speichert alles in einer einzigen grossen Tabelle",
+          "warum": "Das erzeugt Redundanz und Anomalien."
+        },
+        {
+          "text": "Man gibt beiden Tabellen denselben Primärschlüssel",
+          "warum": "Das löst das Problem nicht: Ein Datensatz kann so nicht mit mehreren Partnern verknüpft werden."
+        }
+      ],
+      "tipp": "Bei 1:n genügt ein Fremdschlüssel. Was braucht man, wenn beide Seiten viele Partner haben?",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#er-modell"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Film-Datenbank mit den Tabellen <code>filme</code> (FilmNr, Titel, Jahr), <code>schauspieler</code> (SchauspielerNr, Vorname, Name) und <code>filme_schauspieler</code> (FilmNr, SchauspielerNr). Was ist jedes Attribut?",
+      "optionen": [
+        "Primärschlüssel",
+        "Fremdschlüssel",
+        "kein Schlüssel"
+      ],
+      "zeilen": [
+        {
+          "text": "<code>FilmNr</code> in der Tabelle filme",
+          "antwort": "Primärschlüssel",
+          "tipp": "Es bestimmt jeden Film eindeutig."
+        },
+        {
+          "text": "<code>Titel</code> in der Tabelle filme",
+          "antwort": "kein Schlüssel",
+          "tipp": "Der Titel ist nur eine Eigenschaft des Films."
+        },
+        {
+          "text": "<code>SchauspielerNr</code> in der Tabelle schauspieler",
+          "antwort": "Primärschlüssel",
+          "tipp": "Es bestimmt jeden Schauspieler eindeutig."
+        },
+        {
+          "text": "<code>FilmNr</code> in der Tabelle filme_schauspieler",
+          "antwort": "Fremdschlüssel",
+          "tipp": "Es verweist auf die Tabelle filme."
+        },
+        {
+          "text": "<code>SchauspielerNr</code> in der Tabelle filme_schauspieler",
+          "antwort": "Fremdschlüssel",
+          "tipp": "Es verweist auf die Tabelle schauspieler."
+        }
+      ],
+      "spalte": "Attribut",
+      "antwortspalte": "Rolle",
+      "radio": true,
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#er-modell"
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Welches Attribut eignet sich am besten als Primärschlüssel für die Tabelle <code>kunde</code>?",
+      "optionen": [
+        {
+          "text": "Eine künstliche, fortlaufende Kundennummer",
+          "richtig": true
+        },
+        {
+          "text": "Der Nachname",
+          "warum": "Nachnamen kommen mehrfach vor, sie sind nicht eindeutig."
+        },
+        {
+          "text": "Der Wohnort",
+          "warum": "Viele Kunden können im selben Ort wohnen."
+        },
+        {
+          "text": "Der Vorname",
+          "warum": "Vornamen kommen mehrfach vor, sie sind nicht eindeutig."
+        }
+      ],
+      "tipp": "Ein Schlüssel muss jeden Datensatz eindeutig bestimmen. Gibt es kein solches Attribut, legt man ein künstliches an.",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#er-modell"
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,7 @@ Es gibt keinen Build-Schritt und kein eingechecktes HTML.
 
 ```
 ├── index.md                    Startseite
-├── lektion-1.md … lektion-9.md Einheitsseiten (Liste der Checks einer Einheit)
+├── lektion-1.md … lektion-10.md Einheitsseiten (Liste der Checks einer Einheit)
 ├── lektionen/*.md              Kopf jedes Checks: Titel, Ziel, Hilfsmittel
 ├── assets/checks/*.json        Die Aufgaben mit Antworten und Tipps
 ├── assets/js/check.js          Prüflogik und Darstellung

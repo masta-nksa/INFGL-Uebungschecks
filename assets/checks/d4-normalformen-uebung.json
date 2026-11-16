@@ -1,0 +1,223 @@
+{
+  "id": "D4",
+  "titel": "Tabellen normalisieren",
+  "aufgaben": [
+    {
+      "typ": "wahl",
+      "frage": "<strong>Aufgabe 1.</strong> Der Schlüssel ist (Art Nr, Besteller, B Datum).<br><table><tr><th>Art Nr</th><th>Bezeichnung</th><th>Besteller</th><th>B Datum</th><th>Menge</th></tr><tr><td>105</td><td>Zucker</td><td>Meyer</td><td>03.10.2009</td><td>200</td></tr><tr><td>105</td><td>Zucker</td><td>Schulze</td><td>03.10.2009</td><td>180</td></tr><tr><td>237</td><td>Mehl</td><td>Meyer</td><td>05.10.2009</td><td>250</td></tr><tr><td>2356</td><td>Salz</td><td>Moppel</td><td>06.10.2009</td><td>80</td></tr></table><br>Welche Normalform wird als Erstes verletzt?",
+      "optionen": [
+        {
+          "text": "1. Normalform",
+          "warum": "Die Werte sind atomar, die 1NF ist erfüllt."
+        },
+        {
+          "text": "2. Normalform",
+          "richtig": true
+        },
+        {
+          "text": "3. Normalform",
+          "warum": "Die 3NF setzt die 2NF voraus. Prüfen Sie zuerst, ob die 2NF erfüllt ist."
+        }
+      ],
+      "tipp": "Die Bezeichnung hängt nur von der Art Nr ab, einem Teil des Schlüssels.",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "<strong>Aufgabe 1.</strong> Die Attribute werden auf zwei Tabellen verteilt: <code>artikel</code> (Art Nr, …) und <code>bestellung</code> (Art Nr, Besteller, B Datum, …).",
+      "optionen": [
+        "artikel",
+        "bestellung"
+      ],
+      "zeilen": [
+        {
+          "text": "Bezeichnung",
+          "antwort": "artikel",
+          "tipp": "Sie hängt nur von der Art Nr ab."
+        },
+        {
+          "text": "Menge",
+          "antwort": "bestellung",
+          "tipp": "Sie gilt für einen Artikel, einen Besteller und ein Datum zusammen."
+        }
+      ],
+      "spalte": "Attribut",
+      "antwortspalte": "Gehört in Tabelle",
+      "radio": true,
+      "tipp": "Fragen Sie bei jedem Attribut: Wovon hängt es ab?"
+    },
+    {
+      "typ": "felder",
+      "frage": "<strong>Aufgabe 1.</strong> Wie viele Tabellen entstehen insgesamt in der 3. Normalform?",
+      "felder": [
+        {
+          "label": "Anzahl Tabellen:",
+          "format": "zahl",
+          "antwort": "2",
+          "tipp": "Zählen Sie die Tabellen der vorherigen Teilaufgabe."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "<strong>Aufgabe 2.</strong> Der Schlüssel ist (Pers Nr, Sprache).<br><table><tr><th>Pers Nr</th><th>Name</th><th>Vorname</th><th>Sprache</th><th>Grad</th></tr><tr><td>105</td><td>Marder</td><td>Monika</td><td>englisch</td><td>2</td></tr><tr><td>105</td><td>Marder</td><td>Monika</td><td>russisch</td><td>3</td></tr><tr><td>234</td><td>Hund</td><td>Hugo</td><td>französisch</td><td>1</td></tr></table><br>Welche Normalform wird als Erstes verletzt?",
+      "optionen": [
+        {
+          "text": "1. Normalform",
+          "warum": "Die Werte sind atomar, die 1NF ist erfüllt."
+        },
+        {
+          "text": "2. Normalform",
+          "richtig": true
+        },
+        {
+          "text": "3. Normalform",
+          "warum": "Die 3NF setzt die 2NF voraus. Prüfen Sie zuerst, ob die 2NF erfüllt ist."
+        }
+      ],
+      "tipp": "Name und Vorname hängen nur von der Pers Nr ab, einem Teil des Schlüssels.",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "<strong>Aufgabe 2.</strong> Die Attribute werden auf zwei Tabellen verteilt: <code>person</code> (Pers Nr, …) und <code>sprachkenntnis</code> (Pers Nr, Sprache, …).",
+      "optionen": [
+        "person",
+        "sprachkenntnis"
+      ],
+      "zeilen": [
+        {
+          "text": "Name",
+          "antwort": "person",
+          "tipp": "Er hängt nur von der Pers Nr ab."
+        },
+        {
+          "text": "Vorname",
+          "antwort": "person",
+          "tipp": "Er hängt nur von der Pers Nr ab."
+        },
+        {
+          "text": "Grad",
+          "antwort": "sprachkenntnis",
+          "tipp": "Der Grad gilt für eine Person in einer bestimmten Sprache, also vom ganzen Schlüssel."
+        }
+      ],
+      "spalte": "Attribut",
+      "antwortspalte": "Gehört in Tabelle",
+      "radio": true,
+      "tipp": "Fragen Sie bei jedem Attribut: Wovon hängt es ab?"
+    },
+    {
+      "typ": "felder",
+      "frage": "<strong>Aufgabe 2.</strong> Wie viele Tabellen entstehen insgesamt in der 3. Normalform?",
+      "felder": [
+        {
+          "label": "Anzahl Tabellen:",
+          "format": "zahl",
+          "antwort": "2",
+          "tipp": "Zählen Sie die Tabellen der vorherigen Teilaufgabe."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "<strong>Aufgabe 3.</strong> Der Schlüssel ist (Pers Nr, Sprache).<br><table><tr><th>Pers Nr</th><th>Name</th><th>Vorname</th><th>Geschl</th><th>Sprache</th><th>Grad</th><th>Abt</th><th>Leiter</th></tr><tr><td>23</td><td>Muh</td><td>Magda</td><td>w</td><td>engl</td><td>2</td><td>34</td><td>Meier</td></tr><tr><td>23</td><td>Muh</td><td>Magda</td><td>w</td><td>franz</td><td>1</td><td>34</td><td>Meier</td></tr><tr><td>145</td><td>Wau</td><td>Harald</td><td>m</td><td></td><td></td><td>34</td><td>Meier</td></tr><tr><td>437</td><td>Miau</td><td>Irene</td><td>w</td><td>engl</td><td>2</td><td>56</td><td>Busse</td></tr></table><br>Welche Normalform wird als Erstes verletzt?",
+      "optionen": [
+        {
+          "text": "1. Normalform",
+          "warum": "Die Werte sind atomar, die 1NF ist erfüllt."
+        },
+        {
+          "text": "2. Normalform",
+          "richtig": true
+        },
+        {
+          "text": "3. Normalform",
+          "warum": "Die 3NF setzt die 2NF voraus. Prüfen Sie zuerst, ob die 2NF erfüllt ist."
+        }
+      ],
+      "tipp": "Name, Vorname, Geschl und Abt hängen nur von der Pers Nr ab: ein Teil des Schlüssels. Erst danach kommt die 3NF in Frage.",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "<strong>Aufgabe 3.</strong> Die Attribute werden auf drei Tabellen verteilt: <code>person</code> (Pers Nr, …, Abt), <code>abteilung</code> (Abt, …) und <code>sprachkenntnis</code> (Pers Nr, Sprache, …).",
+      "optionen": [
+        "person",
+        "abteilung",
+        "sprachkenntnis"
+      ],
+      "zeilen": [
+        {
+          "text": "Geschl",
+          "antwort": "person",
+          "tipp": "Sie hängt nur von der Pers Nr ab."
+        },
+        {
+          "text": "Abt",
+          "antwort": "person",
+          "tipp": "Die Person gehört zu einer Abteilung; Abt bleibt als Fremdschlüssel hier."
+        },
+        {
+          "text": "Leiter",
+          "antwort": "abteilung",
+          "tipp": "Er hängt von der Abteilung ab, nicht von der Person."
+        },
+        {
+          "text": "Grad",
+          "antwort": "sprachkenntnis",
+          "tipp": "Er gilt für eine Person in einer Sprache."
+        }
+      ],
+      "spalte": "Attribut",
+      "antwortspalte": "Gehört in Tabelle",
+      "radio": true,
+      "tipp": "Fragen Sie bei jedem Attribut: Wovon hängt es ab?"
+    },
+    {
+      "typ": "felder",
+      "frage": "<strong>Aufgabe 3.</strong> Wie viele Tabellen entstehen insgesamt in der 3. Normalform?",
+      "felder": [
+        {
+          "label": "Anzahl Tabellen:",
+          "format": "zahl",
+          "antwort": "3",
+          "tipp": "Zählen Sie die Tabellen der vorherigen Teilaufgabe."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    }
+  ]
+}

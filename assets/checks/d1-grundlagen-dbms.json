@@ -1,0 +1,187 @@
+{
+  "id": "D1",
+  "titel": "Grundlagen und Datenbankarten",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Daten, Information oder Wissen?",
+      "optionen": [
+        "Daten",
+        "Information",
+        "Wissen"
+      ],
+      "zeilen": [
+        {
+          "text": "Die Zeichenfolge <code>0110 1001 1100</code> ohne weitere Angaben",
+          "antwort": "Daten",
+          "tipp": "Ohne Bedeutung sind es nur Zeichen."
+        },
+        {
+          "text": "Die Zahl 38.5, gekennzeichnet als Körpertemperatur eines Patienten in °C",
+          "antwort": "Information",
+          "tipp": "Die Zahl hat hier eine Bedeutung bekommen."
+        },
+        {
+          "text": "Aus «Alle Säugetiere atmen mit Lungen» und «Delfine sind Säugetiere» folgt «Delfine atmen mit Lungen».",
+          "antwort": "Wissen",
+          "tipp": "Hier werden Informationen kombiniert und etwas Neues abgeleitet."
+        }
+      ],
+      "spalte": "Beispiel",
+      "antwortspalte": "Stufe",
+      "radio": true,
+      "tipp": "Daten sind bedeutungslos, Information hat eine Bedeutung, Wissen entsteht durch Kombination von Informationen.",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#grundlagen"
+        }
+      ]
+    },
+    {
+      "typ": "mehrfach",
+      "frage": "Welche Herausforderungen muss ein Datenbanksystem lösen? (Mehrere Antworten sind richtig.)",
+      "optionen": [
+        {
+          "text": "Paralleler Zugriff mehrerer Benutzer",
+          "richtig": true
+        },
+        {
+          "text": "Schutz vor unberechtigtem Zugriff (Datenschutz)",
+          "richtig": true
+        },
+        {
+          "text": "Datensicherheit bei Absturz oder Stromausfall",
+          "richtig": true
+        },
+        {
+          "text": "Vermeiden von Redundanz zwischen verschiedenen Anwendungen",
+          "richtig": true
+        },
+        {
+          "text": "Möglichst viele Kopien derselben Daten anlegen",
+          "warum": "Gerade das soll vermieden werden: Mehrfach gespeicherte Daten verschwenden Platz und können sich widersprechen."
+        },
+        {
+          "text": "Alle Benutzer sehen die internen Datenformate",
+          "warum": "Das Gegenteil ist gefragt: Die Datenunabhängigkeit versteckt die internen Formate."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#grundlagen"
+        }
+      ],
+      "tipp": "Denken Sie an einen Online-Shop: Viele Kunden bestellen gleichzeitig, und bei einem Stromausfall darf keine Bestellung verloren gehen."
+    },
+    {
+      "typ": "wahl",
+      "frage": "Was ist ein DBMS (Datenbankmanagementsystem)?",
+      "optionen": [
+        {
+          "text": "Die Software, mit der man auf die Daten zugreift und die z. B. gleichzeitiges Schreiben regelt",
+          "richtig": true
+        },
+        {
+          "text": "Der gesamte Datenbestand eines Unternehmens",
+          "warum": "Das ist die Datenbank. Das DBMS ist die Software dazu."
+        },
+        {
+          "text": "Ein Diagramm, das Entitäten und Beziehungen zeigt",
+          "warum": "Das ist das ER-Modell."
+        },
+        {
+          "text": "Ein Verfahren, um Tabellen zu zerlegen",
+          "warum": "Das ist die Normalisierung."
+        }
+      ],
+      "tipp": "DBMS = Management-System: Es verwaltet den Zugriff auf die Daten.",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#grundlagen"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Welche Datenbankart ist gemeint?",
+      "optionen": [
+        "hierarchisch",
+        "objektorientiert",
+        "Netzwerk",
+        "relational"
+      ],
+      "zeilen": [
+        {
+          "text": "Daten bilden einen Baum, jeder Knoten hat genau einen Vorgänger (z. B. XML).",
+          "antwort": "hierarchisch",
+          "tipp": "Ein Baum: von der Wurzel zu den Blättern."
+        },
+        {
+          "text": "Besteht aus Klassen und Objekten, ähnlich wie in der Programmierung.",
+          "antwort": "objektorientiert",
+          "tipp": "Denken Sie an die objektorientierte Programmierung."
+        },
+        {
+          "text": "Ein Knoten kann mehrere Vorgänger haben, m:n-Beziehungen sind möglich.",
+          "antwort": "Netzwerk",
+          "tipp": "Eine Verallgemeinerung des Baums."
+        },
+        {
+          "text": "Viele Tabellen, die über Schlüssel verknüpft sind; jede Information wird nur einmal gespeichert.",
+          "antwort": "relational",
+          "tipp": "Tabellen und Schlüssel: die heute verbreitetste Art."
+        }
+      ],
+      "spalte": "Beschreibung",
+      "antwortspalte": "Datenbankart",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#arten"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Richtig oder falsch?",
+      "optionen": [
+        "richtig",
+        "falsch"
+      ],
+      "zeilen": [
+        {
+          "text": "Redundanz bedeutet, dass dieselbe Information mehrfach gespeichert ist.",
+          "antwort": "richtig",
+          "tipp": "Redundant heisst «überflüssig mehrfach vorhanden»."
+        },
+        {
+          "text": "Inkonsistenz entsteht, wenn sich mehrfach gespeicherte Daten widersprechen.",
+          "antwort": "richtig",
+          "tipp": "Zum Beispiel, wenn eine Adresse nur an einer von zwei Stellen geändert wurde."
+        },
+        {
+          "text": "Eine relationale Datenbank speichert dieselbe Information bewusst möglichst oft.",
+          "antwort": "falsch",
+          "tipp": "Sie soll jede Information nur einmal speichern."
+        },
+        {
+          "text": "Das DBMS bietet einen Zwischenspeicher (Cache) an.",
+          "antwort": "richtig",
+          "tipp": "Der Cache beschleunigt den Zugriff."
+        }
+      ],
+      "spalte": "Aussage",
+      "antwortspalte": "Antwort",
+      "radio": true,
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#grundlagen"
+        }
+      ]
+    }
+  ]
+}

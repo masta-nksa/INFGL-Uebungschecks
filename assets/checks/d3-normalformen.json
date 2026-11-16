@@ -1,0 +1,182 @@
+{
+  "id": "D3",
+  "titel": "Anomalien und Normalformen",
+  "aufgaben": [
+    {
+      "typ": "zuordnung",
+      "frage": "Eine Tabelle <code>mitarbeiter</code> enthält zu jeder Person auch Abteilung und Abteilungstelefon. Welche Anomalie ist gemeint?",
+      "optionen": [
+        "Insert-Anomalie",
+        "Delete-Anomalie",
+        "Update-Anomalie"
+      ],
+      "zeilen": [
+        {
+          "text": "Die Telefonnummer der Abteilung ändert sich und muss in allen Zeilen dieser Abteilung angepasst werden.",
+          "antwort": "Update-Anomalie",
+          "tipp": "Es geht ums Ändern an mehreren Stellen."
+        },
+        {
+          "text": "Der letzte Mitarbeiter einer Abteilung wird gelöscht, und damit sind auch Abteilung und Telefon weg.",
+          "antwort": "Delete-Anomalie",
+          "tipp": "Beim Löschen geht mehr verloren als gewollt."
+        },
+        {
+          "text": "Eine neue Abteilung ohne Mitarbeiter lässt sich nur mit leeren Feldern eintragen.",
+          "antwort": "Insert-Anomalie",
+          "tipp": "Beim Einfügen müssen Angaben erfunden oder leer gelassen werden."
+        }
+      ],
+      "spalte": "Situation",
+      "antwortspalte": "Anomalie",
+      "radio": true,
+      "tipp": "Insert = Einfügen, Delete = Löschen, Update = Ändern.",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Die Tabelle <code>kunde</code> hat die Spalten Kunden-ID, Name, Telefon. In Zeile 1 steht im Feld Telefon «079 111 11 11, 044 222 22 22», in Zeile 2 nur «078 333 33 33». Welche Normalform wird als Erstes verletzt?",
+      "optionen": [
+        {
+          "text": "1. Normalform",
+          "richtig": true
+        },
+        {
+          "text": "2. Normalform",
+          "warum": "Die 2NF setzt die 1NF voraus. Hier ist schon die 1NF verletzt."
+        },
+        {
+          "text": "3. Normalform",
+          "warum": "Die 3NF setzt 1NF und 2NF voraus. Hier ist schon die 1NF verletzt."
+        },
+        {
+          "text": "Keine, die Tabelle ist in 3NF",
+          "warum": "In einem Feld stehen zwei Telefonnummern."
+        }
+      ],
+      "tipp": "Steht in jedem Feld nur ein Wert?",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Schlüssel ist (<code>Bestell-Nr</code>, <code>Artikel-Nr</code>). Spalten: Bestell-Nr, Artikel-Nr, Artikelpreis, Menge. Der Artikelpreis hängt nur von der Artikel-Nr ab. Welche Normalform wird verletzt?",
+      "optionen": [
+        {
+          "text": "2. Normalform",
+          "richtig": true
+        },
+        {
+          "text": "1. Normalform",
+          "warum": "Alle Felder enthalten nur einen Wert, die 1NF ist erfüllt."
+        },
+        {
+          "text": "3. Normalform",
+          "warum": "Der Preis hängt von einem Teil des Schlüssels ab, nicht von einem Nichtschlüssel-Attribut. Das ist ein 2NF-Fehler."
+        },
+        {
+          "text": "Keine",
+          "warum": "Der Preis hängt nur vom halben Schlüssel ab."
+        }
+      ],
+      "tipp": "Hängt der Preis vom ganzen Schlüssel ab oder nur von einem Teil?",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "wahl",
+      "frage": "Schlüssel ist <code>Schüler-Nr</code>. Spalten: Schüler-Nr, Name, Klasse, Klassenlehrer. Der Klassenlehrer ist durch die Klasse bestimmt. Welche Normalform wird verletzt?",
+      "optionen": [
+        {
+          "text": "3. Normalform",
+          "richtig": true
+        },
+        {
+          "text": "1. Normalform",
+          "warum": "Alle Felder sind atomar."
+        },
+        {
+          "text": "2. Normalform",
+          "warum": "Der Schlüssel besteht nur aus einem Attribut, also kann es keine teilweise Abhängigkeit geben."
+        },
+        {
+          "text": "Keine",
+          "warum": "Der Klassenlehrer hängt von der Klasse ab, nicht direkt von der Schüler-Nr."
+        }
+      ],
+      "tipp": "Hängt ein Nichtschlüssel-Attribut von einem anderen Nichtschlüssel-Attribut ab?",
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "zuordnung",
+      "frage": "Welche Normalform fordert das?",
+      "optionen": [
+        "1. Normalform",
+        "2. Normalform",
+        "3. Normalform"
+      ],
+      "zeilen": [
+        {
+          "text": "Alle Werte sind atomar.",
+          "antwort": "1. Normalform",
+          "tipp": "Pro Feld nur ein Wert."
+        },
+        {
+          "text": "Jedes Nichtschlüssel-Attribut hängt vom ganzen Schlüssel ab.",
+          "antwort": "2. Normalform",
+          "tipp": "Es geht um die Abhängigkeit vom (ganzen) Schlüssel."
+        },
+        {
+          "text": "Kein Nichtschlüssel-Attribut hängt von einem anderen Nichtschlüssel-Attribut ab.",
+          "antwort": "3. Normalform",
+          "tipp": "Es geht um Abhängigkeiten unter den Nichtschlüssel-Attributen."
+        }
+      ],
+      "spalte": "Forderung",
+      "antwortspalte": "Normalform",
+      "radio": true,
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    },
+    {
+      "typ": "felder",
+      "frage": "Die Tabelle <code>rechnung</code> (Rechnungs-Nr, Pos, Artikel-Nr, Artikelname, Anzahl) wird normalisiert: Der Artikelname kommt in eine Tabelle <code>artikel</code>. Wie viele Tabellen gibt es danach insgesamt?",
+      "felder": [
+        {
+          "label": "Anzahl Tabellen:",
+          "format": "zahl",
+          "antwort": "2",
+          "tipp": "Eine Tabelle für die Rechnungspositionen, eine für die Artikel."
+        }
+      ],
+      "nachlesen": [
+        {
+          "text": "Theorie",
+          "href": "/lektionen/d0-theorie.html#normalformen"
+        }
+      ]
+    }
+  ]
+}
